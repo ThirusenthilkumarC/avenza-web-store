@@ -12,6 +12,12 @@ import { CheckoutPage } from './pages/CheckoutPage';
 import { AccountPage } from './pages/AccountPage';
 import { OrdersPage } from './pages/OrdersPage';
 import { LoginPage } from './pages/LoginPage';
+import { SellerRegisterPage } from './pages/SellerRegisterPage';
+import { AboutPage } from './pages/AboutPage';
+import { ContactPage } from './pages/ContactPage';
+import { ReturnsPage } from './pages/ReturnsPage';
+import { TermsPage } from './pages/TermsPage';
+import { PrivacyPage } from './pages/PrivacyPage';
 
 export const App: React.FC = () => {
   return (
@@ -30,6 +36,12 @@ export const App: React.FC = () => {
             <Route path="account" element={<AccountPage />} />
             <Route path="orders" element={<OrdersPage />} />
             <Route path="login" element={<LoginPage />} />
+            <Route path="seller/register" element={<SellerRegisterPage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="returns" element={<ReturnsPage />} />
+            <Route path="terms" element={<TermsPage />} />
+            <Route path="privacy" element={<PrivacyPage />} />
             <Route path="*" element={<HomePage />} />
           </Route>
         </Routes>

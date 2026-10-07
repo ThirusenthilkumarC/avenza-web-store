@@ -5,11 +5,11 @@ import { ShieldCheck, RefreshCw, Lock } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-stone-950 text-stone-300 mt-20 pt-14 pb-24 lg:pb-12 border-t border-stone-800 relative">
+    <footer className="bg-stone-950 text-stone-300 mt-20 pt-14 pb-24 lg:pb-12 border-t border-stone-800 relative text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* TRUST GUARANTEES STRIP */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pb-10 mb-10 border-b border-stone-800 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pb-10 mb-10 border-b border-stone-800">
           <div className="flex items-center gap-4 bg-stone-900/80 p-4 rounded-2xl border border-stone-800">
             <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center shrink-0 font-bold">
               <ShieldCheck className="w-6 h-6 text-amber-400" />
@@ -49,11 +49,11 @@ export const Footer: React.FC = () => {
               Get to Know Us
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
-              <li><Link to="/account" className="hover:text-amber-400 transition-colors">About Avenza</Link></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Careers & Culture</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Press Room</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Avenza Cares</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Artisan Heritage Initiative</a></li>
+              <li><Link to="/about" className="hover:text-amber-400 transition-colors">About Avenza</Link></li>
+              <li><Link to="/about" className="hover:text-amber-400 transition-colors">Careers & Culture</Link></li>
+              <li><Link to="/about" className="hover:text-amber-400 transition-colors">Press Room</Link></li>
+              <li><Link to="/about" className="hover:text-amber-400 transition-colors">Avenza Cares</Link></li>
+              <li><Link to="/about" className="hover:text-amber-400 transition-colors">Artisan Heritage Initiative</Link></li>
             </ul>
           </div>
 
@@ -63,10 +63,10 @@ export const Footer: React.FC = () => {
               Connect With Us
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Customer Lounge</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Brand Stories</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Social Concierge</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Affiliate Network</a></li>
+              <li><Link to="/contact" className="hover:text-amber-400 transition-colors">Customer Lounge</Link></li>
+              <li><Link to="/about" className="hover:text-amber-400 transition-colors">Brand Stories</Link></li>
+              <li><Link to="/contact" className="hover:text-amber-400 transition-colors">Social Concierge</Link></li>
+              <li><Link to="/seller/register" className="hover:text-amber-400 transition-colors">Affiliate Network</Link></li>
             </ul>
           </div>
 
@@ -76,11 +76,11 @@ export const Footer: React.FC = () => {
               Make Money on Avenza
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Sell on Avenza</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Fulfilment by Avenza</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Advertising</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Avenza Merchant Hub</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Supply to Avenza</a></li>
+              <li><Link to="/seller/register" className="hover:text-amber-400 transition-colors">Sell on Avenza</Link></li>
+              <li><Link to="/seller/register" className="hover:text-amber-400 transition-colors">Fulfilment by Avenza</Link></li>
+              <li><Link to="/seller/register" className="hover:text-amber-400 transition-colors">Advertising</Link></li>
+              <li><Link to="/seller/register" className="hover:text-amber-400 transition-colors">Avenza Merchant Hub</Link></li>
+              <li><Link to="/seller/register" className="hover:text-amber-400 transition-colors">Supply to Avenza</Link></li>
             </ul>
           </div>
 
@@ -91,10 +91,10 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
               <li><Link to="/account" className="hover:text-amber-400 transition-colors">Your Account</Link></li>
-              <li><Link to="/orders" className="hover:text-amber-400 transition-colors">Returns & Replacement</Link></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Purchase Protection</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Help & Support</a></li>
-              <li><a href="#" className="hover:text-amber-400 transition-colors">Avenza App</a></li>
+              <li><Link to="/returns" className="hover:text-amber-400 transition-colors">Returns & Replacement</Link></li>
+              <li><Link to="/returns" className="hover:text-amber-400 transition-colors">Purchase Protection</Link></li>
+              <li><Link to="/contact" className="hover:text-amber-400 transition-colors">Help & Support</Link></li>
+              <li><Link to="/about" className="hover:text-amber-400 transition-colors">Avenza App</Link></li>
             </ul>
           </div>
         </div>
@@ -118,11 +118,11 @@ export const Footer: React.FC = () => {
         <div className="mt-8 text-center text-[11px] text-stone-500 space-y-1">
           <p>© 2026 AVENZA Luxury Marketplace. All rights reserved.</p>
           <div className="flex justify-center items-center gap-4 text-stone-400 pt-1">
-            <a href="#" className="hover:underline">Privacy Policy</a>
+            <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
             <span>•</span>
-            <a href="#" className="hover:underline">Terms of Service</a>
+            <Link to="/terms" className="hover:underline">Terms of Service</Link>
             <span>•</span>
-            <a href="#" className="hover:underline">Cookie Preferences</a>
+            <Link to="/terms" className="hover:underline">Cookie Preferences</Link>
           </div>
         </div>
 
