@@ -1,229 +1,94 @@
-# 🛍️ Avenza Web Store
+# 🛍️ AVENZA — A New Avenue for You
 
 <div align="center">
 
-### ✨ A Modern & Responsive E-Commerce Web Application
+<img src="assets/avenza-logo.jpeg" alt="Avenza Logo" width="280"/>
 
-Avenza is a modern e-commerce web application designed with a clean, premium user interface and a smooth shopping experience across desktop, tablet, and mobile devices.
+### ✨ A Modern Marketplace for a Better Shopping Experience
+
+**Discover. Explore. Shop. Experience Avenza.**
 
 <br/>
 
-**Built with React + TypeScript + Vite**
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Responsive](https://img.shields.io/badge/Responsive-Yes-22C55E?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Under%20Development-F59E0B?style=for-the-badge)
+
+<br/>
+
+[🌐 Live Demo](#-live-demo) •
+[✨ Features](#-features) •
+[🛠️ Tech Stack](#️-tech-stack) •
+[📸 Screenshots](#-screenshots)
 
 </div>
 
 ---
 
-## 🚀 About Avenza
+## 🏆 About Avenza
 
-**Avenza Web Store** is a responsive e-commerce frontend focused on providing a modern and user-friendly online shopping experience.
+**Avenza** is a modern and responsive e-commerce marketplace designed to create a premium, smooth, and enjoyable online shopping experience.
 
-The application includes product browsing, responsive layouts, interactive UI components, navigation, authentication-ready pages, and essential store information pages.
+The platform brings multiple shopping categories together in one elegant marketplace, allowing users to discover trending products, explore curated collections, find daily deals, and shop across different categories.
 
----
+> **A New Avenue for You.**
 
-## ✨ Features
+Avenza focuses on:
 
-* 🛍️ Modern E-Commerce Interface
-* 📱 Fully Responsive Design
-* 💻 Desktop, Tablet & Mobile Support
-* 🎨 Premium Modern UI
-* ⚡ Fast Vite Development Environment
-* 🔄 Smooth Client-Side Navigation
-* 🧩 Reusable React Components
-* 📦 Product Display & Shopping Experience
-* 🔐 Login & Signup Interface
-* 📄 Privacy Policy Page
-* 📜 Terms & Conditions Page
-* 🦶 Responsive Footer
-* 🎯 Clean & Maintainable Code
-* 🌐 Mobile-Friendly Layout
+- 🛍️ Premium shopping experience
+- 🎨 Clean and modern UI
+- 📱 Mobile-first responsiveness
+- ⚡ Fast and smooth interactions
+- 🔎 Easy product discovery
+- ❤️ User-friendly shopping experience
+- 🏷️ Deals, offers and curated collections
 
 ---
 
-## 🛠️ Tech Stack
+# ✨ Features
 
-| Technology      | Purpose                     |
-| --------------- | --------------------------- |
-| ⚛️ React        | Frontend UI                 |
-| 🔷 TypeScript   | Type-safe development       |
-| ⚡ Vite          | Development & build tool    |
-| 🎨 CSS          | Styling & responsive design |
-| 🧭 React Router | Page navigation             |
-| 🐙 Git          | Version control             |
-| 🐙 GitHub       | Source code hosting         |
+## 🏠 Modern Home Page
+
+Avenza's homepage is designed like a premium marketplace with carefully organized shopping sections.
+
+### Highlights
+
+- 🎯 Hero promotional banner
+- 🛍️ Curated shopping categories
+- ⚡ Deal of the Day
+- 🔥 Trending products
+- 🎧 Electronics & Gadgets
+- 👗 Haute Fashion & Heritage Apparel
+- 🧴 Beauty & Personal Care
+- 🍳 Home & Kitchen
+- 🎒 Recommended products
+- 🏪 Seller onboarding section
 
 ---
 
-## 📁 Project Structure
+## 🛒 Shopping Experience
+
+Users can explore products through different marketplace sections.
 
 ```text
-avenza-web-store/
-│
-├── frontend/
-│   ├── public/
-│   │
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   │   └── Footer.tsx
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── PrivacyPage.tsx
-│   │   │   └── TermsPage.tsx
-│   │   │
-│   │   ├── App.tsx
-│   │   └── main.tsx
-│   │
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── vite.config.ts
-│
-├── .gitignore
-└── README.md
-```
-
----
-
-## 💻 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/ThirusenthilkumarC/avenza-web-store.git
-```
-
-### 2. Navigate to the Project
-
-```bash
-cd avenza-web-store
-```
-
-### 3. Navigate to Frontend
-
-```bash
-cd frontend
-```
-
-### 4. Install Dependencies
-
-```bash
-npm install
-```
-
-### 5. Start Development Server
-
-```bash
-npm run dev
-```
-
-The application will be available at the local Vite development URL shown in your terminal.
-
----
-
-## 🧪 Build for Production
-
-```bash
-npm run build
-```
-
-To preview the production build:
-
-```bash
-npm run preview
-```
-
----
-
-## 📱 Responsive Design
-
-Avenza is designed to work smoothly across:
-
-* 📱 Mobile Phones
-* 📲 Tablets
-* 💻 Laptops
-* 🖥️ Desktop Screens
-
-The layout adapts automatically to different screen sizes while maintaining a consistent shopping experience.
-
----
-
-## 🎨 UI Highlights
-
-* ✨ Premium visual design
-* 🧊 Modern card layouts
-* 🎯 Clear call-to-action buttons
-* 📱 Mobile-first responsive behavior
-* 🧭 Simple navigation
-* 🪄 Smooth interactions
-* 📄 Clean information pages
-
----
-
-## 🔮 Future Enhancements
-
-Planned improvements include:
-
-* 🛒 Shopping Cart
-* ❤️ Wishlist
-* 💳 Payment Integration
-* 🔐 Complete Authentication
-* 👤 User Profile
-* 📦 Order Tracking
-* 🔎 Advanced Product Search
-* 🏷️ Product Categories & Filters
-* ⭐ Product Reviews & Ratings
-* 📊 Admin Dashboard
-* ☁️ Backend & Database Integration
-
----
-
-## 📸 Screenshots
-
-> Add your Avenza website screenshots here.
-
-```text
-screenshots/
-├── home.png
-├── products.png
-├── login.png
-└── mobile.png
-```
-
-Example:
-
-```markdown
-![Avenza Home Page](screenshots/home.png)
-```
-
----
-
-## 🌐 Live Demo
-
-🚀 **Coming Soon**
-
----
-
-## 👨‍💻 Developer
-
-**Thirusenthilkumar C**
-
-Full Stack Developer
-
-* GitHub: [ThirusenthilkumarC](https://github.com/ThirusenthilkumarC)
-
----
-
-## 📄 License
-
-This project is developed for learning, portfolio, and demonstration purposes.
-
----
-
-<div align="center">
-
-### ⭐ If you like Avenza, consider giving this repository a star!
-
-**Avenza — Shop Smart. Shop Better. ✨**
-
-</div>
+Home
+ │
+ ├── Categories
+ │
+ ├── Today's Deals
+ │
+ ├── Best Sellers
+ │
+ ├── New Arrivals
+ │
+ ├── Electronics
+ │
+ ├── Fashion
+ │
+ ├── Beauty
+ │
+ ├── Home & Kitchen
+ │
+ └── Recommended Products
