@@ -1,7 +1,7 @@
 import React from 'react';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from './ProductCard';
-import { Laptop, ArrowRight, Volume2 } from 'lucide-react';
+import { Laptop, Volume2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const ElectronicsSection: React.FC = () => {
@@ -27,10 +27,9 @@ export const ElectronicsSection: React.FC = () => {
 
         <button
           onClick={() => navigate('/products/electronics')}
-          className="hidden sm:flex items-center gap-1.5 text-xs font-bold text-amber-800 hover:text-amber-950 transition-colors group"
+          className="hidden sm:flex items-center gap-1 text-xs font-bold text-amber-800 hover:text-amber-950 transition-colors group min-h-[44px]"
         >
-          <span>View All Tech Deals</span>
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <span>Explore Audio Fest →</span>
         </button>
       </div>
 
@@ -38,7 +37,7 @@ export const ElectronicsSection: React.FC = () => {
         {/* LEFT FEATURED PROMO BANNER */}
         <div
           onClick={() => navigate('/products/electronics')}
-          className="lg:col-span-4 bg-gradient-to-br from-stone-950 via-stone-900 to-amber-950 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between cursor-pointer border border-stone-800 shadow-xl group hover:border-amber-500/50 transition-all relative overflow-hidden"
+          className="lg:col-span-4 bg-gradient-to-br from-stone-950 via-stone-900 to-amber-950 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between cursor-pointer border border-stone-800 shadow-xl group hover:border-amber-500/50 transition-all relative overflow-hidden min-h-[340px]"
         >
           {/* Subtle Ambient Circle */}
           <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
@@ -48,24 +47,17 @@ export const ElectronicsSection: React.FC = () => {
               <Volume2 className="w-3.5 h-3.5" /> FEATURED SHOWCASE
             </span>
             
-            <h3 className="text-2xl font-bold font-serif-luxury text-stone-50 mt-4 leading-tight group-hover:text-amber-300 transition-colors">
+            <h3 className="text-2xl sm:text-3xl font-bold font-serif-luxury text-stone-50 mt-4 leading-tight group-hover:text-amber-300 transition-colors">
               Immersive Spatial Audio
             </h3>
             
-            <p className="text-xs text-stone-300 mt-2 font-light leading-relaxed">
-              Experience loss-less acoustic perfection with active noise cancelling headphones, studio monitors and soundbars.
+            <p className="text-xs text-stone-300 mt-2.5 font-light leading-relaxed">
+              Upgrade your everyday experience with next-generation technology.
             </p>
           </div>
 
           <div className="mt-8 pt-6 border-t border-stone-800 flex items-center justify-between">
-            <div>
-              <span className="text-[10px] text-stone-400 uppercase font-semibold block">Exclusive Discount</span>
-              <span className="text-xl font-extrabold text-amber-400">UP TO 50% OFF</span>
-            </div>
-
-            <div className="w-10 h-10 rounded-xl bg-amber-500 group-hover:bg-amber-400 text-stone-950 flex items-center justify-center font-bold transition-transform group-hover:translate-x-1">
-              <ArrowRight className="w-5 h-5" />
-            </div>
+            <span className="text-xs font-extrabold text-amber-400">Explore Audio Fest →</span>
           </div>
         </div>
 

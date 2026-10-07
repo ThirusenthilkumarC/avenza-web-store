@@ -1,52 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag } from 'lucide-react';
 
 interface LogoProps {
   className?: string;
   isLight?: boolean;
+  showTagline?: boolean;
 }
 
 /**
- * BRAND LOGO PLACEHOLDER COMPONENT
+ * OFFICIAL AVENZA BRAND LOGO COMPONENT
+ * Displays the official uploaded logo icon alongside bold "AVENZA" typography.
  * 
- * Replace this section or logo SVG with your official brand logo image/icon.
- * Example:
- * <img src="/logo.png" alt="Your Website Name" className="h-10" />
+ * Desktop: [LOGO ICON] AVENZA (Luxury Marketplace)
+ * Mobile:  [LOGO ICON] AVENZA
  */
-export const Logo: React.FC<LogoProps> = ({ className = '', isLight = false }) => {
+export const Logo: React.FC<LogoProps> = ({ className = '', isLight = false, showTagline = true }) => {
   return (
     <Link 
       to="/" 
-      className={`inline-flex items-center gap-2.5 group transition-all ${className}`}
-      aria-label="Home Page"
+      className={`inline-flex items-center gap-2.5 shrink-0 group transition-opacity duration-200 hover:opacity-95 ${className}`}
+      aria-label="AVENZA Luxury Marketplace"
     >
-      {/* PLACEHOLDER ICON - Replace with your logo SVG/PNG */}
-      <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold shadow-sm transition-transform duration-300 group-hover:scale-105 ${
-        isLight 
-          ? 'bg-amber-500 text-stone-950' 
-          : 'bg-stone-900 text-amber-400 border border-amber-500/30'
-      }`}>
-        <ShoppingBag className="w-5 h-5 text-amber-400 group-hover:rotate-6 transition-transform" />
+      {/* Official Logo Icon Image */}
+      <div className="p-0.5 rounded-xl bg-[#FAF8F5] shrink-0">
+        <img
+          src="/avenza-logo.jpg"
+          alt="AVENZA Logo Icon"
+          className="h-9 sm:h-11 w-auto object-contain rounded-lg"
+        />
       </div>
 
-      {/* PLACEHOLDER TEXT BRAND - Replace text or remove when adding image logo */}
-      <div className="flex flex-col text-left">
-        <div className="flex items-center gap-1.5">
-          <span className={`font-serif-luxury text-xl font-bold tracking-tight ${
-            isLight ? 'text-white' : 'text-stone-900'
-          }`}>
-            LUXE<span className="text-amber-600 font-light italic">MARKET</span>
-          </span>
-          <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-900 font-semibold border border-amber-300/60 uppercase tracking-widest hidden sm:inline-block">
-            DEMO
-          </span>
-        </div>
-        <span className={`text-[10px] tracking-wider uppercase font-medium -mt-1 ${
-          isLight ? 'text-stone-400' : 'text-stone-500'
+      {/* Brand Typography */}
+      <div className="flex flex-col text-left leading-none">
+        <span className={`font-serif-luxury text-xl sm:text-2xl font-black tracking-tight ${
+          isLight ? 'text-white' : 'text-stone-950'
         }`}>
-          [YOUR BRAND LOGO PLACEHOLDER]
+          AVENZA
         </span>
+        {showTagline && (
+          <span className={`text-[9px] sm:text-[10px] font-bold tracking-widest uppercase mt-0.5 ${
+            isLight ? 'text-amber-400' : 'text-amber-800'
+          }`}>
+            LUXURY MARKETPLACE
+          </span>
+        )}
       </div>
     </Link>
   );

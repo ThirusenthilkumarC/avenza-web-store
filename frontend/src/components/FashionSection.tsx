@@ -18,16 +18,17 @@ export const FashionSection: React.FC = () => {
         <div className="text-left">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-amber-800 uppercase mb-1">
             <Shirt className="w-3.5 h-3.5 text-amber-600" />
-            HERITAGE & STYLE
+            HERITAGE & COUTURE
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold font-serif-luxury text-stone-900">
             Haute Fashion & Heritage Apparel
           </h2>
+          <p className="text-xs text-stone-500 mt-0.5">Handcrafted luxury and timeless Indian style</p>
         </div>
 
         <button
           onClick={() => navigate('/products/men-fashion')}
-          className="hidden sm:flex items-center gap-1.5 text-xs font-bold text-amber-800 hover:text-amber-950 transition-colors group"
+          className="hidden sm:flex items-center gap-1.5 text-xs font-bold text-amber-800 hover:text-amber-950 transition-colors group min-h-[44px]"
         >
           <span>Explore Couture</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
