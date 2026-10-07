@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, RefreshCw, ShieldCheck, Truck } from 'lucide-react';
+import { ChevronRight, RefreshCw } from 'lucide-react';
 
 export const ReturnsPage: React.FC = () => {
   return (

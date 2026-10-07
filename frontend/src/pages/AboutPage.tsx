@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ShieldCheck, Sparkles, Store, MapPin } from 'lucide-react';
+import { ChevronRight, ShieldCheck, Store, MapPin } from 'lucide-react';
 import { Logo } from '../components/Logo';
 
 export const AboutPage: React.FC = () => {
