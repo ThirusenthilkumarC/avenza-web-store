@@ -10,6 +10,7 @@ export const MobileBottomNav: React.FC = () => {
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200 px-3 py-2 flex items-center justify-around text-[10px] font-semibold text-stone-600 shadow-2xl">
       <NavLink
         to="/"
+        aria-label="Avenza Homepage"
         className={({ isActive }) =>
           `flex flex-col items-center gap-1 transition-colors ${
             isActive ? 'text-amber-700 font-bold' : 'hover:text-stone-900'
@@ -22,6 +23,7 @@ export const MobileBottomNav: React.FC = () => {
 
       <NavLink
         to="/products"
+        aria-label="Browse Product Categories"
         className={({ isActive }) =>
           `flex flex-col items-center gap-1 transition-colors ${
             isActive ? 'text-amber-700 font-bold' : 'hover:text-stone-900'
@@ -34,6 +36,7 @@ export const MobileBottomNav: React.FC = () => {
 
       <NavLink
         to="/search"
+        aria-label="Search Products"
         className={({ isActive }) =>
           `flex flex-col items-center gap-1 transition-colors ${
             isActive ? 'text-amber-700 font-bold' : 'hover:text-stone-900'
@@ -46,6 +49,7 @@ export const MobileBottomNav: React.FC = () => {
 
       <NavLink
         to="/wishlist"
+        aria-label={`View Wishlist, ${wishlist.length} items`}
         className={({ isActive }) =>
           `relative flex flex-col items-center gap-1 transition-colors ${
             isActive ? 'text-amber-700 font-bold' : 'hover:text-stone-900'
@@ -65,6 +69,7 @@ export const MobileBottomNav: React.FC = () => {
 
       <NavLink
         to="/cart"
+        aria-label={`View Cart, ${cartCount} items`}
         className={({ isActive }) =>
           `relative flex flex-col items-center gap-1 transition-colors ${
             isActive ? 'text-amber-700 font-bold' : 'hover:text-stone-900'

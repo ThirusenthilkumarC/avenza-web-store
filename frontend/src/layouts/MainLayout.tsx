@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { MobileBottomNav } from '../components/MobileBottomNav';
 import { Toast } from '../components/Toast';
+import { NotificationSystem } from '../components/NotificationSystem';
 import { QuickViewModal } from '../components/QuickViewModal';
 
 export const MainLayout: React.FC = () => {
@@ -21,6 +22,7 @@ export const MainLayout: React.FC = () => {
       {/* Fixed UI Overlays */}
       <MobileBottomNav />
       <Toast />
+      <NotificationSystem />
       <QuickViewModal />
     </div>
   );

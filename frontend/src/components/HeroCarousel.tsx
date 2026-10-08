@@ -165,6 +165,13 @@ export const HeroCarousel: React.FC = () => {
               <img
                 src={activeSlide.featuredProductImage}
                 alt={activeSlide.featuredProductTitle}
+                loading="eager"
+                decoding="sync"
+                width="400"
+                height="400"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80';
+                }}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>

@@ -73,6 +73,7 @@ export const SearchBar: React.FC<{ isMobile?: boolean; onCloseMobile?: () => voi
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
+              aria-label="Search category department filter"
               className="appearance-none bg-stone-50 hover:bg-stone-100 py-2.5 pl-3.5 pr-8 text-xs font-semibold text-stone-700 cursor-pointer outline-none transition-colors"
             >
               <option value="All">All Categories</option>
@@ -96,6 +97,7 @@ export const SearchBar: React.FC<{ isMobile?: boolean; onCloseMobile?: () => voi
               setIsOpenSuggestions(true);
             }}
             onFocus={() => setIsOpenSuggestions(true)}
+            aria-label="Search 50,000+ luxury products, brands and categories"
             placeholder="Search 50,000+ luxury products, brands & categories..."
             className="w-full py-2.5 px-4 text-sm text-stone-900 bg-transparent placeholder-stone-400 outline-none"
           />

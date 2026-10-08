@@ -107,3 +107,36 @@ export interface Coupon {
   description: string;
   expiresAt: string;
 }
+
+export type NotificationType =
+  | 'flash_sale'
+  | 'cart_reminder'
+  | 'wishlist_price_drop'
+  | 'order_status'
+  | 'welcome_offer'
+  | 'low_stock'
+  | 'discount_unlocked'
+  | 'trending_product'
+  | 'festival_offer'
+  | 'delivery_update';
+
+export interface NotificationItem {
+  id: string;
+  type: NotificationType;
+  badge: string;
+  title: string;
+  description: string;
+  ctaText?: string;
+  ctaLink?: string;
+  featuredImage?: string;
+  expirySeconds?: number;
+  durationMs?: number;
+  metadata?: {
+    discountPercent?: number;
+    productId?: number;
+    orderId?: string;
+    originalPrice?: number;
+    salePrice?: number;
+    stockRemaining?: number;
+  };
+}

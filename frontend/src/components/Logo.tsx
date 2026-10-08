@@ -26,6 +26,11 @@ export const Logo: React.FC<LogoProps> = ({ className = '', isLight = false, sho
         <img
           src="/avenza-logo.jpg"
           alt="AVENZA Logo Icon"
+          loading="eager"
+          onError={(e) => {
+            // Hide image and show letter A fallback icon if image fails
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
           className="h-9 sm:h-11 w-auto object-contain rounded-lg"
         />
       </div>

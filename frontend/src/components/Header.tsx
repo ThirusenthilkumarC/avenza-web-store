@@ -61,7 +61,7 @@ export const Header: React.FC = () => {
             <Link to="/account" className="hover:text-amber-400 transition-colors hidden sm:inline">
               Seller Hub
             </Link>
-            <Link to="/orders" className="hover:text-amber-400 transition-colors">
+            <Link to="/help" className="hover:text-amber-400 transition-colors">
               Help & Support
             </Link>
           </div>

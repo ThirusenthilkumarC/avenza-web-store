@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEO } from '../components/SEO';
 import { HeroCarousel } from '../components/HeroCarousel';
 import { PromoCards } from '../components/PromoCards';
 import { CategoryGrid } from '../components/CategoryGrid';
@@ -12,6 +13,10 @@ import { RecommendedProducts } from '../components/RecommendedProducts';
 export const HomePage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <SEO
+        title="AVENZA | Luxury Marketplace - Premium E-Commerce"
+        description="Discover authentic flagship electronics, haute fashion, fine watches and master artisan creations on AVENZA."
+      />
       {/* 1. HERO CAROUSEL */}
       <HeroCarousel />
 

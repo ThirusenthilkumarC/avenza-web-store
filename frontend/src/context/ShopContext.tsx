@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import type { Product, CartItem, WishlistItem, Order, Coupon, DeliveryAddress } from '../types';
+import type { Product, CartItem, WishlistItem, Order, Coupon, DeliveryAddress, NotificationItem } from '../types';
 import { products as initialProducts } from '../data/products';
 import { coupons } from '../data/coupons';
 
@@ -20,6 +20,7 @@ interface ShopContextType {
   deliveryLocation: { pincode: string; city: string };
   appliedCoupon: Coupon | null;
   toasts: ToastState[];
+  activeNotification: NotificationItem | null;
   
   // Actions
   addToCart: (product: Product, quantity?: number, size?: string, color?: string) => void;
@@ -46,6 +47,8 @@ interface ShopContextType {
   
   showToast: (message: string, type?: 'success' | 'info' | 'warning' | 'error') => void;
   removeToast: (id: number) => void;
+  showNotification: (item: NotificationItem) => void;
+  dismissNotification: () => void;
   
   // Computed values
   cartSubtotal: number;
@@ -58,31 +61,46 @@ interface ShopContextType {
 
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
+const getSafeStorage = <T,>(key: string, defaultValue: T): T => {
+  try {
+    if (typeof window === 'undefined' || !window.localStorage) return defaultValue;
+    const saved = localStorage.getItem(key);
+    if (!saved) return defaultValue;
+    return JSON.parse(saved) as T;
+  } catch (err) {
+    console.warn(`[Avenza Storage] Error reading key "${key}":`, err);
+    return defaultValue;
+  }
+};
+
+const setSafeStorage = (key: string, value: any) => {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+  } catch (err) {
+    console.warn(`[Avenza Storage] Error writing key "${key}":`, err);
+  }
+};
+
 export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [productsList] = useState<Product[]>(initialProducts);
   
   // LocalStorage state initialization
   const [cart, setCart] = useState<CartItem[]>(() => {
-    const saved = localStorage.getItem('luxury_cart');
-    return saved ? JSON.parse(saved) : [];
+    return getSafeStorage<CartItem[]>('luxury_cart', []);
   });
   
   const [wishlist, setWishlist] = useState<WishlistItem[]>(() => {
-    const saved = localStorage.getItem('luxury_wishlist');
-    return saved ? JSON.parse(saved) : [];
+    return getSafeStorage<WishlistItem[]>('luxury_wishlist', []);
   });
   
   const [recentlyViewedIds, setRecentlyViewedIds] = useState<number[]>(() => {
-    const saved = localStorage.getItem('luxury_recently_viewed');
-    return saved ? JSON.parse(saved) : [];
+    return getSafeStorage<number[]>('luxury_recently_viewed', []);
   });
   
   const [orders, setOrders] = useState<Order[]>(() => {
-    const saved = localStorage.getItem('luxury_orders');
-    if (saved) return JSON.parse(saved);
-    
-    // Default mock initial order for realism
-    return [
+    const defaultOrders: Order[] = [
       {
         id: 'ORD-89421',
         date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
@@ -117,37 +135,91 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         ]
       }
     ];
+    return getSafeStorage<Order[]>('luxury_orders', defaultOrders);
   });
   
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [appliedCoupon, setAppliedCoupon] = useState<Coupon | null>(null);
   const [deliveryLocation, setDeliveryLocationState] = useState<{ pincode: string; city: string }>(() => {
-    const saved = localStorage.getItem('luxury_location');
-    return saved ? JSON.parse(saved) : { pincode: '400001', city: 'Mumbai' };
+    return getSafeStorage<{ pincode: string; city: string }>('luxury_location', { pincode: '400001', city: 'Mumbai' });
   });
   
   const [toasts, setToasts] = useState<ToastState[]>([]);
+  const [activeNotification, setActiveNotification] = useState<NotificationItem | null>(null);
+
+  const showNotification = (item: NotificationItem) => {
+    setActiveNotification(item);
+  };
+
+  const dismissNotification = () => {
+    if (activeNotification?.type === 'welcome_offer') {
+      setSafeStorage('avenza_welcome_dismissed', 'true');
+    }
+    setActiveNotification(null);
+  };
+
+  // Smart Auto-Triggers
+  useEffect(() => {
+    // 1. Welcome Offer Trigger (First-time visitors)
+    const isWelcomeDismissed = getSafeStorage<string>('avenza_welcome_dismissed', '');
+    if (!isWelcomeDismissed) {
+      const welcomeTimer = setTimeout(() => {
+        showNotification({
+          id: 'welcome-offer-auto',
+          type: 'welcome_offer',
+          badge: '🎁 WELCOME TO AVENZA',
+          title: 'Get ₹500 OFF Your First Luxury Order',
+          description: 'Enjoy exclusive welcome privileges. Use coupon WELCOME10 at checkout.',
+          ctaText: 'SHOP NOW',
+          ctaLink: '/products?deal=true',
+          durationMs: 7000
+        });
+      }, 2500);
+      return () => clearTimeout(welcomeTimer);
+    }
+  }, []);
+
+  useEffect(() => {
+    // 2. Flash Sale Offer Auto-Trigger (After 12 seconds if no active notification)
+    const flashTimer = setTimeout(() => {
+      setActiveNotification(prev => {
+        if (prev) return prev;
+        return {
+          id: 'flash-sale-auto',
+          type: 'flash_sale',
+          badge: '🎉 AVENZA GRAND FESTIVAL',
+          title: 'Extra 20% OFF Unlocked!',
+          description: 'Limited-time festival discounts on spatial audio, heritage apparel & luxury watches.',
+          ctaText: 'SHOP DEALS',
+          ctaLink: '/deals',
+          expirySeconds: 5058,
+          durationMs: 7000
+        };
+      });
+    }, 12000);
+    return () => clearTimeout(flashTimer);
+  }, []);
 
   // Persist to localStorage
   useEffect(() => {
-    localStorage.setItem('luxury_cart', JSON.stringify(cart));
+    setSafeStorage('luxury_cart', cart);
   }, [cart]);
 
   useEffect(() => {
-    localStorage.setItem('luxury_wishlist', JSON.stringify(wishlist));
+    setSafeStorage('luxury_wishlist', wishlist);
   }, [wishlist]);
 
   useEffect(() => {
-    localStorage.setItem('luxury_recently_viewed', JSON.stringify(recentlyViewedIds));
+    setSafeStorage('luxury_recently_viewed', recentlyViewedIds);
   }, [recentlyViewedIds]);
 
   useEffect(() => {
-    localStorage.setItem('luxury_orders', JSON.stringify(orders));
+    setSafeStorage('luxury_orders', orders);
   }, [orders]);
 
   useEffect(() => {
-    localStorage.setItem('luxury_location', JSON.stringify(deliveryLocation));
+    setSafeStorage('luxury_location', deliveryLocation);
   }, [deliveryLocation]);
 
   // Toast Handler
@@ -174,7 +246,21 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
       return [...prev, { product, quantity, selectedSize, selectedColor }];
     });
+
     showToast(`Added "${product.name.slice(0, 25)}..." to Shopping Cart`, 'success');
+
+    // Trigger Cart Notification
+    showNotification({
+      id: `cart-${Date.now()}`,
+      type: 'cart_reminder',
+      badge: '🛍️ ADDED TO CART',
+      title: product.name,
+      description: `Saved to your cart. Free express delivery available.`,
+      ctaText: 'VIEW CART',
+      ctaLink: '/cart',
+      featuredImage: product.images[0],
+      durationMs: 6000
+    });
   };
 
   const removeFromCart = (productId: number) => {
@@ -206,6 +292,20 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         return prev.filter(item => item.product.id !== product.id);
       } else {
         showToast(`Added to Wishlist`, 'success');
+        
+        // Trigger Wishlist Notification
+        showNotification({
+          id: `wishlist-${Date.now()}`,
+          type: 'wishlist_price_drop',
+          badge: '❤️ SAVED TO WISHLIST',
+          title: product.name,
+          description: `Saved to your wishlist. We'll notify you if price drops or stock runs low.`,
+          ctaText: 'VIEW WISHLIST',
+          ctaLink: '/wishlist',
+          featuredImage: product.images[0],
+          durationMs: 6000
+        });
+
         return [...prev, { product, addedAt: new Date().toISOString() }];
       }
     });
@@ -312,6 +412,19 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setOrders(prev => [newOrder, ...prev]);
     clearCart();
     showToast(`Order #${newOrder.id} placed successfully!`, 'success');
+
+    // Trigger Order Status Notification
+    showNotification({
+      id: `order-${newOrder.id}`,
+      type: 'order_status',
+      badge: '🚚 ORDER CONFIRMED',
+      title: `Order #${newOrder.id} Received`,
+      description: `Your order is being processed. Tracking number: ${newOrder.trackingNumber}`,
+      ctaText: 'TRACK ORDER',
+      ctaLink: `/orders/${newOrder.id}`,
+      durationMs: 7000
+    });
+
     return newOrder;
   };
 
@@ -328,6 +441,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         deliveryLocation,
         appliedCoupon,
         toasts,
+        activeNotification,
         
         addToCart,
         removeFromCart,
@@ -349,6 +463,8 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         
         showToast,
         removeToast,
+        showNotification,
+        dismissNotification,
         
         cartSubtotal,
         cartDiscount,

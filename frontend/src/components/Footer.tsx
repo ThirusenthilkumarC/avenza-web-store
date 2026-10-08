@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/account" className="hover:text-amber-400 transition-colors">Your Account</Link></li>
               <li><Link to="/returns" className="hover:text-amber-400 transition-colors">Returns & Replacement</Link></li>
               <li><Link to="/returns" className="hover:text-amber-400 transition-colors">Purchase Protection</Link></li>
-              <li><Link to="/contact" className="hover:text-amber-400 transition-colors">Help & Support</Link></li>
+              <li><Link to="/help" className="hover:text-amber-400 transition-colors">Help & Support</Link></li>
               <li><Link to="/about" className="hover:text-amber-400 transition-colors">Avenza App</Link></li>
             </ul>
           </div>

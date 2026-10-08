@@ -51,7 +51,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
               ? 'bg-rose-50 text-rose-600 border border-rose-200'
               : 'bg-white/90 text-stone-600 hover:text-rose-600 border border-stone-200'
           }`}
-          aria-label="Add to Wishlist"
+          aria-label={`Save ${product.name} to Wishlist`}
         >
           <Heart className={`w-4 h-4 ${inWishlist ? 'fill-rose-600' : ''}`} />
         </button>
@@ -63,6 +63,9 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           src={imgSrc}
           alt={product.name}
           loading="lazy"
+          decoding="async"
+          width="300"
+          height="300"
           onError={() => setImgSrc('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80')}
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
         />
@@ -70,6 +73,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         {/* Quick View Hover Overlay Button */}
         <button
           onClick={handleQuickView}
+          aria-label={`Quick view ${product.name}`}
           className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-stone-900/90 hover:bg-stone-900 text-white text-xs font-semibold px-4 py-2 rounded-xl backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5 shadow-lg"
         >
           <Eye className="w-3.5 h-3.5 text-amber-400" />
@@ -96,7 +100,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
               <span>{product.rating}</span>
               <Star className="w-3 h-3 text-amber-500 fill-amber-500 ml-0.5" />
             </div>
-            <span className="text-[11px] text-stone-400">({product.reviews})</span>
+            <span className="text-[11px] text-stone-500 font-medium">({product.reviews} reviews)</span>
           </div>
         </div>
 
@@ -108,10 +112,10 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             </span>
             {product.originalPrice > product.price && (
               <>
-                <span className="text-xs text-stone-400 line-through">
+                <span className="text-xs text-stone-500 line-through font-medium">
                   ₹{product.originalPrice.toLocaleString('en-IN')}
                 </span>
-                <span className="text-xs font-bold text-emerald-600">
+                <span className="text-xs font-bold text-emerald-700">
                   {product.discount}% OFF
                 </span>
               </>
@@ -119,18 +123,19 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           </div>
 
           {/* Delivery Badge */}
-          <p className="text-[10px] text-stone-500 mt-1 flex items-center gap-1">
-            <ShieldCheck className="w-3 h-3 text-emerald-600" />
+          <p className="text-[10px] text-stone-600 mt-1 flex items-center gap-1">
+            <ShieldCheck className="w-3 h-3 text-emerald-700" />
             <span>{product.delivery}</span>
           </p>
 
           {/* Add to Cart Button */}
           <button
             onClick={handleAddToCart}
+            aria-label={`Add ${product.name} to Shopping Cart`}
             className={`w-full mt-3 py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-xs ${
               isAdded
                 ? 'bg-emerald-700 text-white'
-                : 'bg-stone-900 hover:bg-amber-600 text-amber-400 hover:text-stone-950'
+                : 'bg-stone-950 hover:bg-amber-600 text-amber-400 hover:text-stone-950'
             }`}
           >
             {isAdded ? (
