@@ -140,3 +140,13 @@ export interface NotificationItem {
     stockRemaining?: number;
   };
 }
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  avatar?: string;
+  membershipTier?: 'Privilege Gold' | 'Platinum' | 'Member';
+  joinedDate?: string;
+}

@@ -25,7 +25,7 @@ import { SearchBar } from './SearchBar';
 import { categories } from '../data/categories';
 
 export const Header: React.FC = () => {
-  const { cartCount, cartSubtotal, wishlist, deliveryLocation, setDeliveryLocation } = useShop();
+  const { cartCount, cartSubtotal, wishlist, deliveryLocation, setDeliveryLocation, currentUser, logout } = useShop();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLocationModalOpen, setIsLocationModalOpen] = useState(false);
@@ -115,17 +115,79 @@ export const Header: React.FC = () => {
             <span>EN / ₹ INR</span>
           </div>
 
-          {/* Account & Orders */}
-          <Link
-            to="/account"
-            className="hidden sm:flex items-center gap-2 p-2 rounded-xl hover:bg-stone-100 text-stone-800 transition-colors text-xs font-semibold min-h-[44px]"
-          >
-            <User className="w-5 h-5 text-stone-800" />
-            <div className="hidden xl:flex flex-col text-left leading-tight">
-              <span className="text-[9px] text-stone-500 font-normal">Welcome</span>
-              <span className="font-bold">Account & Orders</span>
-            </div>
-          </Link>
+          {/* Account & Orders Menu */}
+          <div className="relative group hidden sm:block">
+            {currentUser ? (
+              <div className="flex items-center gap-2 p-2 rounded-xl hover:bg-stone-100 text-stone-800 transition-colors text-xs font-semibold min-h-[44px] cursor-pointer">
+                <div className="w-8 h-8 rounded-full bg-stone-900 text-amber-400 font-bold flex items-center justify-center text-xs">
+                  {currentUser.name.charAt(0)}
+                </div>
+                <div className="hidden xl:flex flex-col text-left leading-tight">
+                  <span className="text-[9px] text-stone-500 font-normal">Hello, {currentUser.name.split(' ')[0]}</span>
+                  <span className="font-bold">Account & Orders</span>
+                </div>
+                <ChevronDown className="w-3.5 h-3.5 text-stone-400 group-hover:rotate-180 transition-transform" />
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="flex items-center gap-2 p-2 rounded-xl hover:bg-stone-100 text-stone-800 transition-colors text-xs font-semibold min-h-[44px]"
+              >
+                <User className="w-5 h-5 text-stone-800" />
+                <div className="hidden xl:flex flex-col text-left leading-tight">
+                  <span className="text-[9px] text-stone-500 font-normal">Welcome</span>
+                  <span className="font-bold">Sign In / Join</span>
+                </div>
+              </Link>
+            )}
+
+            {/* Desktop Account Hover Dropdown */}
+            {currentUser && (
+              <div className="absolute top-full right-0 mt-1 w-56 bg-white rounded-2xl shadow-xl border border-stone-200 p-2 hidden group-hover:block z-50 divide-y divide-stone-100 animate-fade-in text-left">
+                <div className="p-3 bg-stone-50 rounded-xl mb-1">
+                  <p className="font-bold text-xs text-stone-900 font-serif-luxury">{currentUser.name}</p>
+                  <p className="text-[10px] text-stone-500 truncate">{currentUser.email}</p>
+                  <span className="inline-block mt-1 text-[9px] font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                    {currentUser.membershipTier || 'Privilege Member'}
+                  </span>
+                </div>
+                <div className="py-1">
+                  <Link
+                    to="/account"
+                    className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-stone-100 text-stone-800 text-xs font-medium transition-colors"
+                  >
+                    <User className="w-4 h-4 text-stone-500" /> Account Profile
+                  </Link>
+                  <Link
+                    to="/orders"
+                    className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-stone-100 text-stone-800 text-xs font-medium transition-colors"
+                  >
+                    <Package className="w-4 h-4 text-stone-500" /> My Orders & Shipments
+                  </Link>
+                  <Link
+                    to="/account/addresses"
+                    className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-stone-100 text-stone-800 text-xs font-medium transition-colors"
+                  >
+                    <MapPin className="w-4 h-4 text-stone-500" /> Saved Addresses
+                  </Link>
+                  <Link
+                    to="/wishlist"
+                    className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-stone-100 text-stone-800 text-xs font-medium transition-colors"
+                  >
+                    <Heart className="w-4 h-4 text-stone-500" /> Wishlist ({wishlist.length})
+                  </Link>
+                </div>
+                <div className="pt-1">
+                  <button
+                    onClick={logout}
+                    className="w-full flex items-center gap-2.5 p-2 rounded-lg text-rose-700 hover:bg-rose-50 text-xs font-bold transition-colors text-left"
+                  >
+                    <User className="w-4 h-4 text-rose-600" /> Sign Out
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Wishlist */}
           <Link
@@ -313,13 +375,49 @@ export const Header: React.FC = () => {
 
             {/* Bottom Actions */}
             <div className="p-4 border-t border-stone-200 bg-stone-50 space-y-2">
-              <Link
-                to="/account"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 bg-stone-950 text-white py-3 rounded-xl font-semibold text-xs shadow-sm"
-              >
-                <User className="w-4 h-4" /> Account & Profile
-              </Link>
+              {currentUser ? (
+                <>
+                  <div className="p-2.5 bg-stone-100 rounded-xl flex items-center justify-between text-xs">
+                    <div>
+                      <p className="font-bold text-stone-900">{currentUser.name}</p>
+                      <p className="text-[10px] text-stone-500">{currentUser.email}</p>
+                    </div>
+                    <button
+                      onClick={() => {
+                        logout();
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="text-[10px] font-bold text-rose-600 hover:underline"
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                  <Link
+                    to="/account"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-full flex items-center justify-center gap-2 bg-stone-950 text-white py-3 rounded-xl font-semibold text-xs shadow-sm"
+                  >
+                    <User className="w-4 h-4" /> Account & Profile
+                  </Link>
+                </>
+              ) : (
+                <div className="grid grid-cols-2 gap-2">
+                  <Link
+                    to="/login"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center justify-center gap-1.5 bg-stone-950 text-amber-400 py-3 rounded-xl font-bold text-xs shadow-sm"
+                  >
+                    <User className="w-4 h-4" /> Sign In
+                  </Link>
+                  <Link
+                    to="/register"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center justify-center gap-1.5 bg-white text-stone-900 border border-stone-300 py-3 rounded-xl font-bold text-xs shadow-sm"
+                  >
+                    Sign Up
+                  </Link>
+                </div>
+              )}
               <Link
                 to="/orders"
                 onClick={() => setIsMobileMenuOpen(false)}

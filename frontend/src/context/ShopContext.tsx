@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import type { Product, CartItem, WishlistItem, Order, Coupon, DeliveryAddress, NotificationItem } from '../types';
+import type { Product, CartItem, WishlistItem, Order, Coupon, DeliveryAddress, NotificationItem, User } from '../types';
 import { products as initialProducts } from '../data/products';
 import { coupons } from '../data/coupons';
 
@@ -21,8 +21,14 @@ interface ShopContextType {
   appliedCoupon: Coupon | null;
   toasts: ToastState[];
   activeNotification: NotificationItem | null;
+  currentUser: User | null;
   
   // Actions
+  login: (email: string, password?: string) => { success: boolean; message: string };
+  register: (name: string, email: string, phone: string, password?: string) => { success: boolean; message: string };
+  logout: () => void;
+  updateProfile: (details: Partial<User>) => void;
+  
   addToCart: (product: Product, quantity?: number, size?: string, color?: string) => void;
   removeFromCart: (productId: number) => void;
   updateCartQuantity: (productId: number, quantity: number) => void;
@@ -148,6 +154,69 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [toasts, setToasts] = useState<ToastState[]>([]);
   const [activeNotification, setActiveNotification] = useState<NotificationItem | null>(null);
 
+  // Authentication State
+  const defaultUser: User = {
+    id: 'usr-98124',
+    name: 'Vikramaditya Roy',
+    email: 'vikram.roy@example.com',
+    phone: '+91 98765 43210',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
+    membershipTier: 'Privilege Gold',
+    joinedDate: 'Member since Oct 2025'
+  };
+
+  const [currentUser, setCurrentUser] = useState<User | null>(() => {
+    return getSafeStorage<User | null>('luxury_user', defaultUser);
+  });
+
+  useEffect(() => {
+    setSafeStorage('luxury_user', currentUser);
+  }, [currentUser]);
+
+  const login = (email: string, _password?: string) => {
+    const trimmed = email.trim().toLowerCase();
+    const existingName = trimmed.split('@')[0];
+    const formattedName = existingName.charAt(0).toUpperCase() + existingName.slice(1);
+    
+    const loggedInUser: User = {
+      id: `usr-${Date.now().toString().slice(-5)}`,
+      name: trimmed === 'vikram.roy@example.com' ? 'Vikramaditya Roy' : formattedName,
+      email: trimmed,
+      phone: '+91 98765 43210',
+      membershipTier: 'Privilege Gold',
+      joinedDate: 'Member since 2026'
+    };
+    setCurrentUser(loggedInUser);
+    showToast(`Welcome back, ${loggedInUser.name}!`, 'success');
+    return { success: true, message: 'Signed in successfully' };
+  };
+
+  const register = (name: string, email: string, phone: string, _password?: string) => {
+    const newUser: User = {
+      id: `usr-${Date.now().toString().slice(-5)}`,
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      phone: phone.trim(),
+      membershipTier: 'Member',
+      joinedDate: 'Joined today'
+    };
+    setCurrentUser(newUser);
+    showToast(`Account created for ${newUser.name}. Welcome to AVENZA!`, 'success');
+    return { success: true, message: 'Account created successfully' };
+  };
+
+  const logout = () => {
+    setCurrentUser(null);
+    showToast('Signed out of your account', 'info');
+  };
+
+  const updateProfile = (details: Partial<User>) => {
+    if (!currentUser) return;
+    const updated = { ...currentUser, ...details };
+    setCurrentUser(updated);
+    showToast('Profile information updated successfully', 'success');
+  };
+
   const showNotification = (item: NotificationItem) => {
     setActiveNotification(item);
   };
@@ -237,17 +306,35 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Cart Functions
   const addToCart = (product: Product, quantity = 1, selectedSize?: string, selectedColor?: string) => {
+    if (product.stock <= 0) {
+      showToast(`"${product.name}" is currently out of stock`, 'warning');
+      return;
+    }
+
     setCart(prev => {
-      const existingIndex = prev.findIndex(item => item.product.id === product.id);
+      const existingIndex = prev.findIndex(item => 
+        item.product.id === product.id &&
+        item.selectedSize === selectedSize &&
+        item.selectedColor === selectedColor
+      );
+
       if (existingIndex > -1) {
+        const currentQty = prev[existingIndex].quantity;
+        const newQty = Math.min(product.stock, currentQty + quantity);
+        if (currentQty + quantity > product.stock) {
+          showToast(`Stock limit reached! Max available: ${product.stock}`, 'warning');
+        } else {
+          showToast(`Updated "${product.name.slice(0, 22)}..." quantity (${newQty})`, 'success');
+        }
         const updated = [...prev];
-        updated[existingIndex].quantity += quantity;
+        updated[existingIndex].quantity = newQty;
         return updated;
       }
-      return [...prev, { product, quantity, selectedSize, selectedColor }];
-    });
 
-    showToast(`Added "${product.name.slice(0, 25)}..." to Shopping Cart`, 'success');
+      const initialQty = Math.min(product.stock, Math.max(1, quantity));
+      showToast(`Added "${product.name.slice(0, 25)}..." to Shopping Cart`, 'success');
+      return [...prev, { product, quantity: initialQty, selectedSize, selectedColor }];
+    });
 
     // Trigger Cart Notification
     showNotification({
@@ -273,9 +360,14 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
       removeFromCart(productId);
       return;
     }
-    setCart(prev =>
-      prev.map(item => (item.product.id === productId ? { ...item, quantity } : item))
-    );
+    setCart(prev => {
+      const target = prev.find(item => item.product.id === productId);
+      if (target && quantity > target.product.stock) {
+        showToast(`Stock limit: Only ${target.product.stock} units available`, 'warning');
+        return prev.map(item => (item.product.id === productId ? { ...item, quantity: target.product.stock } : item));
+      }
+      return prev.map(item => (item.product.id === productId ? { ...item, quantity } : item));
+    });
   };
 
   const clearCart = () => {
@@ -442,6 +534,12 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         appliedCoupon,
         toasts,
         activeNotification,
+        currentUser,
+        
+        login,
+        register,
+        logout,
+        updateProfile,
         
         addToCart,
         removeFromCart,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from '../components/ProductCard';
+import { SEO } from '../components/SEO';
 import {
   Star,
   ShoppingBag,
@@ -27,7 +28,17 @@ export const ProductDetailPage: React.FC = () => {
 
   const product = products.find(p => p.id === Number(id));
 
+  const availableSizes = product?.category.toLowerCase() === 'fashion'
+    ? ['S', 'M', 'L', 'XL']
+    : product?.category.toLowerCase() === 'electronics'
+    ? ['128 GB', '256 GB', '512 GB']
+    : [];
+
+  const availableColors = ['Obsidian Black', 'Warm Gold', 'Sterling Silver'];
+
   const [selectedImg, setSelectedImg] = useState<string>('');
+  const [selectedSize, setSelectedSize] = useState<string>(availableSizes[0] || '');
+  const [selectedColor, setSelectedColor] = useState<string>(availableColors[0]);
   const [quantity, setQuantity] = useState<number>(1);
   const [activeTab, setActiveTab] = useState<'desc' | 'specs' | 'reviews' | 'qa'>('desc');
   const [checkPincode, setCheckPincode] = useState<string>(deliveryLocation.pincode);
@@ -38,6 +49,9 @@ export const ProductDetailPage: React.FC = () => {
   useEffect(() => {
     if (product) {
       setSelectedImg(product.images[0]);
+      if (availableSizes.length > 0) {
+        setSelectedSize(availableSizes[0]);
+      }
       addRecentlyViewed(product);
       window.scrollTo(0, 0);
     }
@@ -58,11 +72,11 @@ export const ProductDetailPage: React.FC = () => {
   const inWishlist = isInWishlist(product.id);
 
   const handleAddToCart = () => {
-    addToCart(product, quantity);
+    addToCart(product, quantity, selectedSize, selectedColor);
   };
 
   const handleBuyNow = () => {
-    addToCart(product, quantity);
+    addToCart(product, quantity, selectedSize, selectedColor);
     navigate('/checkout');
   };
 
@@ -88,6 +102,10 @@ export const ProductDetailPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 my-6 text-left">
+      <SEO
+        title={`${product.name} | AVENZA Luxury Marketplace`}
+        description={product.description || `Purchase authentic ${product.name} on AVENZA. Insured courier delivery and certificate of authenticity included.`}
+      />
       {/* BREADCRUMBS */}
       <div className="flex items-center gap-2 text-xs text-stone-500 mb-6 flex-wrap">
         <Link to="/" className="hover:text-stone-900">Home</Link>

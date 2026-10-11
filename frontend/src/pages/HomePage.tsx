@@ -9,6 +9,8 @@ import { ElectronicsSection } from '../components/ElectronicsSection';
 import { FashionSection } from '../components/FashionSection';
 import { SellerCTA } from '../components/SellerCTA';
 import { RecommendedProducts } from '../components/RecommendedProducts';
+import { CustomerReviewsSection } from '../components/CustomerReviewsSection';
+import { NewsletterSection } from '../components/NewsletterSection';
 
 export const HomePage: React.FC = () => {
   return (
@@ -43,6 +45,13 @@ export const HomePage: React.FC = () => {
 
       {/* 9. RECOMMENDED PRODUCTS BASED ON BROWSING */}
       <RecommendedProducts />
+
+      {/* 10. CUSTOMER REVIEWS & PATRON TESTIMONIALS */}
+      <CustomerReviewsSection />
+
+      {/* 11. THE AVENZA PRIVATE CIRCLE NEWSLETTER */}
+      <NewsletterSection />
     </div>
   );
 };
+
