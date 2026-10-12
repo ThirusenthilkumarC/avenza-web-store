@@ -4,12 +4,10 @@ import { ProductCard } from './ProductCard';
 import { History, RotateCcw } from 'lucide-react';
 
 export const RecommendedProducts: React.FC = () => {
-  const { recentlyViewed, products, showToast } = useShop();
+  const { recentlyViewed, products, clearRecentlyViewed } = useShop();
 
   const handleClearHistory = () => {
-    localStorage.removeItem('luxury_recently_viewed');
-    showToast('Browsing history cleared', 'info');
-    window.location.reload();
+    clearRecentlyViewed();
   };
 
   const displayProducts = recentlyViewed.length >= 6

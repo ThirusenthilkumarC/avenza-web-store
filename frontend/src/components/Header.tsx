@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   MapPin,
   Heart,
@@ -13,11 +13,8 @@ import {
   Flame,
   Globe,
   Award,
-  Smartphone,
   Laptop,
   Shirt,
-  Home,
-  Dumbbell,
   ShieldCheck
 } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
@@ -26,6 +23,7 @@ import { SearchBar } from './SearchBar';
 import { categories } from '../data/categories';
 
 export const Header: React.FC = () => {
+  const location = useLocation();
   const { cartCount, cartSubtotal, wishlist, deliveryLocation, setDeliveryLocation, currentUser, logout } = useShop();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -59,7 +57,7 @@ export const Header: React.FC = () => {
             <span className="hidden md:flex items-center gap-1 text-stone-300">
               <Globe className="w-3.5 h-3.5 text-amber-400" /> EN / ₹ INR
             </span>
-            <Link to="/account" className="hover:text-amber-400 transition-colors hidden sm:inline">
+            <Link to="/seller/register" className="hover:text-amber-400 transition-colors hidden sm:inline">
               Seller Hub
             </Link>
             <Link to="/help" className="hover:text-amber-400 transition-colors">
@@ -248,73 +246,163 @@ export const Header: React.FC = () => {
           
           {/* All Categories Dropdown */}
           <div className="relative group shrink-0">
-            <button className="flex items-center gap-2 bg-stone-950 text-white px-3.5 py-1.5 rounded-lg hover:bg-amber-600 transition-colors text-xs font-bold min-h-[36px]">
+            <button
+              className="flex items-center gap-2 bg-stone-950 text-white px-3.5 py-1.5 rounded-lg hover:bg-amber-600 transition-colors text-xs font-bold min-h-[36px]"
+              aria-label="All Categories Menu"
+            >
               <Menu className="w-4 h-4 text-amber-400" />
               <span>All Categories</span>
-              <ChevronDown className="w-3.5 h-3.5 text-amber-400" />
+              <ChevronDown className="w-3.5 h-3.5 text-amber-400 group-hover:rotate-180 transition-transform" />
             </button>
 
             {/* Hover mega menu */}
-            <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-2xl border border-stone-200 p-2 hidden group-hover:block z-50 divide-y divide-stone-100">
-              {categories.slice(0, 10).map((cat) => (
+            <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-2xl shadow-2xl border border-stone-200 p-2.5 hidden group-hover:block z-50 divide-y divide-stone-100 max-h-[75vh] overflow-y-auto">
+              <div className="p-2 bg-stone-50 rounded-xl mb-1 text-[11px] font-bold text-stone-600 uppercase tracking-wider">
+                Browse Departments
+              </div>
+              <div className="py-1">
+                {categories.map((cat) => (
+                  <Link
+                    key={cat.id}
+                    to={`/products/${cat.slug}`}
+                    className="flex items-center justify-between p-2 hover:bg-amber-50 rounded-lg text-stone-800 hover:text-amber-950 font-medium transition-colors"
+                  >
+                    <span className="text-xs">{cat.name}</span>
+                    <span className="text-[10px] text-stone-400 font-normal">{cat.count}+ items</span>
+                  </Link>
+                ))}
+              </div>
+              <div className="pt-2">
                 <Link
-                  key={cat.id}
-                  to={`/products/${cat.slug}`}
-                  className="flex items-center justify-between p-2.5 hover:bg-amber-50 rounded-lg text-stone-800 hover:text-amber-900 font-medium transition-colors"
+                  to="/products"
+                  className="block text-center p-2 text-xs text-amber-800 font-bold hover:underline"
                 >
-                  <span className="text-xs">{cat.name}</span>
-                  <span className="text-[10px] text-stone-400 font-normal">{cat.count} items</span>
+                  View All Departments →
                 </Link>
-              ))}
-              <Link
-                to="/products"
-                className="block text-center p-2.5 text-xs text-amber-800 font-bold hover:underline"
-              >
-                View All Departments →
-              </Link>
+              </div>
             </div>
           </div>
 
           {/* Quick Nav Links */}
-          <div className="flex items-center gap-5 text-stone-700 font-semibold">
+          <div className="flex items-center gap-4 text-stone-700 font-semibold">
             <Link
-              to="/products?deal=true"
-              className="flex items-center gap-1 text-amber-900 font-bold hover:text-amber-950 transition-colors bg-amber-200/70 px-2.5 py-1 rounded-md border border-amber-300/60"
+              to="/"
+              className={`hover:text-amber-800 transition-colors px-2 py-1 rounded-md ${
+                location.pathname === '/' ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
             >
-              <Flame className="w-3.5 h-3.5 text-amber-700 fill-amber-500" />
-              Today's Deals
+              Home
             </Link>
 
-            <Link to="/products?sort=rating" className="hover:text-amber-800 transition-colors flex items-center gap-1">
+            <Link
+              to="/products"
+              className={`hover:text-amber-800 transition-colors px-2 py-1 rounded-md ${
+                location.pathname === '/products' ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
+              All Products
+            </Link>
+
+            <Link
+              to="/deals"
+              className={`flex items-center gap-1 font-bold transition-colors px-2.5 py-1 rounded-md border ${
+                location.pathname === '/deals' || location.pathname.includes('deal')
+                  ? 'bg-amber-400 text-stone-950 border-amber-500 shadow-2xs'
+                  : 'bg-amber-200/70 text-amber-900 hover:text-amber-950 border-amber-300/60'
+              }`}
+            >
+              <Flame className="w-3.5 h-3.5 text-amber-700 fill-amber-500" />
+              Offers & Deals
+            </Link>
+
+            <Link
+              to="/best-sellers"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname === '/best-sellers' ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
               <Award className="w-3.5 h-3.5 text-stone-500" /> Best Sellers
             </Link>
 
-            <Link to="/products?sort=newest" className="hover:text-amber-800 transition-colors flex items-center gap-1">
+            <Link
+              to="/new-arrivals"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname === '/new-arrivals' ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
               <Sparkles className="w-3.5 h-3.5 text-amber-600" /> New Arrivals
             </Link>
 
-            <Link to="/products/mobiles" className="hover:text-amber-800 transition-colors flex items-center gap-1">
-              <Smartphone className="w-3.5 h-3.5 text-stone-500" /> Mobiles & Tablets
+            <Link
+              to="/products/men"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname.includes('/men') ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
+              <Shirt className="w-3.5 h-3.5 text-stone-500" /> Men
             </Link>
 
-            <Link to="/products/electronics" className="hover:text-amber-800 transition-colors flex items-center gap-1">
-              <Laptop className="w-3.5 h-3.5 text-stone-500" /> Electronics & Gadgets
+            <Link
+              to="/products/women"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname.includes('/women') ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-600" /> Women
             </Link>
 
-            <Link to="/products/men-fashion" className="hover:text-amber-800 transition-colors flex items-center gap-1">
-              <Shirt className="w-3.5 h-3.5 text-stone-500" /> Fashion & Apparel
+            <Link
+              to="/products/electronics"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname.includes('/electronics') ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
+              <Laptop className="w-3.5 h-3.5 text-stone-500" /> Electronics
             </Link>
 
-            <Link to="/products/home-living" className="hover:text-amber-800 transition-colors flex items-center gap-1">
-              <Home className="w-3.5 h-3.5 text-stone-500" /> Home & Kitchen
+            <Link
+              to="/products/fashion"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname.includes('/fashion') ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
+              <Shirt className="w-3.5 h-3.5 text-stone-500" /> Fashion
             </Link>
 
-            <Link to="/products/sports" className="hover:text-amber-800 transition-colors flex items-center gap-1">
-              <Dumbbell className="w-3.5 h-3.5 text-stone-500" /> Sports & Fitness
+            <Link
+              to="/products/beauty"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname.includes('/beauty') ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-600" /> Beauty
             </Link>
 
-            <Link to="/products" className="text-amber-800 font-bold hover:underline">
-              More...
+            <Link
+              to="/products/accessories"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname.includes('/accessories') ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
+              Accessories
+            </Link>
+
+            <Link
+              to="/products/footwear"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname.includes('/footwear') ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
+              Footwear
+            </Link>
+
+            <Link
+              to="/products/watches"
+              className={`hover:text-amber-800 transition-colors flex items-center gap-1 px-2 py-1 rounded-md ${
+                location.pathname.includes('/watches') ? 'text-amber-900 font-bold bg-amber-100/80' : ''
+              }`}
+            >
+              Watches
             </Link>
           </div>
         </div>
@@ -352,28 +440,124 @@ export const Header: React.FC = () => {
                 <span className="text-[10px] font-bold text-amber-800 uppercase">Change</span>
               </div>
 
-              {/* Menu Categories */}
-              <div className="p-3 space-y-1">
-                <p className="text-[10px] font-bold text-stone-400 uppercase tracking-widest px-3 mb-2">
-                  Avenza Departments
-                </p>
+              {/* Primary Quick Links */}
+              <div className="p-3 space-y-1 border-b border-stone-100">
                 <Link
-                  to="/products?deal=true"
+                  to="/"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-between p-3 rounded-xl bg-amber-100/60 text-amber-950 font-bold text-xs"
+                  className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-stone-100 text-stone-900 font-bold text-xs"
+                >
+                  <span>Home</span>
+                </Link>
+                <Link
+                  to="/products"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-stone-100 text-stone-900 font-bold text-xs"
+                >
+                  <span>Shop All Products</span>
+                </Link>
+                <Link
+                  to="/deals"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-between p-2.5 rounded-xl bg-amber-100/70 text-amber-950 font-bold text-xs"
                 >
                   <span className="flex items-center gap-2">
-                    <Flame className="w-4 h-4 text-amber-700" /> Today's Deals
+                    <Flame className="w-4 h-4 text-amber-700" /> Offers & Today's Deals
                   </span>
-                  <span className="text-[10px] bg-amber-200 px-2 py-0.5 rounded font-mono">HOT</span>
+                  <span className="text-[10px] bg-amber-300 px-2 py-0.5 rounded font-mono font-bold">HOT</span>
                 </Link>
+                <Link
+                  to="/best-sellers"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-stone-100 text-stone-900 font-semibold text-xs"
+                >
+                  <Award className="w-4 h-4 text-amber-700" /> Best Sellers
+                </Link>
+                <Link
+                  to="/new-arrivals"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-stone-100 text-stone-900 font-semibold text-xs"
+                >
+                  <Sparkles className="w-4 h-4 text-amber-600" /> New Arrivals
+                </Link>
+              </div>
 
+              {/* Popular Curations */}
+              <div className="p-3 border-b border-stone-100">
+                <p className="text-[10px] font-bold text-stone-400 uppercase tracking-widest px-2 mb-1.5">
+                  Top Curations
+                </p>
+                <div className="grid grid-cols-2 gap-1.5">
+                  <Link
+                    to="/products/men"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-800 text-xs font-semibold text-center"
+                  >
+                    Men
+                  </Link>
+                  <Link
+                    to="/products/women"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-800 text-xs font-semibold text-center"
+                  >
+                    Women
+                  </Link>
+                  <Link
+                    to="/products/electronics"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-800 text-xs font-semibold text-center"
+                  >
+                    Electronics
+                  </Link>
+                  <Link
+                    to="/products/fashion"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-800 text-xs font-semibold text-center"
+                  >
+                    Fashion
+                  </Link>
+                  <Link
+                    to="/products/beauty"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-800 text-xs font-semibold text-center"
+                  >
+                    Beauty
+                  </Link>
+                  <Link
+                    to="/products/accessories"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-800 text-xs font-semibold text-center"
+                  >
+                    Accessories
+                  </Link>
+                  <Link
+                    to="/products/footwear"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-800 text-xs font-semibold text-center"
+                  >
+                    Footwear
+                  </Link>
+                  <Link
+                    to="/products/watches"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-800 text-xs font-semibold text-center"
+                  >
+                    Watches
+                  </Link>
+                </div>
+              </div>
+
+              {/* Menu Categories */}
+              <div className="p-3 space-y-1">
+                <p className="text-[10px] font-bold text-stone-400 uppercase tracking-widest px-2 mb-2">
+                  All Departments
+                </p>
                 {categories.map((cat) => (
                   <Link
                     key={cat.id}
                     to={`/products/${cat.slug}`}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-between p-3 rounded-xl hover:bg-stone-100 text-stone-800 font-medium text-xs transition-colors"
+                    className="flex items-center justify-between p-2.5 rounded-xl hover:bg-stone-100 text-stone-800 font-medium text-xs transition-colors"
                   >
                     <span>{cat.name}</span>
                     <span className="text-stone-400 font-normal text-[11px]">({cat.count})</span>
@@ -396,7 +580,7 @@ export const Header: React.FC = () => {
                         logout();
                         setIsMobileMenuOpen(false);
                       }}
-                      className="text-[10px] font-bold text-rose-600 hover:underline"
+                      className="text-[10px] font-bold text-rose-600 hover:underline p-1 min-h-[32px] flex items-center"
                     >
                       Sign Out
                     </button>
@@ -404,7 +588,7 @@ export const Header: React.FC = () => {
                   <Link
                     to="/account"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-full flex items-center justify-center gap-2 bg-stone-950 text-white py-3 rounded-xl font-semibold text-xs shadow-sm"
+                    className="w-full flex items-center justify-center gap-2 bg-stone-950 text-white py-3 rounded-xl font-semibold text-xs shadow-sm min-h-[44px]"
                   >
                     <User className="w-4 h-4" /> Account & Profile
                   </Link>
@@ -414,14 +598,14 @@ export const Header: React.FC = () => {
                   <Link
                     to="/login"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-1.5 bg-stone-950 text-amber-400 py-3 rounded-xl font-bold text-xs shadow-sm"
+                    className="flex items-center justify-center gap-1.5 bg-stone-950 text-amber-400 py-3 rounded-xl font-bold text-xs shadow-sm min-h-[44px]"
                   >
                     <User className="w-4 h-4" /> Sign In
                   </Link>
                   <Link
                     to="/register"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-1.5 bg-white text-stone-900 border border-stone-300 py-3 rounded-xl font-bold text-xs shadow-sm"
+                    className="flex items-center justify-center gap-1.5 bg-white text-stone-900 border border-stone-300 py-3 rounded-xl font-bold text-xs shadow-sm min-h-[44px]"
                   >
                     Sign Up
                   </Link>
@@ -430,10 +614,26 @@ export const Header: React.FC = () => {
               <Link
                 to="/orders"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 bg-white text-stone-800 border border-stone-300 py-3 rounded-xl font-semibold text-xs"
+                className="w-full flex items-center justify-center gap-2 bg-white text-stone-800 border border-stone-300 py-3 rounded-xl font-semibold text-xs min-h-[44px]"
               >
                 <Package className="w-4 h-4" /> Track My Orders
               </Link>
+              <div className="flex items-center justify-between pt-2 text-[11px] text-stone-500">
+                <Link
+                  to="/seller/register"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="hover:text-amber-800 underline"
+                >
+                  Seller Hub
+                </Link>
+                <Link
+                  to="/help"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="hover:text-amber-800 underline"
+                >
+                  Help & Support
+                </Link>
+              </div>
             </div>
           </div>
 

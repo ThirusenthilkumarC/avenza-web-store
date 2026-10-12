@@ -45,8 +45,16 @@ export const CategoryCard: React.FC<{ category: Category }> = ({ category }) => 
 
   return (
     <div
+      role="button"
+      tabIndex={0}
       onClick={() => navigate(`/products/${category.slug}`)}
-      className="group bg-white rounded-2xl p-4 border border-stone-200/90 shadow-2xs hover:shadow-xl hover:border-amber-500/50 transition-all duration-300 cursor-pointer flex flex-col items-center text-center transform hover:-translate-y-1"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          navigate(`/products/${category.slug}`);
+        }
+      }}
+      className="group bg-white rounded-2xl p-4 border border-stone-200/90 shadow-2xs hover:shadow-xl hover:border-amber-500/50 transition-all duration-300 cursor-pointer flex flex-col items-center text-center transform hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
     >
       {/* Circle Icon Badge */}
       <div className="w-14 h-14 rounded-2xl bg-stone-100 group-hover:bg-amber-100 text-stone-700 group-hover:text-amber-900 flex items-center justify-center mb-3 transition-colors shadow-xs">

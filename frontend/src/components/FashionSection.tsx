@@ -9,7 +9,7 @@ export const FashionSection: React.FC = () => {
   const { products } = useShop();
 
   const fashionProducts = products
-    .filter(p => p.category === 'Fashion' || p.category === 'Accessories')
+    .filter(p => p.category === 'Fashion' || p.category === 'Accessories' || p.category === 'Footwear')
     .slice(0, 4);
 
   return (
@@ -27,7 +27,7 @@ export const FashionSection: React.FC = () => {
         </div>
 
         <button
-          onClick={() => navigate('/products/men-fashion')}
+          onClick={() => navigate('/products/fashion')}
           className="hidden sm:flex items-center gap-1.5 text-xs font-bold text-amber-800 hover:text-amber-950 transition-colors group min-h-[44px]"
         >
           <span>Explore Couture</span>

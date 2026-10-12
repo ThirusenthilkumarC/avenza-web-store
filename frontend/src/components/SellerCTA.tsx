@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Store, ShieldCheck, MapPin, CreditCard, ArrowRight, Percent, Headphones } from 'lucide-react';
 
 export const SellerCTA: React.FC = () => {
@@ -42,10 +43,13 @@ export const SellerCTA: React.FC = () => {
           </div>
 
           <div className="lg:col-span-4 flex justify-start lg:justify-end">
-            <button className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-extrabold px-7 py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 text-xs sm:text-sm transition-all transform hover:-translate-y-0.5 min-h-[44px]">
+            <Link
+              to="/seller/register"
+              className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-extrabold px-7 py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 text-xs sm:text-sm transition-all transform hover:-translate-y-0.5 min-h-[44px]"
+            >
               <span>Register as a Seller</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

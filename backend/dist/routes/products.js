@@ -34,8 +34,32 @@ productsRouter.get('/', (req, res) => {
         let query = 'SELECT * FROM products WHERE 1=1';
         const params = [];
         if (category && category !== 'All') {
-            query += ' AND LOWER(category) = LOWER(?)';
-            params.push(String(category));
+            const catStr = String(category).trim().toLowerCase();
+            if (catStr === 'men' || catStr === 'men-fashion' || catStr === "men's fashion" || catStr === 'mens') {
+                query += " AND (LOWER(category) LIKE '%men%' OR (LOWER(category) = 'fashion' AND LOWER(subcategory) LIKE '%men%'))";
+            }
+            else if (catStr === 'women' || catStr === 'women-fashion' || catStr === "women's fashion" || catStr === 'womens') {
+                query += " AND (LOWER(category) LIKE '%women%' OR (LOWER(category) = 'fashion' AND LOWER(subcategory) LIKE '%women%'))";
+            }
+            else if (catStr === 'fashion') {
+                query += " AND (LOWER(category) LIKE '%fashion%' OR LOWER(category) = 'footwear')";
+            }
+            else if (catStr === 'home-living' || catStr === 'home') {
+                query += " AND (LOWER(category) LIKE '%home%' OR LOWER(category) = 'kitchen')";
+            }
+            else if (catStr === 'bags') {
+                query += " AND (LOWER(category) LIKE '%bag%' OR LOWER(subcategory) LIKE '%bag%')";
+            }
+            else if (catStr === 'beauty') {
+                query += " AND (LOWER(category) LIKE '%beauty%' OR LOWER(category) LIKE '%health%')";
+            }
+            else if (catStr === 'footwear') {
+                query += " AND (LOWER(category) LIKE '%footwear%' OR LOWER(subcategory) LIKE '%footwear%')";
+            }
+            else {
+                query += ' AND (LOWER(category) = LOWER(?) OR LOWER(subcategory) = LOWER(?) OR LOWER(category) LIKE ?)';
+                params.push(catStr, catStr, `%${catStr}%`);
+            }
         }
         if (subcategory) {
             query += ' AND LOWER(subcategory) = LOWER(?)';

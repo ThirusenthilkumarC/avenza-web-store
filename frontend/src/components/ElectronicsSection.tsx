@@ -36,8 +36,13 @@ export const ElectronicsSection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
         {/* LEFT FEATURED PROMO BANNER */}
         <div
+          role="link"
+          tabIndex={0}
           onClick={() => navigate('/products/electronics')}
-          className="lg:col-span-4 bg-gradient-to-br from-stone-950 via-stone-900 to-amber-950 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between cursor-pointer border border-stone-800 shadow-xl group hover:border-amber-500/50 transition-all relative overflow-hidden min-h-[340px]"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') navigate('/products/electronics');
+          }}
+          className="lg:col-span-4 bg-gradient-to-br from-stone-950 via-stone-900 to-amber-950 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between cursor-pointer border border-stone-800 shadow-xl group hover:border-amber-500/50 transition-all relative overflow-hidden min-h-[340px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
         >
           {/* Subtle Ambient Circle */}
           <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />

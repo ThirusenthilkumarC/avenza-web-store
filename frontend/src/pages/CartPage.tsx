@@ -277,6 +277,14 @@ export const CartPage: React.FC = () => {
             <ArrowRight className="w-4 h-4" />
           </button>
 
+          {/* Continue Shopping Button */}
+          <button
+            onClick={() => navigate('/products')}
+            className="w-full bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-xs transition-colors"
+          >
+            <span>Continue Shopping</span>
+          </button>
+
           <p className="text-[10px] text-stone-400 text-center flex items-center justify-center gap-1">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
             100% Encrypted & Safe Checkout Guarantee

@@ -17,9 +17,9 @@ export const TrendingProducts: React.FC = () => {
   // Filter logic for tabs
   const filteredProducts = products.filter(product => {
     if (activeTab === 'All Trending') return true;
-    if (activeTab === 'Tech & Gadgets') return product.category === 'Electronics' || product.category === 'Mobiles' || product.category === 'Watches';
-    if (activeTab === 'Apparel & Style') return product.category === 'Fashion' || product.category === 'Bags' || product.category === 'Accessories';
-    if (activeTab === 'Home & Living') return product.category === 'Home' || product.category === 'Kitchen';
+    if (activeTab === 'Tech & Gadgets') return ['Electronics', 'Mobiles', 'Watches'].includes(product.category);
+    if (activeTab === 'Apparel & Style') return ['Fashion', 'Bags', 'Accessories', 'Footwear', 'Beauty'].includes(product.category);
+    if (activeTab === 'Home & Living') return ['Home', 'Kitchen'].includes(product.category);
     return true;
   }).slice(0, 15);
 

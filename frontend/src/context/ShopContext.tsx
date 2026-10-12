@@ -40,6 +40,7 @@ interface ShopContextType {
   moveToCartFromWishlist: (product: Product) => void;
   
   addRecentlyViewed: (product: Product) => void;
+  clearRecentlyViewed: () => void;
   setQuickViewProduct: (product: Product | null) => void;
   setSearchQuery: (query: string) => void;
   setDeliveryLocation: (location: { pincode: string; city: string }) => void;
@@ -485,6 +486,14 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
   };
 
+  const clearRecentlyViewed = () => {
+    setRecentlyViewedIds([]);
+    try {
+      localStorage.removeItem('luxury_recently_viewed');
+    } catch {}
+    showToast('Browsing history cleared', 'info');
+  };
+
   const recentlyViewed = recentlyViewedIds
     .map(id => productsList.find(p => p.id === id))
     .filter((p): p is Product => p !== undefined);
@@ -670,6 +679,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
         moveToCartFromWishlist,
         
         addRecentlyViewed,
+        clearRecentlyViewed,
         setQuickViewProduct,
         setSearchQuery,
         setDeliveryLocation,

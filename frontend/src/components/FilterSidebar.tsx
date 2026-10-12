@@ -42,7 +42,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
     onChange({
       category: 'All',
       minPrice: 0,
-      maxPrice: 100000,
+      maxPrice: 250000,
       selectedBrands: [],
       minRating: 0,
       minDiscount: 0,
@@ -123,8 +123,8 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
         <input
           type="range"
           min={0}
-          max={100000}
-          step={1000}
+          max={250000}
+          step={2500}
           value={filters.maxPrice}
           onChange={(e) => onChange({ ...filters, maxPrice: Number(e.target.value) })}
           className="w-full accent-amber-600"

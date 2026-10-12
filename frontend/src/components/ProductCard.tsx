@@ -31,8 +31,15 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 
   return (
     <div
+      role="article"
+      tabIndex={0}
       onClick={() => navigate(`/product/${product.id}`)}
-      className="group bg-white rounded-2xl border border-stone-200/90 shadow-2xs hover:shadow-xl hover:border-amber-500/40 transition-all duration-300 cursor-pointer flex flex-col justify-between overflow-hidden relative transform hover:-translate-y-1"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          navigate(`/product/${product.id}`);
+        }
+      }}
+      className="group bg-white rounded-2xl border border-stone-200/90 shadow-2xs hover:shadow-xl hover:border-amber-500/40 transition-all duration-300 cursor-pointer flex flex-col justify-between overflow-hidden relative transform hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
     >
       {/* Top Badges & Wishlist */}
       <div className="absolute top-3 left-3 right-3 z-10 flex items-center justify-between pointer-events-none">

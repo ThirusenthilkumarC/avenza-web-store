@@ -37,6 +37,8 @@ const AdminOrdersPage = lazy(() => import('./pages/admin/AdminOrdersPage').then(
 const AdminCategoriesPage = lazy(() => import('./pages/admin/AdminCategoriesPage').then(m => ({ default: m.AdminCategoriesPage })));
 const AdminUsersPage = lazy(() => import('./pages/admin/AdminUsersPage').then(m => ({ default: m.AdminUsersPage })));
 
+import { ScrollToTop } from './components/ScrollToTop';
+
 const PageLoader: React.FC = () => (
   <div className="min-h-[60vh] flex items-center justify-center p-8">
     <div className="w-10 h-10 border-4 border-stone-200 border-t-amber-600 rounded-full animate-spin" />
@@ -47,6 +49,7 @@ export const App: React.FC = () => {
   return (
     <ShopProvider>
       <Router>
+        <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* Storefront Customer Routes */}
@@ -54,11 +57,14 @@ export const App: React.FC = () => {
               <Route index element={<HomePage />} />
               <Route path="shop" element={<ProductsPage />} />
               <Route path="products" element={<ProductsPage />} />
+              <Route path="all-products" element={<ProductsPage />} />
+              <Route path="categories" element={<ProductsPage />} />
               <Route path="products/:category" element={<ProductsPage />} />
               <Route path="category/:category" element={<ProductsPage />} />
               <Route path="product/:id" element={<ProductDetailPage />} />
               <Route path="search" element={<SearchPage />} />
               <Route path="deals" element={<ProductsPage />} />
+              <Route path="offers" element={<ProductsPage />} />
               <Route path="best-sellers" element={<ProductsPage />} />
               <Route path="new-arrivals" element={<ProductsPage />} />
               <Route path="wishlist" element={<WishlistPage />} />
@@ -66,6 +72,8 @@ export const App: React.FC = () => {
               <Route path="checkout" element={<CheckoutPage />} />
               <Route path="order-success" element={<OrderSuccessPage />} />
               <Route path="account" element={<AccountPage />} />
+              <Route path="profile" element={<AccountPage />} />
+              <Route path="user/profile" element={<AccountPage />} />
               <Route path="account/addresses" element={<AddressesPage />} />
               <Route path="orders" element={<OrdersPage />} />
               <Route path="orders/:id" element={<OrderDetailPage />} />
@@ -79,6 +87,7 @@ export const App: React.FC = () => {
               <Route path="help" element={<HelpPage />} />
               <Route path="faq" element={<HelpPage />} />
               <Route path="returns" element={<ReturnsPage />} />
+              <Route path="refunds" element={<ReturnsPage />} />
               <Route path="terms" element={<TermsPage />} />
               <Route path="privacy" element={<PrivacyPage />} />
               <Route path="404" element={<NotFoundPage />} />

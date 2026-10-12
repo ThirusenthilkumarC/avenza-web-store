@@ -1,57 +1,98 @@
-import React, { useState, useMemo } from 'react';
-import { useParams, useSearchParams, Link } from 'react-router-dom';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useParams, useSearchParams, useLocation, Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from '../components/ProductCard';
 import { FilterSidebar } from '../components/FilterSidebar';
 import type { FilterState } from '../components/FilterSidebar';
 import { SortDropdown } from '../components/SortDropdown';
-import { categories } from '../data/categories';
-import { Grid, List, ChevronRight, SlidersHorizontal, Sparkles } from 'lucide-react';
+import { Grid, List, ChevronRight, SlidersHorizontal, Sparkles, ArrowDown } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { getCanonicalCategoryName, matchesProductCategory } from '../utils/categoryMatcher';
 
 export const ProductsPage: React.FC = () => {
   const { category: urlCategory } = useParams<{ category?: string }>();
   const [searchParams] = useSearchParams();
-  const searchDeal = searchParams.get('deal');
+  const location = useLocation();
+
+  const searchDeal = searchParams.get('deal') === 'true' || location.pathname.includes('deals') || location.pathname.includes('offers');
   const searchSort = searchParams.get('sort');
+  const queryCategory = searchParams.get('category');
 
   const { products } = useShop();
 
-  // Find active category label from slug
-  const matchedCategory = categories.find(c => c.slug === urlCategory)?.name || 'All';
+  // Determine initial canonical category
+  const initialRawCategory = urlCategory || queryCategory;
+  const initialCategory = initialRawCategory
+    ? getCanonicalCategoryName(initialRawCategory)
+    : 'All';
 
   const [filters, setFilters] = useState<FilterState>({
-    category: matchedCategory,
+    category: initialCategory,
     minPrice: 0,
-    maxPrice: 100000,
+    maxPrice: 250000,
     selectedBrands: [],
     minRating: 0,
-    minDiscount: searchDeal ? 30 : 0,
+    minDiscount: searchDeal ? 20 : 0,
     inStockOnly: false
   });
 
-  const [sortBy, setSortBy] = useState<string>(searchSort || 'relevance');
+  const [sortBy, setSortBy] = useState<string>(
+    location.pathname.includes('best-sellers')
+      ? 'rating'
+      : location.pathname.includes('new-arrivals')
+      ? 'newest'
+      : searchSort || 'relevance'
+  );
+
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loadedCount, setLoadedCount] = useState(12);
   const itemsPerPage = 12;
 
-  // Extract available brands for filter
+  // Re-sync filters and sort whenever the URL route, category param, or query params change
+  useEffect(() => {
+    const rawCat = urlCategory || searchParams.get('category');
+    const canonicalCat = rawCat ? getCanonicalCategoryName(rawCat) : 'All';
+
+    const isDealRoute = location.pathname.includes('deals') || location.pathname.includes('offers') || searchParams.get('deal') === 'true';
+    const isBestSellerRoute = location.pathname.includes('best-sellers') || searchParams.get('sort') === 'rating';
+    const isNewArrivalRoute = location.pathname.includes('new-arrivals') || searchParams.get('sort') === 'newest';
+
+    setFilters(prev => ({
+      ...prev,
+      category: canonicalCat,
+      minDiscount: isDealRoute ? 20 : 0
+    }));
+
+    if (isBestSellerRoute) {
+      setSortBy('rating');
+    } else if (isNewArrivalRoute) {
+      setSortBy('newest');
+    } else if (searchParams.get('sort')) {
+      setSortBy(searchParams.get('sort')!);
+    }
+
+    setCurrentPage(1);
+    setLoadedCount(itemsPerPage);
+  }, [urlCategory, searchParams, location.pathname]);
+
+  // Extract available brands for the active category
   const availableBrands = useMemo(() => {
     const brandsSet = new Set<string>();
     products.forEach(p => {
-      if (filters.category === 'All' || p.category.toLowerCase() === filters.category.toLowerCase()) {
-        brandsSet.add(p.brand);
+      if (filters.category === 'All' || matchesProductCategory(p, filters.category)) {
+        if (p.brand) brandsSet.add(p.brand);
       }
     });
-    return Array.from(brandsSet);
+    return Array.from(brandsSet).sort();
   }, [products, filters.category]);
 
   // Filter & Sort products logic
   const filteredProducts = useMemo(() => {
-    let list = products.filter(p => {
-      // Category match
-      if (filters.category !== 'All' && p.category.toLowerCase() !== filters.category.toLowerCase()) {
+    const list = products.filter(p => {
+      // Category match using flexible canonical matching
+      if (filters.category !== 'All' && !matchesProductCategory(p, filters.category)) {
         return false;
       }
       // Price range match
@@ -70,22 +111,22 @@ export const ProductsPage: React.FC = () => {
       if (p.discount < filters.minDiscount) {
         return false;
       }
-      // In stock
+      // In stock match
       if (filters.inStockOnly && p.stock <= 0) {
         return false;
       }
       return true;
     });
 
-    // Sort
+    // Sorting
     if (sortBy === 'price-low') {
       list.sort((a, b) => a.price - b.price);
     } else if (sortBy === 'price-high') {
       list.sort((a, b) => b.price - a.price);
     } else if (sortBy === 'rating') {
-      list.sort((a, b) => b.rating - a.rating);
+      list.sort((a, b) => (b.rating || 0) - (a.rating || 0));
     } else if (sortBy === 'discount') {
-      list.sort((a, b) => b.discount - a.discount);
+      list.sort((a, b) => (b.discount || 0) - (a.discount || 0));
     } else if (sortBy === 'newest') {
       list.sort((a, b) => b.id - a.id);
     }
@@ -93,27 +134,67 @@ export const ProductsPage: React.FC = () => {
     return list;
   }, [products, filters, sortBy]);
 
-  // Pagination slice
+  // Reset page when filter criteria change
+  const handleFilterChange = (newFilters: FilterState) => {
+    setFilters(newFilters);
+    setCurrentPage(1);
+    setLoadedCount(itemsPerPage);
+  };
+
+  const handleSortChange = (newSort: string) => {
+    setSortBy(newSort);
+    setCurrentPage(1);
+    setLoadedCount(itemsPerPage);
+  };
+
+  // Pagination calculation
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const paginatedProducts = filteredProducts.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
 
+  // Progressive "Load More" view when user clicks Load More, otherwise paginated view
+  const displayedProducts = loadedCount > itemsPerPage
+    ? filteredProducts.slice(0, loadedCount)
+    : paginatedProducts;
+
+  const handleLoadMore = () => {
+    setLoadedCount(prev => Math.min(prev + itemsPerPage, filteredProducts.length));
+  };
+
+  // Human-readable title
+  const pageTitle = useMemo(() => {
+    if (location.pathname.includes('deals') || location.pathname.includes('offers')) {
+      return "Today's Exclusive Deals & Offers";
+    }
+    if (location.pathname.includes('best-sellers')) {
+      return "AVENZA Best Sellers";
+    }
+    if (location.pathname.includes('new-arrivals')) {
+      return "New Luxury Arrivals";
+    }
+    if (filters.category !== 'All') {
+      return filters.category;
+    }
+    return "All Luxury Marketplace Products";
+  }, [location.pathname, filters.category]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 my-6 text-left">
       <SEO
-        title={`${filters.category === 'All' ? 'All Luxury Marketplace Products' : filters.category} | AVENZA`}
-        description={`Explore certified luxury ${filters.category.toLowerCase()} products with tamper-evident packaging, insured air courier, and authenticity guarantee on AVENZA.`}
+        title={`${pageTitle} | AVENZA Luxury Marketplace`}
+        description={`Explore certified authentic ${pageTitle.toLowerCase()} products with tamper-evident packaging, insured air courier, and authenticity guarantee on AVENZA.`}
       />
+
       {/* BREADCRUMBS */}
-      <div className="flex items-center gap-2 text-xs text-stone-500 mb-4">
-        <Link to="/" className="hover:text-stone-900">Home</Link>
-        <ChevronRight className="w-3.5 h-3.5" />
-        <Link to="/products" className="hover:text-stone-900">Products</Link>
+      <div className="flex items-center gap-2 text-xs text-stone-500 mb-4 flex-wrap">
+        <Link to="/" className="hover:text-stone-900 transition-colors">Home</Link>
+        <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
+        <Link to="/products" className="hover:text-stone-900 transition-colors">Products</Link>
         {filters.category !== 'All' && (
           <>
-            <ChevronRight className="w-3.5 h-3.5" />
+            <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
             <span className="font-semibold text-stone-900">{filters.category}</span>
           </>
         )}
@@ -123,10 +204,10 @@ export const ProductsPage: React.FC = () => {
       <div className="bg-white rounded-2xl p-5 border border-stone-200/90 shadow-2xs mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold font-serif-luxury text-stone-900">
-            {filters.category === 'All' ? 'All Luxury Marketplace Products' : filters.category}
+            {pageTitle}
           </h1>
           <p className="text-xs text-stone-500 mt-1">
-            Showing <strong>{filteredProducts.length}</strong> premium handpicked items
+            Showing <strong className="text-stone-900">{filteredProducts.length}</strong> premium handpicked items across certified artisans & brand outlets
           </p>
         </div>
 
@@ -134,19 +215,20 @@ export const ProductsPage: React.FC = () => {
           {/* Mobile Filter Trigger */}
           <button
             onClick={() => setIsMobileFilterOpen(true)}
-            className="lg:hidden bg-stone-900 text-amber-400 font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2"
+            className="lg:hidden bg-stone-900 hover:bg-stone-800 text-amber-400 font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 transition-colors min-h-[44px]"
+            aria-label="Open filter options"
           >
             <SlidersHorizontal className="w-4 h-4" /> Filters
           </button>
 
           {/* Sort Dropdown */}
-          <SortDropdown value={sortBy} onChange={setSortBy} />
+          <SortDropdown value={sortBy} onChange={handleSortChange} />
 
           {/* View Mode Toggle */}
           <div className="hidden sm:flex items-center bg-stone-100 p-1 rounded-xl border border-stone-200">
             <button
               onClick={() => setViewMode('grid')}
-              className={`p-1.5 rounded-lg text-xs font-semibold transition-colors ${
+              className={`p-1.5 rounded-lg text-xs font-semibold transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center ${
                 viewMode === 'grid' ? 'bg-white shadow-xs text-stone-900' : 'text-stone-500 hover:text-stone-900'
               }`}
               aria-label="Grid View"
@@ -155,7 +237,7 @@ export const ProductsPage: React.FC = () => {
             </button>
             <button
               onClick={() => setViewMode('list')}
-              className={`p-1.5 rounded-lg text-xs font-semibold transition-colors ${
+              className={`p-1.5 rounded-lg text-xs font-semibold transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center ${
                 viewMode === 'list' ? 'bg-white shadow-xs text-stone-900' : 'text-stone-500 hover:text-stone-900'
               }`}
               aria-label="List View"
@@ -167,18 +249,18 @@ export const ProductsPage: React.FC = () => {
       </div>
 
       {/* MAIN CONTENT SPLIT */}
-      <div className="flex gap-6">
+      <div className="flex gap-6 items-start">
         {/* SIDEBAR FILTERS */}
         <FilterSidebar
           filters={filters}
-          onChange={setFilters}
+          onChange={handleFilterChange}
           availableBrands={availableBrands}
           isMobileOpen={isMobileFilterOpen}
           onCloseMobile={() => setIsMobileFilterOpen(false)}
         />
 
         {/* PRODUCTS GRID / LIST */}
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           {filteredProducts.length > 0 ? (
             <>
               <div
@@ -188,45 +270,68 @@ export const ProductsPage: React.FC = () => {
                     : 'space-y-4'
                 }
               >
-                {paginatedProducts.map(product => (
+                {displayedProducts.map(product => (
                   <ProductCard key={product.id} product={product} />
                 ))}
               </div>
 
-              {/* PAGINATION */}
-              {totalPages > 1 && (
-                <div className="mt-10 flex items-center justify-center gap-2">
+              {/* PAGINATION AND LOAD MORE CONTROLS */}
+              <div className="mt-10 pt-6 border-t border-stone-200 flex flex-col items-center gap-4">
+                {/* Load More Option */}
+                {loadedCount < filteredProducts.length && (
                   <button
-                    disabled={currentPage === 1}
-                    onClick={() => setCurrentPage(p => p - 1)}
-                    className="px-4 py-2 rounded-xl text-xs font-bold border border-stone-300 disabled:opacity-40 hover:bg-stone-100 transition-colors"
+                    onClick={handleLoadMore}
+                    className="flex items-center gap-2 bg-stone-900 hover:bg-amber-600 text-amber-400 hover:text-stone-950 font-bold px-6 py-3 rounded-xl text-xs transition-colors shadow-md min-h-[44px]"
                   >
-                    Previous
+                    <ArrowDown className="w-4 h-4" />
+                    <span>Load More Products ({filteredProducts.length - loadedCount} remaining)</span>
                   </button>
+                )}
 
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(num => (
+                {/* Numbered Page Pagination */}
+                {totalPages > 1 && (
+                  <div className="flex flex-wrap items-center justify-center gap-2">
                     <button
-                      key={num}
-                      onClick={() => setCurrentPage(num)}
-                      className={`w-9 h-9 rounded-xl text-xs font-bold transition-all ${
-                        currentPage === num
-                          ? 'bg-stone-900 text-amber-400 shadow-md'
-                          : 'border border-stone-300 hover:bg-stone-100 text-stone-800'
-                      }`}
+                      disabled={currentPage === 1}
+                      onClick={() => {
+                        setCurrentPage(p => Math.max(1, p - 1));
+                        window.scrollTo({ top: 120, behavior: 'smooth' });
+                      }}
+                      className="px-4 py-2 rounded-xl text-xs font-bold border border-stone-300 disabled:opacity-40 hover:bg-stone-100 transition-colors min-h-[40px]"
                     >
-                      {num}
+                      Previous
                     </button>
-                  ))}
 
-                  <button
-                    disabled={currentPage === totalPages}
-                    onClick={() => setCurrentPage(p => p + 1)}
-                    className="px-4 py-2 rounded-xl text-xs font-bold border border-stone-300 disabled:opacity-40 hover:bg-stone-100 transition-colors"
-                  >
-                    Next
-                  </button>
-                </div>
-              )}
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(num => (
+                      <button
+                        key={num}
+                        onClick={() => {
+                          setCurrentPage(num);
+                          window.scrollTo({ top: 120, behavior: 'smooth' });
+                        }}
+                        className={`w-9 h-9 rounded-xl text-xs font-bold transition-all min-h-[36px] ${
+                          currentPage === num
+                            ? 'bg-stone-900 text-amber-400 shadow-md'
+                            : 'border border-stone-300 hover:bg-stone-100 text-stone-800'
+                        }`}
+                      >
+                        {num}
+                      </button>
+                    ))}
+
+                    <button
+                      disabled={currentPage === totalPages}
+                      onClick={() => {
+                        setCurrentPage(p => Math.min(totalPages, p + 1));
+                        window.scrollTo({ top: 120, behavior: 'smooth' });
+                      }}
+                      className="px-4 py-2 rounded-xl text-xs font-bold border border-stone-300 disabled:opacity-40 hover:bg-stone-100 transition-colors min-h-[40px]"
+                    >
+                      Next
+                    </button>
+                  </div>
+                )}
+              </div>
             </>
           ) : (
             <div className="bg-white rounded-2xl p-12 text-center border border-stone-200 shadow-2xs">
@@ -237,17 +342,17 @@ export const ProductsPage: React.FC = () => {
               </p>
               <button
                 onClick={() =>
-                  setFilters({
+                  handleFilterChange({
                     category: 'All',
                     minPrice: 0,
-                    maxPrice: 100000,
+                    maxPrice: 250000,
                     selectedBrands: [],
                     minRating: 0,
                     minDiscount: 0,
                     inStockOnly: false
                   })
                 }
-                className="mt-4 bg-stone-900 text-amber-400 font-bold px-5 py-2.5 rounded-xl text-xs hover:bg-amber-600 hover:text-stone-950 transition-colors"
+                className="mt-4 bg-stone-900 text-amber-400 font-bold px-6 py-3 rounded-xl text-xs hover:bg-amber-600 hover:text-stone-950 transition-colors shadow-sm min-h-[44px]"
               >
                 Reset All Filters
               </button>

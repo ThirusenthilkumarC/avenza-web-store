@@ -1,12 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
-import { ShieldCheck, RefreshCw, Lock } from 'lucide-react';
+import { ShieldCheck, RefreshCw, Lock, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-stone-950 text-stone-300 mt-20 pt-14 pb-24 lg:pb-12 border-t border-stone-800 relative text-left">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <footer className="bg-stone-950 text-stone-300 mt-20 border-t border-stone-800 relative text-left">
+      {/* BACK TO TOP STRIP */}
+      <button
+        onClick={scrollToTop}
+        className="w-full py-3.5 bg-stone-900/95 hover:bg-amber-500 hover:text-stone-950 text-stone-300 text-xs font-semibold uppercase tracking-widest transition-all flex items-center justify-center gap-2 border-b border-stone-800 cursor-pointer group"
+        aria-label="Back to top of page"
+      >
+        <ArrowUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+        <span>Back to Top</span>
+      </button>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-24 lg:pb-12">
 
         {/* TRUST GUARANTEES STRIP */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pb-10 mb-10 border-b border-stone-800">

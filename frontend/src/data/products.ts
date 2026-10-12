@@ -1292,5 +1292,1602 @@ export const products: Product[] = [
     stock: 28,
     delivery: "Free Delivery in 2 Days",
     seller: "PawPal Petcare"
+  },
+  {
+    id: 41,
+    name: "Venezia Tailored Italian Wool 3-Piece Tuxedo Suit",
+    brand: "Venezia",
+    category: "Men's Fashion",
+    subcategory: "Suits & Tuxedos",
+    price: 34999,
+    originalPrice: 49999,
+    discount: 30,
+    rating: 4.9,
+    reviews: 185,
+    images: [
+          "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Impeccably tailored 3-piece tuxedo crafted from Super 140s Italian merino wool with satin peak lapels and hand-finished pick stitching.",
+    features: [
+          "100% Super 140s Italian Virgin Wool",
+          "Satin Silk Peak Lapels & Trimmed Pockets",
+          "Half-Canvas Construction for Superior Drape",
+          "Includes Tailored Waistcoat & Trousers"
+    ],
+    specs: {
+          "Fabric": "Super 140s Merino Wool",
+          "Fit": "Modern Tailored Fit",
+          "Lapel": "Satin Peak Lapel",
+          "Care": "Dry Clean Only",
+          "Origin": "Biella, Italy"
+    },
+    stock: 14,
+    badge: "Exclusive",
+    delivery: "Free Express White-Glove Delivery by Tomorrow",
+    seller: "Venezia Sartoria Flagship"
+  },
+  {
+    id: 42,
+    name: "Maharaja Royal Hand-Embroidered Raw Silk Sherwani Set",
+    brand: "Royal Heritage",
+    category: "Men's Fashion",
+    subcategory: "Ethnic Wear",
+    price: 42999,
+    originalPrice: 59999,
+    discount: 28,
+    rating: 4.9,
+    reviews: 210,
+    images: [
+          "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Regal raw silk ivory sherwani embellished with antique gold dabka and zardozi needlework, accompanied by a chanderi silk stole and churidar.",
+    features: [
+          "Pure Banarasi Raw Mulberry Silk",
+          "Handcrafted Antique Zardozi & Resham Embroidery",
+          "Includes Embroidered Stole (Dupatta) & Churidar",
+          "Bespoke Brass Buttons with Semi-Precious Stones"
+    ],
+    specs: {
+          "Fabric": "Pure Raw Silk & Chanderi",
+          "Work": "Antique Zardozi & Dabka",
+          "Occasion": "Bridal & Royal Celebrations",
+          "Origin": "Varanasi, India"
+    },
+    stock: 9,
+    badge: "Best Seller",
+    delivery: "Free Insured Express Delivery in 2 Days",
+    seller: "Royal Heritage Atelier"
+  },
+  {
+    id: 43,
+    name: "Sovereign Hand-Tailored Silk Linen Bandhgala Coat",
+    brand: "Aurelia",
+    category: "Men's Fashion",
+    subcategory: "Ethnic Wear",
+    price: 18499,
+    originalPrice: 24999,
+    discount: 26,
+    rating: 4.8,
+    reviews: 320,
+    images: [
+          "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Modern royal bandhgala jodhpuri jacket crafted in structured silk-linen blend with hand-cast pewter metallic buttons.",
+    features: [
+          "Premium Silk-Linen Textured Weave",
+          "Mandarin Collar with Piped Velvet Edges",
+          "Full Bemberg Breathable Lining",
+          "Structured Shoulder Silhouette"
+    ],
+    specs: {
+          "Material": "Silk 40%, Linen 60%",
+          "Cut": "Classic Jodhpuri Bandhgala",
+          "Buttons": "Custom Pewter Lion Crest",
+          "Color": "Royal Navy Blue"
+    },
+    stock: 22,
+    badge: "New Arrival",
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Aurelia Menswear"
+  },
+  {
+    id: 44,
+    name: "Milano Egyptian Giza Cotton Tailored Crisp Formal Shirt",
+    brand: "Venezia",
+    category: "Men's Fashion",
+    subcategory: "Formal Shirts",
+    price: 4999,
+    originalPrice: 7999,
+    discount: 37,
+    rating: 4.7,
+    reviews: 440,
+    images: [
+          "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Silky, breathable formal dress shirt woven from 100% long-staple Egyptian Giza cotton with mother-of-pearl buttons.",
+    features: [
+          "100% Long-Staple Egyptian Giza 87 Cotton",
+          "Genuine Australian Mother-of-Pearl Buttons",
+          "French Seam Construction (22 Stitches/Inch)",
+          "Wrinkle-Resistant Natural Easy-Iron Finish"
+    ],
+    specs: {
+          "Collar": "Semi-Spread Cutaway",
+          "Cuff": "Convertible French/Barrel",
+          "Weave": "Royal Twill 120/2",
+          "Color": "Crisp Optical White"
+    },
+    stock: 48,
+    badge: "Hot Trend",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Venezia Sartoria Flagship"
+  },
+  {
+    id: 45,
+    name: "Kashmir Pure Pashmina Hand-Sozni Embroidered Men's Shawl",
+    brand: "Royal Heritage",
+    category: "Men's Fashion",
+    subcategory: "Shawls & Stoles",
+    price: 28999,
+    originalPrice: 38999,
+    discount: 25,
+    rating: 5,
+    reviews: 95,
+    images: [
+          "https://images.unsplash.com/photo-1520975954732-35dd22299614?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Certified GI-tagged authentic Ladakhi Changthangi cashmere handspun on traditional looms with delicate Sozni needle embroidery.",
+    features: [
+          "100% Certified Changthangi Cashmere Pashmina",
+          "Handspun Yarn & Hand-Woven on Wooden Looms",
+          "Master Artisan Sozni Floral Hashiya Border",
+          "Featherlight Warmth with Micron Count Under 14.5"
+    ],
+    specs: {
+          "Dimensions": "100 x 200 cm (Men Doshalla)",
+          "Certification": "Kashmir GI Tagged & Barcoded",
+          "Micron": "14.2 Microns Pure Cashmere",
+          "Color": "Natural Walnut Charcoal"
+    },
+    stock: 8,
+    badge: "Exclusive",
+    delivery: "Free Insured Express Delivery in 2 Days",
+    seller: "Kashmir Heritage Guild"
+  },
+  {
+    id: 46,
+    name: "Aurelia Mulberry Silk Kurta Pyjama with Silk Nehru Jacket",
+    brand: "Aurelia",
+    category: "Men's Fashion",
+    subcategory: "Ethnic Sets",
+    price: 12999,
+    originalPrice: 18999,
+    discount: 31,
+    rating: 4.8,
+    reviews: 280,
+    images: [
+          "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Artisanal 3-piece celebratory ethnic ensemble consisting of a pure tussar silk kurta, chudidar, and woven jacquard Nehru jacket.",
+    features: [
+          "Pure Tussar Mulberry Silk Kurta",
+          "Jacquard Brocade Woven Sleeveless Jacket",
+          "Side Concealed Pockets & Side Slits",
+          "Comfort Elasticated Silk Blend Chudidar"
+    ],
+    specs: {
+          "Set Contents": "Kurta, Nehru Jacket & Pyjama",
+          "Fabric": "Tussar Silk Blend",
+          "Occasion": "Festive & Wedding Guest",
+          "Care": "Dry Clean"
+    },
+    stock: 25,
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Aurelia Menswear"
+  },
+  {
+    id: 47,
+    name: "Belgravia Full-Grain Nappa Leather Biker Jacket",
+    brand: "Venezia",
+    category: "Men's Fashion",
+    subcategory: "Jackets & Outerwear",
+    price: 24999,
+    originalPrice: 34999,
+    discount: 28,
+    rating: 4.9,
+    reviews: 140,
+    images: [
+          "https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Supple Italian full-grain lambskin leather cafe-racer jacket equipped with antiqued Japanese YKK Excella zippers.",
+    features: [
+          "100% Vegetable-Tanned Italian Lambskin Nappa",
+          "Heavyweight YKK Excella Gunmetal Zippers",
+          "Quilted Thermal Silk-Satin Interior Lining",
+          "Interior Concealed Device & Passport Pockets"
+    ],
+    specs: {
+          "Leather Type": "Full-Grain Lamb Nappa (0.9mm)",
+          "Hardware": "Brushed Antique Brass",
+          "Fit": "Tailored Slim Fit",
+          "Origin": "Florence, Italy"
+    },
+    stock: 16,
+    badge: "Limited Stock",
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Venezia Sartoria Flagship"
+  },
+  {
+    id: 48,
+    name: "Devika Pure Mulberry Silk Handloom Paithani Saree with Peacock Zari",
+    brand: "Royal Heritage",
+    category: "Women's Fashion",
+    subcategory: "Sarees",
+    price: 36999,
+    originalPrice: 48999,
+    discount: 24,
+    rating: 5,
+    reviews: 230,
+    images: [
+          "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Authentic Yeola Paithani saree handwoven on traditional pit looms featuring pure gold tested zari mor-bangadi (peacock in bangle) motifs on the pallu.",
+    features: [
+          "100% Pure Mulberry Silk (Silk Mark Certified)",
+          "Intricate Peacock & Floral Tapestry Weave Pallu",
+          "Tested Pure Gold & Silver Metallic Zari",
+          "Comes with Matching Unstitched Blouse Piece"
+    ],
+    specs: {
+          "Saree Length": "5.5 Meters + 0.8m Blouse",
+          "Weave Technique": "Tapestry Handloom (Kadiyal)",
+          "Weight": "850g Pure Silk",
+          "Origin": "Yeola, Maharashtra"
+    },
+    stock: 7,
+    badge: "Exclusive",
+    delivery: "Free Insured Express Delivery in 2 Days",
+    seller: "Royal Heritage Atelier"
+  },
+  {
+    id: 49,
+    name: "Aurelia Royal Zardozi Velvet Bridal Wedding Lehenga Choli",
+    brand: "Aurelia",
+    category: "Women's Fashion",
+    subcategory: "Lehengas",
+    price: 68999,
+    originalPrice: 95000,
+    discount: 27,
+    rating: 4.9,
+    reviews: 180,
+    images: [
+          "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Grand bridal couture lehenga in rich crimson micro-velvet, embellished with intricate hand-embroidered dabka, cutdana, sequins, and French knots.",
+    features: [
+          "Heavy Crimson Micro-Velvet with 5.5m Flare",
+          "Dual Dupatta Set: Velvet Shawl & Hand-Embroidered Organza Veil",
+          "Embellished with Semi-Precious Beads & Dabka Work",
+          "Built-in Double Cancan Layer for Dramatic Gher"
+    ],
+    specs: {
+          "Fabric": "Micro Velvet & Silk Organza",
+          "Flair": "5.5 Meters Circular Gher",
+          "Blouse": "Unstitched Padded Pattern",
+          "Care": "Specialized Bridal Dry Clean"
+    },
+    stock: 5,
+    badge: "Best Seller",
+    delivery: "Free Insured Express Delivery in 3 Days",
+    seller: "Aurelia Bridal Studio"
+  },
+  {
+    id: 50,
+    name: "Chandni Handcrafted Chikankari Pure Georgette Anarkali Suit",
+    brand: "Aurelia",
+    category: "Women's Fashion",
+    subcategory: "Anarkalis & Suits",
+    price: 19999,
+    originalPrice: 28999,
+    discount: 31,
+    rating: 4.8,
+    reviews: 310,
+    images: [
+          "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Floor-length pure viscose georgette Anarkali featuring authentic Lucknowi Chikankari needlework with subtle mukaish metallic accents.",
+    features: [
+          "Hand-Embroidered Bakhiya, Phanda & Keel Kangan Stitches",
+          "Delicate Real Silver Mukaish Badla Work",
+          "Includes Pure Crepe Chudidar & Matching Dupatta",
+          "Dyed in Ethereal Powder Blush Rose"
+    ],
+    specs: {
+          "Fabric": "Pure Viscose Georgette 60g",
+          "Flair": "4.5 Meters Anarkali Kalis",
+          "Lining": "Pure Butter Crepe Included",
+          "Origin": "Lucknow, Uttar Pradesh"
+    },
+    stock: 14,
+    badge: "Hot Trend",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Aurelia Womenswear"
+  },
+  {
+    id: 51,
+    name: "Elysian Silk Organza Hand-Painted Floral Evening Saree",
+    brand: "Royal Heritage",
+    category: "Women's Fashion",
+    subcategory: "Sarees",
+    price: 15499,
+    originalPrice: 22999,
+    discount: 32,
+    rating: 4.8,
+    reviews: 195,
+    images: [
+          "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Gossamer pure silk organza saree hand-painted by master artisans with botanical English roses and highlighted with scalloped sequin embroidery.",
+    features: [
+          "100% Pure Lightweight Silk Organza",
+          "Hand-Painted One-of-a-Kind Botanical Motifs",
+          "Delicate Hand-Embroidered Scallop Pearl Border",
+          "Includes Raw Silk Blouse Fabric"
+    ],
+    specs: {
+          "Saree Length": "5.5m with Scalloped Edges",
+          "Blouse Fabric": "0.9m Pure Raw Silk",
+          "Weight": "380g Ultra-Light",
+          "Care": "Gentle Dry Clean Only"
+    },
+    stock: 18,
+    badge: "New Arrival",
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Royal Heritage Atelier"
+  },
+  {
+    id: 52,
+    name: "Nocturne Haute Couture Draped Emerald Satin Evening Gown",
+    brand: "Veloura",
+    category: "Women's Fashion",
+    subcategory: "Couture Gowns",
+    price: 24999,
+    originalPrice: 35000,
+    discount: 28,
+    rating: 4.9,
+    reviews: 165,
+    images: [
+          "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Architecturally draped floor-sweeping evening gown cut on the bias from heavy Italian silk satin with an asymmetric cowl neckline.",
+    features: [
+          "Heavy Silk Duchesse Satin with Luminous Luster",
+          "Internal Corseted Bodice with Flexible Boning",
+          "High Thigh Slit with Cascading Waterfall Drape",
+          "Invisible Back Zip Closure"
+    ],
+    specs: {
+          "Silhouette": "Fitted Column with Fluid Train",
+          "Length": "Floor Length (155 cm)",
+          "Color": "Deep Imperial Emerald",
+          "Origin": "Milan, Italy"
+    },
+    stock: 11,
+    badge: "Exclusive",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Veloura Luxury Studio"
+  },
+  {
+    id: 53,
+    name: "Kashmir Tilla Embroidered Pure Cashmere Pashmina Cape",
+    brand: "Royal Heritage",
+    category: "Women's Fashion",
+    subcategory: "Winter Couture",
+    price: 32999,
+    originalPrice: 45000,
+    discount: 26,
+    rating: 5,
+    reviews: 80,
+    images: [
+          "https://images.unsplash.com/photo-1520975954732-35dd22299614?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Regal draped cape jacket tailored from Grade-A pure Kashmiri cashmere pashmina, outlined with authentic metallic silver Tilla embroidery.",
+    features: [
+          "100% Certified Hand-Loomed Pashmina",
+          "Real Silver Thread Tilla Hand Embroidery",
+          "Contemporary Draped Cape Silhouette",
+          "Pure Mulberry Silk Satin Contrast Lining"
+    ],
+    specs: {
+          "Fabric": "Changthangi Cashmere Pashmina",
+          "Embroidery": "Traditional Kashmiri Tilla",
+          "Fit": "Free Size Draped Cape",
+          "Color": "Onyx Black with Silver Tilla"
+    },
+    stock: 6,
+    badge: "Limited Stock",
+    delivery: "Free Insured Delivery in 2 Days",
+    seller: "Kashmir Heritage Guild"
+  },
+  {
+    id: 54,
+    name: "Sitara Mirror-Work Hand-Embroidered Silk Sharara Set",
+    brand: "Aurelia",
+    category: "Women's Fashion",
+    subcategory: "Ethnic Sets",
+    price: 17999,
+    originalPrice: 25999,
+    discount: 30,
+    rating: 4.8,
+    reviews: 240,
+    images: [
+          "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Festive pure crepe silk short peplum kurta with multi-tiered flared sharara pants and an organza dupatta adorned with mirror embroidery.",
+    features: [
+          "Pure Silk Crepe with Real Glass Mirror Work",
+          "Voluminous Flared Tiered Sharara Bottoms",
+          "Scalloped Organza Dupatta with Mirror Buttis",
+          "Zari Lace Detailing on Sleeves & Hemline"
+    ],
+    specs: {
+          "Set Contents": "Short Kurta, Tiered Sharara, Dupatta",
+          "Fabric": "Silk Crepe & Organza",
+          "Color": "Saffron Marigold Gold",
+          "Care": "Dry Clean"
+    },
+    stock: 19,
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Aurelia Womenswear"
+  },
+  {
+    id: 55,
+    name: "Regalia Banarasi Katan Silk Tissue Brocade Saree",
+    brand: "Royal Heritage",
+    category: "Women's Fashion",
+    subcategory: "Sarees",
+    price: 27999,
+    originalPrice: 38000,
+    discount: 26,
+    rating: 4.9,
+    reviews: 290,
+    images: [
+          "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Heritage heirloom Banarasi Katan silk saree woven with real gold tissue threads in an all-over intricate jangla floral jaal pattern.",
+    features: [
+          "100% Pure Katan Silk Base with Metallic Tissue Warp",
+          "Master Handloom Kadwa Weave (No Loose Floats)",
+          "Traditional Meenakari Highlights in Flowers",
+          "Govt Silk Mark Certified Authenticity"
+    ],
+    specs: {
+          "Length": "6.3m (Including Blouse Piece)",
+          "Weave": "Handloom Kadwa Brocade",
+          "Origin": "Varanasi, India",
+          "Color": "Metallic Gold-Rose Dual Tone"
+    },
+    stock: 9,
+    badge: "Best Seller",
+    delivery: "Free Insured Express Delivery in 2 Days",
+    seller: "Royal Heritage Atelier"
+  },
+  {
+    id: 56,
+    name: "Venezia Goodyear Welted Italian Calfskin Oxford Shoes",
+    brand: "Venezia",
+    category: "Footwear",
+    subcategory: "Men Formal",
+    price: 18999,
+    originalPrice: 26999,
+    discount: 29,
+    rating: 4.9,
+    reviews: 310,
+    images: [
+          "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Benchmark formal cap-toe oxford dress shoes handcrafted in Tuscany using full-grain French box calf leather and traditional Goodyear welted soles.",
+    features: [
+          "Full-Grain French Box Calfskin Leather",
+          "Traditional Hand-Sewn Goodyear Welted Construction",
+          "Vegetable-Tanned Italian Leather Sole with Cork Filling",
+          "Closed Channel Stitching & Chiseled Toe Silhouette"
+    ],
+    specs: {
+          "Upper": "French Box Calfskin",
+          "Sole": "Oak-Bark Tanned Leather Sole",
+          "Construction": "Goodyear Welted 360",
+          "Origin": "Tuscany, Italy"
+    },
+    stock: 15,
+    badge: "Exclusive",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Venezia Shoemakers"
+  },
+  {
+    id: 57,
+    name: "Aurelia Handcrafted Zardozi Embroidered Royal Juttis",
+    brand: "Aurelia",
+    category: "Footwear",
+    subcategory: "Ethnic Footwear",
+    price: 4499,
+    originalPrice: 6999,
+    discount: 35,
+    rating: 4.8,
+    reviews: 420,
+    images: [
+          "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Artisanal ceremonial mojari juttis made from genuine vegetable-tanned leather, hand-embroidered with zardozi thread and padded memory foam insoles.",
+    features: [
+          "100% Genuine Camel Leather Soles & Upper",
+          "Hand-Embroidered Dabka & Gold Zardozi Needlework",
+          "Double-Cushioned Memory Foam Insole (Zero Bite)",
+          "Traditional Curved Palla Silhouette"
+    ],
+    specs: {
+          "Sole": "Handcrafted Genuine Leather",
+          "Lining": "Soft Leather with Foam Padding",
+          "Care": "Wipe with Dry Cloth, Keep in Dustbag",
+          "Origin": "Jaipur, Rajasthan"
+    },
+    stock: 35,
+    badge: "Hot Trend",
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Aurelia Footwear"
+  },
+  {
+    id: 58,
+    name: "Veloura Crystal-Embellished Satin Stiletto Pumps (85mm)",
+    brand: "Veloura",
+    category: "Footwear",
+    subcategory: "Women Heels",
+    price: 16999,
+    originalPrice: 23999,
+    discount: 29,
+    rating: 4.9,
+    reviews: 175,
+    images: [
+          "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Glamorous pointed-toe evening pumps cloaked in lustrous Italian silk satin, crowned by an iconic multifaceted Austrian crystal buckle brooch.",
+    features: [
+          "Italian Silk Satin Upper with Leather Insole",
+          "Precision-Cut Austrian Crystal Brooch Embellishment",
+          "85mm Flared Stiletto Heel for Balanced Grace",
+          "Slip-Resistant Leather Outsole"
+    ],
+    specs: {
+          "Heel Height": "85mm (3.3 inches)",
+          "Upper": "Pure Silk Satin",
+          "Insole": "Padded Italian Kid Leather",
+          "Origin": "Florence, Italy"
+    },
+    stock: 12,
+    badge: "Best Seller",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Veloura Luxury Studio"
+  },
+  {
+    id: 59,
+    name: "AeroStrata Carbon-Plated Nitrogen Marathon Running Shoes",
+    brand: "EcoFit",
+    category: "Footwear",
+    subcategory: "Performance Sneakers",
+    price: 14999,
+    originalPrice: 19999,
+    discount: 25,
+    rating: 4.8,
+    reviews: 380,
+    images: [
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Flagship marathon racer equipped with a full-length curved carbon fiber propulsion plate and supercritical nitrogen-infused foam midsole.",
+    features: [
+          "Full-Length Spoon-Shaped Carbon Fiber Plate",
+          "Supercritical Nitrogen PEBA Foam with 85% Energy Return",
+          "Ultra-Lightweight Hydrophobic Engineered Mesh Upper (185g)",
+          "Continental Wet-Grip Rubber Outsole Pods"
+    ],
+    specs: {
+          "Weight": "188g (Size UK 8)",
+          "Drop": "8mm Heel-to-Toe",
+          "Foam": "Dual-Density Nitrogen PEBA",
+          "Plate": "100% 3K Carbon Fiber"
+    },
+    stock: 28,
+    badge: "Deal of the Day",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "EcoFit Sports Official"
+  },
+  {
+    id: 60,
+    name: "Venezia Hand-Stitched Suede Penny Loafers with Commando Sole",
+    brand: "Venezia",
+    category: "Footwear",
+    subcategory: "Casual Loafers",
+    price: 13999,
+    originalPrice: 19999,
+    discount: 30,
+    rating: 4.7,
+    reviews: 260,
+    images: [
+          "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Sophisticated everyday penny loafers crafted from velvety water-repellent Italian reverse suede on lightweight micro-lug rubber soles.",
+    features: [
+          "Water-Repellent Italian Reverse Calf Suede",
+          "Blake Rapid Flex Stitched Construction",
+          "Ultra-Lightweight Extralight Commando Lug Soles",
+          "Full Leather Lined with Ergonomic Arch Support"
+    ],
+    specs: {
+          "Upper": "Tuscan Calf Suede",
+          "Sole": "Extralight EVA Lug Sole",
+          "Construction": "Blake Stitched",
+          "Color": "Espresso Snuff Brown"
+    },
+    stock: 22,
+    badge: "New Arrival",
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Venezia Shoemakers"
+  },
+  {
+    id: 61,
+    name: "Veloura Handcrafted Leather Block-Heel Kolhapuri Sandals",
+    brand: "Veloura",
+    category: "Footwear",
+    subcategory: "Ethnic Footwear",
+    price: 5499,
+    originalPrice: 7999,
+    discount: 31,
+    rating: 4.8,
+    reviews: 340,
+    images: [
+          "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Contemporary fusion footwear marrying the classic T-strap Kolhapuri braid with a sturdy 50mm architectural wooden block heel.",
+    features: [
+          "Genuine Kolhapur Hand-Braided Leather Straps",
+          "50mm Solid Rosewood Architectural Block Heel",
+          "Anti-Slip Ribbed Rubber Forefoot Insert",
+          "Triple Layer Memory Foam Insole"
+    ],
+    specs: {
+          "Heel Height": "50mm Block Heel",
+          "Upper": "Hand-Tanned Buffalo Leather",
+          "Insole": "Cushioned Kid Leather",
+          "Color": "Natural Tan Gold"
+    },
+    stock: 31,
+    delivery: "Free Delivery in 2 Days",
+    seller: "Veloura Luxury Studio"
+  },
+  {
+    id: 62,
+    name: "ArtisanCraft Goodyear Welted Wingtip Brogue Boots",
+    brand: "Venezia",
+    category: "Footwear",
+    subcategory: "Boots",
+    price: 21999,
+    originalPrice: 29999,
+    discount: 26,
+    rating: 4.9,
+    reviews: 130,
+    images: [
+          "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Rugged yet refined wingtip brogue ankle boots tailored in pull-up Horween leather with storm welt weather sealing and Dainite studded rubber soles.",
+    features: [
+          "Horween Chromexcel Pull-Up Leather",
+          "Storm Welted 360 Weather-Proof Construction",
+          "Dainite British Studded Rubber Outsole",
+          "Speed Hook Brass Eyelets & Pull Tabs"
+    ],
+    specs: {
+          "Upper": "Horween Leather (Chicago)",
+          "Sole": "British Dainite Rubber",
+          "Height": "6-Inch Ankle Boot",
+          "Color": "Cognac Vintage Chestnut"
+    },
+    stock: 14,
+    badge: "Exclusive",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Venezia Shoemakers"
+  },
+  {
+    id: 63,
+    name: "Zenith CinemaPro 4K Laser Ultra-Short-Throw Home Projector",
+    brand: "Zenith",
+    category: "Electronics",
+    subcategory: "Home Theater",
+    price: 189990,
+    originalPrice: 249990,
+    discount: 24,
+    rating: 4.9,
+    reviews: 88,
+    images: [
+          "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Triple-laser ultra-short throw projector casting 150 inches of true 4K HDR10+ imagery from just 9 inches away with built-in Bowers & Wilkins audio.",
+    features: [
+          "Triple Laser ALPD 4.0 RGB Light Engine (3,000 ANSI Lumens)",
+          "True 4K UHD with Dolby Vision & HDR10+ Support",
+          "Projects 100'' Screen from 6 Inches Away (Max 150'')",
+          "Integrated 60W Acoustic Bowers & Wilkins Dolby Atmos Speakers"
+    ],
+    specs: {
+          "Resolution": "3840 x 2160 4K UHD",
+          "Brightness": "3,000 ANSI Lumens",
+          "Throw Ratio": "0.19:1 Ultra Short Throw",
+          "Lamp Life": "25,000+ Hours",
+          "Connectivity": "3x HDMI 2.1 (eARC), WiFi 6, Bluetooth 5.2"
+    },
+    stock: 6,
+    badge: "Exclusive",
+    delivery: "Free White-Glove Installation & Delivery in 2 Days",
+    seller: "Zenith Electronics Global"
+  },
+  {
+    id: 64,
+    name: "TechNova Spatial Omni 360 Studio Reference Hi-Fi Speaker",
+    brand: "TechNova",
+    category: "Electronics",
+    subcategory: "Audio",
+    price: 29999,
+    originalPrice: 39999,
+    discount: 25,
+    rating: 4.8,
+    reviews: 320,
+    images: [
+          "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Lossless audiophile wireless home speaker with 360-degree spatial acoustic array, custom carbon-dome tweeters, and room-adaptive calibration.",
+    features: [
+          "Lossless Hi-Res Audio Streaming (24-bit/192kHz)",
+          "7 Precision Drivers with 150W Class-D Tri-Amplification",
+          "RoomSense Microphones for Automatic Acoustic Calibration",
+          "Supports AirPlay 2, Spotify Connect, Tidal Connect, Roon Ready"
+    ],
+    specs: {
+          "Power Output": "150W RMS",
+          "Frequency Response": "32Hz - 24,000Hz",
+          "Connectivity": "Wi-Fi 6, Bluetooth 5.3, Optical 3.5mm",
+          "Finish": "Anodized Aluminum & Acoustically Transparent Wool"
+    },
+    stock: 20,
+    badge: "Hot Trend",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "TechNova Official Outlet"
+  },
+  {
+    id: 65,
+    name: "UltraCraft Studio Max 34'' Curved Nano-IPS 165Hz Creator Display",
+    brand: "UltraCraft",
+    category: "Electronics",
+    subcategory: "Monitors",
+    price: 64999,
+    originalPrice: 84999,
+    discount: 23,
+    rating: 4.9,
+    reviews: 145,
+    images: [
+          "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Ultrawide 34-inch curved creator monitor boasting 98% DCI-P3 color gamut, Thunderbolt 4 90W single-cable dock, and Delta E < 1 calibration.",
+    features: [
+          "34-Inch WQHD (3440 x 1440) Nano-IPS Curved Panel (1900R)",
+          "Factory Calibrated Delta E < 1 with Hardware LUT Calibration",
+          "Thunderbolt 4 Single Cable Port with 90W Host Power Delivery",
+          "165Hz Refresh Rate & 1ms GtG Response with G-Sync Compatibility"
+    ],
+    specs: {
+          "Panel Type": "Nano-IPS 10-Bit Color",
+          "Color Accuracy": "98% DCI-P3, 135% sRGB",
+          "Ports": "Thunderbolt 4, 2x HDMI 2.1, DisplayPort 1.4, USB Hub",
+          "Warranty": "3 Years Zero Bright Pixel Guarantee"
+    },
+    stock: 11,
+    badge: "New Arrival",
+    delivery: "Free Express Courier in 2 Days",
+    seller: "UltraCraft Workstations"
+  },
+  {
+    id: 66,
+    name: "AuraSound Studio Earbuds Max with Wind Shielding & Spatial Audio",
+    brand: "AuraSound",
+    category: "Electronics",
+    subcategory: "Audio",
+    price: 8999,
+    originalPrice: 14999,
+    discount: 40,
+    rating: 4.7,
+    reviews: 510,
+    images: [
+          "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Flagship True Wireless earbuds with adaptive 48dB noise cancellation, graphene drivers, micro-mesh wind baffles, and wireless fast charging.",
+    features: [
+          "48dB Hybrid Adaptive Active Noise Cancellation",
+          "Beryllium-Coated 11mm Acoustic Dynamic Drivers",
+          "Triple Microphones with Bone Conduction Voice Pick-Up",
+          "38 Hours Total Battery with Qi Wireless Charging Case"
+    ],
+    specs: {
+          "Battery Life": "9h Buds + 29h Charging Case",
+          "Codecs Supported": "LDAC, AAC, SBC, aptX Adaptive",
+          "Water Resistance": "IPX7 Sweat & Water Proof",
+          "Bluetooth": "v5.3 Multipoint Dual Connect"
+    },
+    stock: 45,
+    badge: "Deal of the Day",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "AuraSound Direct"
+  },
+  {
+    id: 67,
+    name: "CineShot Pocket Cinema 6K Gimbal Stabilized Camera Kit",
+    brand: "CineShot",
+    category: "Electronics",
+    subcategory: "Cameras",
+    price: 89990,
+    originalPrice: 115000,
+    discount: 22,
+    rating: 4.9,
+    reviews: 110,
+    images: [
+          "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Compact cinema powerhouse recording 6K ProRes RAW with mechanical 3-axis gimbal stabilization and dual native ISO sensors.",
+    features: [
+          "Super 35 High-Resolution HDR Sensor (6K up to 50fps)",
+          "Integrated 3-Axis Motorized Carbon Mechanical Gimbal",
+          "13 Stops of Dynamic Range with Dual Native ISO up to 25,600",
+          "Includes 24-70mm f/2.8 Parfocal Cinema Lens & Wireless Mic"
+    ],
+    specs: {
+          "Sensor": "Super 35 Dual Native ISO",
+          "Video Formats": "ProRes 422HQ, 6K RAW, 10-Bit 4:2:2",
+          "Screen": "5.0-inch 1500-Nit HDR Touchscreen",
+          "Storage": "CFexpress Type B & High-Speed SD UHS-II"
+    },
+    stock: 9,
+    badge: "Exclusive",
+    delivery: "Free Express Insured Courier in 2 Days",
+    seller: "CineShot Optics Official"
+  },
+  {
+    id: 68,
+    name: "Zenith VisionPro VR/AR Spatial Computing Headset",
+    brand: "Zenith",
+    category: "Electronics",
+    subcategory: "Wearables & VR",
+    price: 149990,
+    originalPrice: 189990,
+    discount: 21,
+    rating: 4.8,
+    reviews: 75,
+    images: [
+          "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Next-generation mixed-reality spatial computer featuring dual 4K micro-OLED displays per eye, precise eye-tracking, and hand gesture navigation.",
+    features: [
+          "Dual Micro-OLED 4K Displays (23 Million Total Pixels)",
+          "12 Cameras & 5 LiDAR Sensors for Real-Time Spatial Mapping",
+          "Intuitive Eye-Tracking & Sub-Millimeter Hand Gesture Inputs",
+          "Spatial Audio Pods with Dynamic Head Tracking"
+    ],
+    specs: {
+          "Display": "2x 4K Micro-OLED 90Hz HDR",
+          "Processor": "Dual M-Silicon Octa-Core Chipset",
+          "Weight": "440g Balanced Carbon Fiber Frame",
+          "Battery": "External Battery Pack (2.5 Hours Continuous)"
+    },
+    stock: 8,
+    badge: "New Arrival",
+    delivery: "Free White-Glove Hand Delivery in 2 Days",
+    seller: "Zenith Electronics Global"
+  },
+  {
+    id: 69,
+    name: "ChronoCraft Tourbillon Masterpiece Rose Gold Automatic Watch",
+    brand: "ChronoCraft",
+    category: "Watches",
+    subcategory: "Tourbillon",
+    price: 145000,
+    originalPrice: 195000,
+    discount: 25,
+    rating: 5,
+    reviews: 65,
+    images: [
+          "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80",
+          "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Haute horlogerie flying tourbillon timepiece featuring an 18K rose gold plated 42mm case, skeletonized dial, and hand-beveled bridges.",
+    features: [
+          "Real Mechanical Flying Tourbillon (28,800 vph)",
+          "Hand-Wind Calibre CC-901 with 72-Hour Power Reserve",
+          "Double Anti-Reflective Curved Sapphire Crystal Front & Back",
+          "Hand-Stitched Louisiana Alligator Leather Strap"
+    ],
+    specs: {
+          "Case Diameter": "42mm",
+          "Case Material": "316L Steel with 18K Rose Gold Ion Plating",
+          "Power Reserve": "72 Hours",
+          "Water Resistance": "50 Meters (5 ATM)"
+    },
+    stock: 5,
+    badge: "Exclusive",
+    delivery: "Free White-Glove Insured Delivery by Tomorrow",
+    seller: "ChronoCraft Geneva Atelier"
+  },
+  {
+    id: 70,
+    name: "ChronoCraft Diver 300M Automatic Ceramic Bezel Marine Watch",
+    brand: "ChronoCraft",
+    category: "Watches",
+    subcategory: "Diving Watches",
+    price: 38999,
+    originalPrice: 52000,
+    discount: 25,
+    rating: 4.9,
+    reviews: 210,
+    images: [
+          "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Professional grade marine dive watch equipped with a scratch-proof ceramic rotating bezel, helium escape valve, and Super-LumiNova markers.",
+    features: [
+          "300 Meters (30 ATM) Certified Water Resistance",
+          "Unidirectional 120-Click Zirconia Ceramic Bezel",
+          "Swiss Automatic Movement with 42-Hour Reserve",
+          "Super-LumiNova BGW9 Glowing Blue Markers & Hands"
+    ],
+    specs: {
+          "Case Diameter": "41mm Stainless Steel",
+          "Glass": "Flat Sapphire with AR Undercoating",
+          "Bracelet": "Solid Link Stainless Steel with Diver Extension",
+          "Movement": "Calibre 2824-2 Automatic (25 Jewels)"
+    },
+    stock: 18,
+    badge: "Best Seller",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "ChronoCraft Geneva Atelier"
+  },
+  {
+    id: 71,
+    name: "PulseFit Titanium Elite Smartwatch with Sapphire Glass & ECG",
+    brand: "PulseFit",
+    category: "Watches",
+    subcategory: "Smartwatches",
+    price: 24999,
+    originalPrice: 34999,
+    discount: 28,
+    rating: 4.8,
+    reviews: 410,
+    images: [
+          "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Aerospace-grade Grade 5 titanium smartwatch featuring medical-grade ECG tracking, dual-frequency GNSS navigation, and 14 days of battery.",
+    features: [
+          "Grade 5 Aerospace Titanium Unibody & Sapphire Glass",
+          "FDA-Cleared ECG & Bio-Impedance Sensor Array",
+          "Dual-Band Multi-Constellation GPS (L1 + L5 Navigation)",
+          "Up to 14 Days Typical Battery Life (Fast Wireless Charge)"
+    ],
+    specs: {
+          "Display": "1.43'' LTPO AMOLED Always-On (1,000 Nits)",
+          "Battery Life": "14 Days Typical / 36 Hours Full GPS",
+          "Water Rating": "10 ATM / Diving EN13319 Compliant",
+          "Sensors": "ECG, SpO2, Optical HR, Temperature, Barometer"
+    },
+    stock: 26,
+    badge: "Hot Trend",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "PulseFit Official"
+  },
+  {
+    id: 72,
+    name: "Aurelia Celestial Moonphase Diamond-Accented Ladies Timepiece",
+    brand: "ChronoCraft",
+    category: "Watches",
+    subcategory: "Women Horology",
+    price: 32999,
+    originalPrice: 45000,
+    discount: 26,
+    rating: 4.9,
+    reviews: 140,
+    images: [
+          "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Ethereal ladies horology timepiece sporting a natural mother-of-pearl dial with real diamond hour indices and a gilded moonphase calendar.",
+    features: [
+          "Natural Tahitian Mother-of-Pearl Shimmering Dial",
+          "12 Certified Lab-Grown Diamond Hour Markers",
+          "Accurate 29.5-Day Astronomical Moonphase Complication",
+          "Polished Mesh Stainless Steel Bracelet with Quick-Release"
+    ],
+    specs: {
+          "Case Diameter": "34mm Delicate Slim Profile",
+          "Diamonds": "0.12 Carats Total Weight (VVS Clarity)",
+          "Glass": "Anti-Scratch Sapphire Crystal",
+          "Water Resistance": "50 Meters"
+    },
+    stock: 14,
+    badge: "New Arrival",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "ChronoCraft Geneva Atelier"
+  },
+  {
+    id: 73,
+    name: "ChronoCraft Heritage Monopusher Chronograph with Alligator Leather",
+    brand: "ChronoCraft",
+    category: "Watches",
+    subcategory: "Chronograph",
+    price: 49999,
+    originalPrice: 65000,
+    discount: 23,
+    rating: 4.9,
+    reviews: 95,
+    images: [
+          "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Vintage 1940s-inspired monopusher column-wheel mechanical chronograph with telemeter dial track and blued steel hands.",
+    features: [
+          "Column-Wheel Monopusher Mechanical Calibre",
+          "Thermally Blued Steel Breguet-Style Hands",
+          "Dual Vintage Subdials for 30-Minute Counter & Seconds",
+          "Exhibition Sapphire Caseback Revealing Engraved Rotor"
+    ],
+    specs: {
+          "Case": "39mm Vintage Proportions 316L",
+          "Movement": "Column-Wheel Chronograph 28,800 bph",
+          "Strap": "Cognac Brown French Calfskin Leather",
+          "Power Reserve": "48 Hours"
+    },
+    stock: 8,
+    badge: "Limited Stock",
+    delivery: "Free Insured Express Delivery in 2 Days",
+    seller: "ChronoCraft Geneva Atelier"
+  },
+  {
+    id: 74,
+    name: "PulseFit Heritage Ceramic Edition GPS Wellness Smartwatch",
+    brand: "PulseFit",
+    category: "Watches",
+    subcategory: "Smartwatches",
+    price: 21999,
+    originalPrice: 29999,
+    discount: 26,
+    rating: 4.8,
+    reviews: 280,
+    images: [
+          "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Ultra-sleek nanotech white ceramic smartwatch body paired with 24/7 cardiovascular monitoring, sleep stages analysis, and Bluetooth calling.",
+    features: [
+          "Polished Nanocrystalline High-Tech White Ceramic Case",
+          "Bluetooth HD Calling with Noise-Filtering Microphones",
+          "100+ Professional Sports Modes & Automatic Rep Counting",
+          "Skin Temperature & Continuous SpO2 Monitoring"
+    ],
+    specs: {
+          "Display": "1.32'' AMOLED 466x466 (352 PPI)",
+          "Battery": "7 Days Continuous Tracking",
+          "Case": "White Zirconia Ceramic + Titanium Bezel",
+          "Compatibility": "iOS & Android Companion Apps"
+    },
+    stock: 21,
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "PulseFit Official"
+  },
+  {
+    id: 75,
+    name: "LuxeBags Handcrafted Tuscan Leather Weekender Duffle Bag",
+    brand: "LuxeBags",
+    category: "Bags",
+    subcategory: "Travel Luggage",
+    price: 19999,
+    originalPrice: 28999,
+    discount: 31,
+    rating: 4.9,
+    reviews: 320,
+    images: [
+          "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Timeless 45-liter carry-on weekender travel duffle handcrafted in Santa Croce from vegetable-tanned full-grain vacchetta leather.",
+    features: [
+          "100% Certified Full-Grain Tuscan Vacchetta Leather",
+          "Solid Antiqued Brass Hardware & Rivet Reinforcements",
+          "Dedicated Zippered Shoe Compartment with Waterproof Lining",
+          "Includes Detachable Padded Shoulder Strap & Luggage Tag"
+    ],
+    specs: {
+          "Capacity": "45 Liters (Cabin Approved)",
+          "Dimensions": "52 x 28 x 26 cm",
+          "Weight": "1.95 KG",
+          "Origin": "Tuscany, Italy"
+    },
+    stock: 17,
+    badge: "Exclusive",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "LuxeBags Italia"
+  },
+  {
+    id: 76,
+    name: "Veloura Signature Monogram Saffiano Leather Tote Bag",
+    brand: "Veloura",
+    category: "Bags",
+    subcategory: "Tote Bags",
+    price: 14999,
+    originalPrice: 21999,
+    discount: 31,
+    rating: 4.8,
+    reviews: 410,
+    images: [
+          "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Structured daily luxury work tote meticulously constructed from scratch-resistant cross-grain Saffiano leather with 14-inch laptop sleeve.",
+    features: [
+          "Scratch & Water Resistant Italian Saffiano Leather",
+          "Padded Central Sleeve Accommodating 14-inch Laptops",
+          "Gold-Tone Protective Metal Base Studs",
+          "Dual Reinforced Handles with 10-inch Drop Length"
+    ],
+    specs: {
+          "Dimensions": "38 x 28 x 14 cm",
+          "Weight": "920g",
+          "Hardware": "14K Pale Gold Plated Metal",
+          "Color": "Classic Noir Black & Gilded Monogram"
+    },
+    stock: 24,
+    badge: "Best Seller",
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Veloura Luxury Studio"
+  },
+  {
+    id: 77,
+    name: "Velour 24K Gold-Plated Polarized Aviator Sunglasses",
+    brand: "Accessories",
+    category: "Accessories",
+    subcategory: "Eyewear",
+    price: 8999,
+    originalPrice: 13999,
+    discount: 35,
+    rating: 4.8,
+    reviews: 290,
+    images: [
+          "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Iconic teardrop aviators sculpted from surgical-grade titanium dipped in 24K yellow gold with distortion-free polarized crystal lenses.",
+    features: [
+          "24K Gold Ion-Plated Lightweight Beta-Titanium Frame",
+          "Category 3 Polarized Glass Lenses with 100% UV400 Protection",
+          "Hypoallergenic Medical-Grade Titanium Nosepads",
+          "Includes Handcrafted Hard Leather Carrying Case"
+    ],
+    specs: {
+          "Frame Material": "Beta-Titanium 24K Gold Plated",
+          "Lens": "G-15 Polarized Mineral Glass",
+          "Lens Width": "58mm Standard",
+          "Weight": "Only 24 Grams"
+    },
+    stock: 30,
+    badge: "Hot Trend",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Velour Eyewear Atelier"
+  },
+  {
+    id: 78,
+    name: "Royal Heritage Sterling Silver 925 Handcrafted Cufflinks Set",
+    brand: "Accessories",
+    category: "Accessories",
+    subcategory: "Jewellery & Cufflinks",
+    price: 6499,
+    originalPrice: 9499,
+    discount: 31,
+    rating: 4.9,
+    reviews: 160,
+    images: [
+          "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Artisan pair of solid 925 hallmarked sterling silver cufflinks set with deep black onyx stone and accompanied by a matching tie bar.",
+    features: [
+          "Certified 925 Hallmarked Solid Sterling Silver",
+          "Hand-Cut Natural Black Onyx Gemstone Inlay",
+          "Swivel T-Bar Closure Mechanism with Polished Finish",
+          "Includes Premium Velvet Lined Presentation Gift Box"
+    ],
+    specs: {
+          "Metal": "Solid 925 Sterling Silver (14g)",
+          "Stone": "Natural Black Onyx",
+          "Hallmark": "Govt BIS Hallmarked 925",
+          "Includes": "Pair of Cufflinks + Matching Tie Clip"
+    },
+    stock: 33,
+    badge: "New Arrival",
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Royal Heritage Silversmiths"
+  },
+  {
+    id: 79,
+    name: "LuxeBags Slim Bifold Carbon Fiber & Full-Grain Leather Wallet",
+    brand: "Accessories",
+    category: "Accessories",
+    subcategory: "Wallets",
+    price: 3499,
+    originalPrice: 5999,
+    discount: 41,
+    rating: 4.7,
+    reviews: 510,
+    images: [
+          "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Ultra-thin minimalist bifold wallet engineered with genuine 3K twill carbon fiber weave and Italian full-grain vegetable-tanned leather.",
+    features: [
+          "Genuine Aerospace 3K Carbon Fiber Outer Shell",
+          "Full-Grain Italian Calfskin Leather Interior Lining",
+          "Certified RFID-Blocking Shielding across All Slots",
+          "Capacity for 8 Cards, Currency Notes & Hidden Pocket"
+    ],
+    specs: {
+          "Dimensions": "11 x 8.5 x 0.8 cm (Ultra-Slim)",
+          "Weight": "48g",
+          "RFID Shield": "Blocks 13.56 MHz Signals",
+          "Color": "Matte Carbon & Bordeaux Burgundy"
+    },
+    stock: 50,
+    badge: "Deal of the Day",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "LuxeBags Italia"
+  },
+  {
+    id: 80,
+    name: "Veloura Reversible Monogram Leather Dress Belt with Gold Buckle",
+    brand: "Accessories",
+    category: "Accessories",
+    subcategory: "Belts",
+    price: 4999,
+    originalPrice: 7499,
+    discount: 33,
+    rating: 4.8,
+    reviews: 380,
+    images: [
+          "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Versatile 35mm reversible luxury belt offering sleek midnight black leather on one side and rich cognac brown on the reverse with a rotatable buckle.",
+    features: [
+          "100% Full-Grain Vegetable-Tanned Italian Leather",
+          "Quick-Twist Reversible Mechanism (Black & Cognac Brown)",
+          "Polished 18K Gold PVD-Coated Brass Buckle",
+          "Hand-Burnished Waxed Edges for Long-Term Durability"
+    ],
+    specs: {
+          "Width": "35mm (Standard Trouser/Suit Width)",
+          "Material": "Double-Sided Full Grain Leather",
+          "Buckle": "Solid Brass Rotatable Pin Buckle",
+          "Sizes Available": "30 to 42 Inches Waist"
+    },
+    stock: 42,
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Veloura Luxury Studio"
+  },
+  {
+    id: 81,
+    name: "Botanica 24K Pure Gold Radiance Elixir Infused Night Serum (30ml)",
+    brand: "Beauty",
+    category: "Beauty",
+    subcategory: "Skincare",
+    price: 4499,
+    originalPrice: 6999,
+    discount: 35,
+    rating: 4.9,
+    reviews: 480,
+    images: [
+          "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Ayurvedic rejuvenating anti-aging face elixir micro-infused with real 24-karat gold flakes, Kashmiri Mogra saffron, and cold-pressed Kumkumadi.",
+    features: [
+          "Infused with 99.9% Pure 24K Cosmetic Gold Flakes",
+          "Rich in Kashmiri Saffron (Crocus Sativus) & Sandalwood",
+          "Clinically Proven to Improve Skin Elasticity & Glow in 14 Days",
+          "100% Clean, Paraben-Free, Mineral Oil-Free & Cruelty-Free"
+    ],
+    specs: {
+          "Volume": "30ml Glass Dropper Bottle",
+          "Skin Type": "Suitable for All Skin Types",
+          "Key Ingredients": "24K Gold, Kumkumadi Tailam, Saffron, Lotus",
+          "Made in": "Udaipur, India"
+    },
+    stock: 36,
+    badge: "Best Seller",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Botanica Herbals Official"
+  },
+  {
+    id: 82,
+    name: "Velour Royal Ambergris Imperial Extrait de Parfum (100ml)",
+    brand: "Beauty",
+    category: "Beauty",
+    subcategory: "Fragrance",
+    price: 12999,
+    originalPrice: 18999,
+    discount: 31,
+    rating: 5,
+    reviews: 210,
+    images: [
+          "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "High-concentration 35% Extrait de Parfum blending rare vintage ambergris, smoky Cambodian oud, Bulgarian rose petals, and Tahitian vanilla.",
+    features: [
+          "35% Pure Perfume Oil Extrait Concentration",
+          "Sillage Lasting 16+ Hours on Skin & Fabrics",
+          "Presented in Heavy Cut-Crystal Flacon with Magnetic Cap",
+          "Artisanal Small-Batch Matured for 6 Months"
+    ],
+    specs: {
+          "Size": "100ml / 3.4 fl. oz.",
+          "Fragrance Family": "Oriental Amber Woody",
+          "Top Notes": "Bergamot, Cardamom, Pink Pepper",
+          "Heart Notes": "Bulgarian Rose, Ambergris, Incense",
+          "Base Notes": "Cambodian Oud, Sandalwood, Bourbon Vanilla"
+    },
+    stock: 15,
+    badge: "Exclusive",
+    delivery: "Free Insured Delivery by Tomorrow",
+    seller: "Velour Parfums Paris"
+  },
+  {
+    id: 83,
+    name: "Botanica Kumkumadi Miracle Youth Restorative Night Cream",
+    brand: "Beauty",
+    category: "Beauty",
+    subcategory: "Skincare",
+    price: 3299,
+    originalPrice: 4999,
+    discount: 34,
+    rating: 4.8,
+    reviews: 360,
+    images: [
+          "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Decadent overnight recovery cream concocted with 26 Ayurvedic herbs, clarified cow's ghee, and vetiver to deeply nourish and fade hyperpigmentation.",
+    features: [
+          "Formulated with Authentic 26-Herb Kumkumadi Tailam",
+          "Clarified A2 Desi Cow's Ghee Base for Deep Dermal Absorption",
+          "Targets Fine Lines, Dark Circles, and Uneven Tone",
+          "Non-Comedogenic & Dermatologically Tested"
+    ],
+    specs: {
+          "Net Weight": "50g Amber Glass Jar",
+          "Application": "Nighttime Face & Neck",
+          "Free From": "Silicones, Sulfates, Artificial Fragrance"
+    },
+    stock: 42,
+    badge: "Hot Trend",
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Botanica Herbals Official"
+  },
+  {
+    id: 84,
+    name: "Botanica Kashmiri Rose Water & Saffron Hydrating Facial Mist",
+    brand: "Beauty",
+    category: "Beauty",
+    subcategory: "Skincare",
+    price: 1499,
+    originalPrice: 2299,
+    discount: 34,
+    rating: 4.8,
+    reviews: 580,
+    images: [
+          "https://images.unsplash.com/photo-1608248597359-52d3a3d548f0?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Steam-distilled pure organic Damask rose water infused with active saffron extracts to instantly tone, hydrate, and tighten open pores.",
+    features: [
+          "100% Pure Steam-Distilled Rosa Damascena Water",
+          "Infused with Pure Saffron Stigmas (Antioxidant Rich)",
+          "Balances Natural pH and Calms Stressed Skin",
+          "Ultra-Fine Continuous Atomizer Spray"
+    ],
+    specs: {
+          "Net Volume": "200ml Recyclable Aluminum Bottle",
+          "Use": "Face Toner, Makeup Setting Spray, Refreshing Mist",
+          "Certification": "USDA Organic Certified"
+    },
+    stock: 65,
+    delivery: "Free Delivery by Tomorrow",
+    seller: "Botanica Herbals Official"
+  },
+  {
+    id: 85,
+    name: "Velour Imperial Mysore Sandalwood Pure Attar Oil (12ml)",
+    brand: "Beauty",
+    category: "Beauty",
+    subcategory: "Fragrance",
+    price: 6999,
+    originalPrice: 9999,
+    discount: 30,
+    rating: 4.9,
+    reviews: 190,
+    images: [
+          "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Govt-certified mature Mysore Santalum Album sandalwood concentrated perfume oil hydro-distilled in traditional copper degs without any alcohol.",
+    features: [
+          "100% Pure Hydro-Distilled Mysore Sandalwood Oil",
+          "Zero Alcohol, Zero Solvents & 100% Concentrated Pure Attar",
+          "Deep Creamy Woody Warmth with Divine Calming Resonance",
+          "Packaged in Gilded Crystal Ittar Bottle with Glass Dipstick"
+    ],
+    specs: {
+          "Volume": "12ml (Approx 1 Tola)",
+          "Grade": "Santalum Album First Quality",
+          "Shelf Life": "Matures and Enriches with Age"
+    },
+    stock: 20,
+    badge: "Exclusive",
+    delivery: "Free Insured Delivery in 2 Days",
+    seller: "Velour Parfums Paris"
+  },
+  {
+    id: 86,
+    name: "UrbanNest Hand-Knotted Kashmiri Pure Silk Area Rug (6x9 Ft)",
+    brand: "Home",
+    category: "Home",
+    subcategory: "Carpets & Rugs",
+    price: 74999,
+    originalPrice: 110000,
+    discount: 31,
+    rating: 5,
+    reviews: 65,
+    images: [
+          "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Exquisite hand-knotted Kashmiri carpet woven from 100% mulberry silk on cotton foundation boasting 400 knots per square inch in Persian medallion motif.",
+    features: [
+          "100% Pure Mulberry Silk Pile (High Knot Density 400 KPSI)",
+          "Intricate Traditional Kashan Medallion & Floral Filigree",
+          "Natural Vegetable Dyes with Luminescent Color Shift Under Light",
+          "Govt Handicrafts Board Certified Authenticity"
+    ],
+    specs: {
+          "Dimensions": "6 x 9 Feet (183 x 274 cm)",
+          "Density": "400 Knots Per Square Inch",
+          "Pile Material": "100% Pure Natural Silk",
+          "Weaving Time": "Approx. 14 Months by Master Weavers"
+    },
+    stock: 4,
+    badge: "Exclusive",
+    delivery: "Free White-Glove Insured Delivery in 3 Days",
+    seller: "UrbanNest Fine Interiors"
+  },
+  {
+    id: 87,
+    name: "ArtisanChef Hand-Hammered Pure Tri-Ply Copper Cookware Set (7 Pcs)",
+    brand: "Kitchen",
+    category: "Kitchen",
+    subcategory: "Cookware",
+    price: 24999,
+    originalPrice: 34999,
+    discount: 28,
+    rating: 4.9,
+    reviews: 140,
+    images: [
+          "https://images.unsplash.com/photo-1584990347449-399066667554?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Culinary chef-grade 7-piece cookware set made of heavy 2.5mm solid hammered copper with an indestructible 18/10 stainless steel cooking interior.",
+    features: [
+          "Heavy 2.5mm Gauge Tri-Ply (Copper Exterior + Aluminum + 18/10 Steel)",
+          "Superior Thermal Conductivity Eliminating Hot Spots",
+          "Ergonomic Cast-Stainless Riveted Cool-Touch Handles",
+          "Includes 24cm Saute Pan, 20cm Saucepan, 28cm Kadai & 3 Lids"
+    ],
+    specs: {
+          "Set Includes": "Kadai (3.5L), Saucepan (2L), Frying Pan (24cm) + 3 Stainless Lids + Copper Polish",
+          "Compatibility": "Gas, Radiant, Ceramic & Oven Safe up to 260°C",
+          "Exterior": "Hand-Hammered Mirror Polished Copper"
+    },
+    stock: 12,
+    badge: "Best Seller",
+    delivery: "Free Express Delivery in 2 Days",
+    seller: "ArtisanChef Culinary"
+  },
+  {
+    id: 88,
+    name: "UrbanNest Solid Reclaimed Teak Mid-Century Modern Credenza Sideboard",
+    brand: "Home",
+    category: "Home",
+    subcategory: "Furniture",
+    price: 48999,
+    originalPrice: 65000,
+    discount: 24,
+    rating: 4.9,
+    reviews: 90,
+    images: [
+          "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Artisan-crafted 60-inch media credenza constructed from 100% solid seasoned teak wood with sliding slatted tambour doors and brass accents.",
+    features: [
+          "100% Solid Kiln-Dried Reclaimed Teakwood Construction",
+          "Smooth Acoustic Slatted Tambour Sliding Doors",
+          "Internal Cable Management Ports & Adjustable Shelving",
+          "Natural Matte Polyurethane Protective Hardwax Finish"
+    ],
+    specs: {
+          "Dimensions": "152 cm (W) x 46 cm (D) x 76 cm (H)",
+          "Weight": "46 KG Solid Wood",
+          "Assembly": "Fully Assembled (No Assembly Required)",
+          "Warranty": "5 Years Structural Teak Warranty"
+    },
+    stock: 7,
+    badge: "Limited Stock",
+    delivery: "Free White-Glove Installation in 3 Days",
+    seller: "UrbanNest Fine Interiors"
+  },
+  {
+    id: 89,
+    name: "Solace Royal Mulberry Silk 22-Momme Luxury Duvet & Pillowcase Set",
+    brand: "Home",
+    category: "Home",
+    subcategory: "Luxury Bedding",
+    price: 18999,
+    originalPrice: 26999,
+    discount: 29,
+    rating: 4.8,
+    reviews: 215,
+    images: [
+          "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Ultra-luxurious King bedding ensemble woven from Grade-6A pure 22-Momme mulberry silk designed to protect skin hydration and hair frizz.",
+    features: [
+          "100% Pure Grade-6A Long-Fiber Mulberry Silk (22 Momme)",
+          "Naturally Hypoallergenic, Breathable and Temperature-Regulating",
+          "Hidden Zipper Closure & 8 Interior Corner Duvet Ties",
+          "Includes King Duvet Cover (90x108 in) & 2 Oxford Pillowcases"
+    ],
+    specs: {
+          "Dimensions": "Duvet: 228 x 274 cm | Pillows: 50 x 75 cm",
+          "Silk Quality": "OEKO-TEX Standard 100 Certified Grade 6A",
+          "Color": "Champagne Pearl Ivory"
+    },
+    stock: 18,
+    badge: "Hot Trend",
+    delivery: "Free Express Delivery by Tomorrow",
+    seller: "Solace Bedding Studio"
+  },
+  {
+    id: 90,
+    name: "ArtisanChef Barista Touch Dual Boiler Commercial Grade Espresso Machine",
+    brand: "Kitchen",
+    category: "Kitchen",
+    subcategory: "Coffee Machines",
+    price: 79999,
+    originalPrice: 105000,
+    discount: 23,
+    rating: 5,
+    reviews: 145,
+    images: [
+          "https://images.unsplash.com/photo-1517668808822-9ebd02f2a8ea?w=800&auto=format&fit=crop&q=80"
+    ],
+    description: "Dual stainless steel boiler commercial home espresso machine featuring digital PID temperature control, Italian 15-bar pump, and rotary steam wand.",
+    features: [
+          "Dedicated Dual Stainless Boilers (Simultaneous Brewing & Steaming)",
+          "Digital PID Temperature Stability within ±0.5°C",
+          "Commercial 58mm Portafilter with Precision Baskets",
+          "Cool-Touch Multi-Directional High-Pressure Microfoam Steam Wand"
+    ],
+    specs: {
+          "Pump": "Commercial Rotary 15-Bar Pump",
+          "Water Tank": "2.8 Liters Removable with Water Level Sensor",
+          "Body": "Brushed Heavy-Gauge 304 Stainless Steel",
+          "Power": "2200W Rapid Heating"
+    },
+    stock: 10,
+    badge: "Exclusive",
+    delivery: "Free Express Insured Courier in 2 Days",
+    seller: "ArtisanChef Culinary"
   }
 ];

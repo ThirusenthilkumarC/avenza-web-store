@@ -42,7 +42,7 @@ export const ReturnsPage: React.FC = () => {
 
           <div>
             <h4 className="font-bold text-stone-900 text-sm mb-1">How to Initiate a Return</h4>
-            <p>1. Go to <strong>My Orders</strong> page in your Avenza Account.</p>
+            <p>1. Go to <Link to="/orders" className="text-amber-800 font-bold hover:underline">My Orders</Link> page in your Avenza Account.</p>
             <p>2. Select the order item and click <strong>Request Return / Exchange</strong>.</p>
             <p>3. Our courier agent will complete a doorstep quality check and collect the item within 24–48 hours.</p>
           </div>
