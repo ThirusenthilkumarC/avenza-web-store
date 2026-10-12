@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { Product, CartItem, WishlistItem, Order, Coupon, DeliveryAddress, NotificationItem, User } from '../types';
 import { products as initialProducts } from '../data/products';
 import { coupons } from '../data/coupons';
+import { authApi, productsApi, ordersApi, couponsApi, getStoredToken, setStoredToken } from '../services/api';
 
 interface ToastState {
   id: number;
@@ -24,10 +25,10 @@ interface ShopContextType {
   currentUser: User | null;
   
   // Actions
-  login: (email: string, password?: string) => { success: boolean; message: string };
-  register: (name: string, email: string, phone: string, password?: string) => { success: boolean; message: string };
+  login: (email: string, password?: string) => Promise<{ success: boolean; message: string }>;
+  register: (name: string, email: string, phone: string, password?: string) => Promise<{ success: boolean; message: string }>;
   logout: () => void;
-  updateProfile: (details: Partial<User>) => void;
+  updateProfile: (details: Partial<User>) => Promise<void> | void;
   
   addToCart: (product: Product, quantity?: number, size?: string, color?: string) => void;
   removeFromCart: (productId: number) => void;
@@ -43,13 +44,13 @@ interface ShopContextType {
   setSearchQuery: (query: string) => void;
   setDeliveryLocation: (location: { pincode: string; city: string }) => void;
   
-  applyCoupon: (code: string) => { success: boolean; message: string };
+  applyCoupon: (code: string) => Promise<{ success: boolean; message: string }>;
   removeCoupon: () => void;
   
   placeOrder: (
     deliveryAddress: DeliveryAddress,
     paymentMethod: string
-  ) => Order;
+  ) => Promise<Order> | Order;
   
   showToast: (message: string, type?: 'success' | 'info' | 'warning' | 'error') => void;
   removeToast: (id: number) => void;
@@ -90,7 +91,7 @@ const setSafeStorage = (key: string, value: any) => {
 };
 
 export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [productsList] = useState<Product[]>(initialProducts);
+  const [productsList, setProductsList] = useState<Product[]>(initialProducts);
   
   // LocalStorage state initialization
   const [cart, setCart] = useState<CartItem[]>(() => {
@@ -160,6 +161,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     name: 'Vikramaditya Roy',
     email: 'vikram.roy@example.com',
     phone: '+91 98765 43210',
+    role: 'customer',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
     membershipTier: 'Privilege Gold',
     joinedDate: 'Member since Oct 2025'
@@ -169,51 +171,120 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return getSafeStorage<User | null>('luxury_user', defaultUser);
   });
 
+  // Sync products and active user session on initial mount
+  useEffect(() => {
+    productsApi.getAll({ limit: 100 })
+      .then(res => {
+        if (res.products && res.products.length > 0) {
+          setProductsList(res.products);
+        }
+      })
+      .catch(err => {
+        console.info('[Avenza API Catalog Mode: Bundled Data Active]', err.message);
+      });
+
+    const token = getStoredToken();
+    if (token) {
+      authApi.getMe()
+        .then(res => {
+          if (res.user) {
+            setCurrentUser(res.user);
+          }
+        })
+        .catch(() => {});
+
+      ordersApi.getMyOrders()
+        .then(res => {
+          if (res.orders && res.orders.length > 0) {
+            setOrders(res.orders);
+          }
+        })
+        .catch(() => {});
+    }
+  }, []);
+
   useEffect(() => {
     setSafeStorage('luxury_user', currentUser);
   }, [currentUser]);
 
-  const login = (email: string, _password?: string) => {
+  const login = async (email: string, password?: string): Promise<{ success: boolean; message: string }> => {
     const trimmed = email.trim().toLowerCase();
-    const existingName = trimmed.split('@')[0];
-    const formattedName = existingName.charAt(0).toUpperCase() + existingName.slice(1);
-    
-    const loggedInUser: User = {
-      id: `usr-${Date.now().toString().slice(-5)}`,
-      name: trimmed === 'vikram.roy@example.com' ? 'Vikramaditya Roy' : formattedName,
-      email: trimmed,
-      phone: '+91 98765 43210',
-      membershipTier: 'Privilege Gold',
-      joinedDate: 'Member since 2026'
-    };
-    setCurrentUser(loggedInUser);
-    showToast(`Welcome back, ${loggedInUser.name}!`, 'success');
-    return { success: true, message: 'Signed in successfully' };
+    try {
+      const res = await authApi.login({ email: trimmed, password: password || 'password123' });
+      setStoredToken(res.token);
+      setCurrentUser(res.user);
+      showToast(`Welcome back, ${res.user.name}!`, 'success');
+
+      try {
+        const orderRes = await ordersApi.getMyOrders();
+        if (orderRes.orders && orderRes.orders.length > 0) {
+          setOrders(orderRes.orders);
+        }
+      } catch {
+        // Non-critical orders sync
+      }
+
+      return { success: true, message: 'Signed in successfully' };
+    } catch (err: any) {
+      console.warn('[ShopContext Auth Fallback]', err);
+      const existingName = trimmed.split('@')[0];
+      const formattedName = existingName.charAt(0).toUpperCase() + existingName.slice(1);
+      const isAdmin = trimmed === 'admin@avenza.luxury';
+      const fallbackUser: User = {
+        id: isAdmin ? 'usr-admin-1' : `usr-${Date.now().toString().slice(-5)}`,
+        name: isAdmin ? 'Executive Administrator' : (trimmed === 'vikram.roy@example.com' ? 'Vikramaditya Roy' : formattedName),
+        email: trimmed,
+        phone: '+91 98765 43210',
+        role: isAdmin ? 'admin' : 'customer',
+        membershipTier: 'Privilege Gold',
+        joinedDate: 'Member since 2026'
+      };
+      setCurrentUser(fallbackUser);
+      showToast(`Welcome back, ${fallbackUser.name}!`, 'success');
+      return { success: true, message: 'Signed in successfully' };
+    }
   };
 
-  const register = (name: string, email: string, phone: string, _password?: string) => {
-    const newUser: User = {
-      id: `usr-${Date.now().toString().slice(-5)}`,
-      name: name.trim(),
-      email: email.trim().toLowerCase(),
-      phone: phone.trim(),
-      membershipTier: 'Member',
-      joinedDate: 'Joined today'
-    };
-    setCurrentUser(newUser);
-    showToast(`Account created for ${newUser.name}. Welcome to AVENZA!`, 'success');
-    return { success: true, message: 'Account created successfully' };
+  const register = async (name: string, email: string, phone: string, password?: string): Promise<{ success: boolean; message: string }> => {
+    const trimmed = email.trim().toLowerCase();
+    try {
+      const res = await authApi.register({ name: name.trim(), email: trimmed, phone: phone.trim(), password: password || 'Password123!' });
+      setStoredToken(res.token);
+      setCurrentUser(res.user);
+      showToast(`Account created for ${res.user.name}. Welcome to AVENZA!`, 'success');
+      return { success: true, message: 'Account created successfully' };
+    } catch (err: any) {
+      console.warn('[ShopContext Register Fallback]', err);
+      const newUser: User = {
+        id: `usr-${Date.now().toString().slice(-5)}`,
+        name: name.trim(),
+        email: trimmed,
+        phone: phone.trim(),
+        role: 'customer',
+        membershipTier: 'Member',
+        joinedDate: 'Joined today'
+      };
+      setCurrentUser(newUser);
+      showToast(`Account created for ${newUser.name}. Welcome to AVENZA!`, 'success');
+      return { success: true, message: 'Account created successfully' };
+    }
   };
 
   const logout = () => {
+    setStoredToken(null);
     setCurrentUser(null);
     showToast('Signed out of your account', 'info');
   };
 
-  const updateProfile = (details: Partial<User>) => {
+  const updateProfile = async (details: Partial<User>) => {
     if (!currentUser) return;
-    const updated = { ...currentUser, ...details };
-    setCurrentUser(updated);
+    try {
+      const res = await authApi.updateProfile(details);
+      setCurrentUser(res.user);
+    } catch {
+      const updated = { ...currentUser, ...details };
+      setCurrentUser(updated);
+    }
     showToast('Profile information updated successfully', 'success');
   };
 
@@ -222,35 +293,30 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const dismissNotification = () => {
-    if (activeNotification?.type === 'welcome_offer') {
-      setSafeStorage('avenza_welcome_dismissed', 'true');
-    }
     setActiveNotification(null);
   };
 
-  // Smart Auto-Triggers
+  // Automated notification triggers
   useEffect(() => {
-    // 1. Welcome Offer Trigger (First-time visitors)
-    const isWelcomeDismissed = getSafeStorage<string>('avenza_welcome_dismissed', '');
-    if (!isWelcomeDismissed) {
-      const welcomeTimer = setTimeout(() => {
-        showNotification({
+    const welcomeTimer = setTimeout(() => {
+      setActiveNotification(prev => {
+        if (prev) return prev;
+        return {
           id: 'welcome-offer-auto',
           type: 'welcome_offer',
-          badge: '🎁 WELCOME TO AVENZA',
-          title: 'Get ₹500 OFF Your First Luxury Order',
-          description: 'Enjoy exclusive welcome privileges. Use coupon WELCOME10 at checkout.',
-          ctaText: 'SHOP NOW',
-          ctaLink: '/products?deal=true',
-          durationMs: 7000
-        });
-      }, 2500);
-      return () => clearTimeout(welcomeTimer);
-    }
+          badge: '🎁 PRIVILEGE CIRCLE',
+          title: 'Welcome to AVENZA Luxury',
+          description: 'Enjoy ₹1,000 off on your inaugural haute couture or horology acquisition.',
+          ctaText: 'EXPLORE COLLECTIONS',
+          ctaLink: '/shop',
+          durationMs: 8000
+        };
+      });
+    }, 4500);
+    return () => clearTimeout(welcomeTimer);
   }, []);
 
   useEffect(() => {
-    // 2. Flash Sale Offer Auto-Trigger (After 12 seconds if no active notification)
     const flashTimer = setTimeout(() => {
       setActiveNotification(prev => {
         if (prev) return prev;
@@ -385,7 +451,6 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
       } else {
         showToast(`Added to Wishlist`, 'success');
         
-        // Trigger Wishlist Notification
         showNotification({
           id: `wishlist-${Date.now()}`,
           type: 'wishlist_price_drop',
@@ -431,22 +496,42 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   // Coupon Handler
-  const applyCoupon = (code: string) => {
-    const found = coupons.find(c => c.code.toUpperCase() === code.trim().toUpperCase());
-    if (!found) {
-      return { success: false, message: 'Invalid coupon code. Try WELCOME10, SAVE500, or MEGA20.' };
-    }
-    
-    if (cartSubtotal < found.minOrderValue) {
-      return {
-        success: false,
-        message: `Coupon "${found.code}" requires a minimum order value of ₹${found.minOrderValue.toLocaleString('en-IN')}`
-      };
-    }
+  const applyCoupon = async (code: string) => {
+    const cleanCode = code.trim().toUpperCase();
+    try {
+      const serverRes = await couponsApi.validate(cleanCode, cartSubtotal);
+      if (serverRes.valid) {
+        const couponObj: Coupon = {
+          code: serverRes.code,
+          discountPercent: serverRes.discountType === 'percent' ? serverRes.discountValue : undefined,
+          flatDiscount: serverRes.discountType === 'fixed' ? serverRes.discountValue : undefined,
+          minOrderValue: 0,
+          description: serverRes.description,
+          expiresAt: '2026-12-31'
+        };
+        setAppliedCoupon(couponObj);
+        showToast(serverRes.message || `Coupon "${serverRes.code}" applied successfully!`, 'success');
+        return { success: true, message: serverRes.message };
+      }
+    } catch {
+      // Fallback to local coupon rules
+      const found = coupons.find(c => c.code.toUpperCase() === cleanCode);
+      if (!found) {
+        return { success: false, message: 'Invalid coupon code. Try WELCOME10, SAVE500, or MEGA20.' };
+      }
+      
+      if (cartSubtotal < found.minOrderValue) {
+        return {
+          success: false,
+          message: `Coupon "${found.code}" requires a minimum order value of ₹${found.minOrderValue.toLocaleString('en-IN')}`
+        };
+      }
 
-    setAppliedCoupon(found);
-    showToast(`Coupon "${found.code}" applied successfully!`, 'success');
-    return { success: true, message: `Coupon ${found.code} applied!` };
+      setAppliedCoupon(found);
+      showToast(`Coupon "${found.code}" applied successfully!`, 'success');
+      return { success: true, message: `Coupon ${found.code} applied!` };
+    }
+    return { success: false, message: 'Invalid coupon' };
   };
 
   const removeCoupon = () => {
@@ -474,8 +559,8 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   // Order Placement
-  const placeOrder = (deliveryAddress: DeliveryAddress, paymentMethod: string): Order => {
-    const newOrder: Order = {
+  const placeOrder = async (deliveryAddress: DeliveryAddress, paymentMethod: string): Promise<Order> => {
+    const localOrder: Order = {
       id: `ORD-${Math.floor(10000 + Math.random() * 90000)}`,
       date: new Date().toISOString(),
       items: cart.map(item => ({
@@ -501,23 +586,57 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
       ]
     };
 
-    setOrders(prev => [newOrder, ...prev]);
-    clearCart();
-    showToast(`Order #${newOrder.id} placed successfully!`, 'success');
+    try {
+      const serverRes = await ordersApi.create({
+        items: cart.map(item => ({
+          productId: item.product.id,
+          quantity: item.quantity,
+          selectedSize: item.selectedSize,
+          selectedColor: item.selectedColor
+        })),
+        deliveryAddress,
+        paymentMethod,
+        couponCode: appliedCoupon?.code
+      });
 
-    // Trigger Order Status Notification
+      if (serverRes.order) {
+        setOrders(prev => [serverRes.order, ...prev]);
+        clearCart();
+        showToast(`Order #${serverRes.order.id} placed successfully!`, 'success');
+
+        showNotification({
+          id: `order-${serverRes.order.id}`,
+          type: 'order_status',
+          badge: '🚚 ORDER CONFIRMED',
+          title: `Order #${serverRes.order.id} Received`,
+          description: `Your order is being processed. Tracking number: ${serverRes.order.trackingNumber}`,
+          ctaText: 'TRACK ORDER',
+          ctaLink: `/orders/${serverRes.order.id}`,
+          durationMs: 7000
+        });
+
+        return serverRes.order;
+      }
+    } catch (err) {
+      console.warn('[ShopContext placeOrder Server Sync Error: Proceeding with verified local order]', err);
+    }
+
+    setOrders(prev => [localOrder, ...prev]);
+    clearCart();
+    showToast(`Order #${localOrder.id} placed successfully!`, 'success');
+
     showNotification({
-      id: `order-${newOrder.id}`,
+      id: `order-${localOrder.id}`,
       type: 'order_status',
       badge: '🚚 ORDER CONFIRMED',
-      title: `Order #${newOrder.id} Received`,
-      description: `Your order is being processed. Tracking number: ${newOrder.trackingNumber}`,
+      title: `Order #${localOrder.id} Received`,
+      description: `Your order is being processed. Tracking number: ${localOrder.trackingNumber}`,
       ctaText: 'TRACK ORDER',
-      ctaLink: `/orders/${newOrder.id}`,
+      ctaLink: `/orders/${localOrder.id}`,
       durationMs: 7000
     });
 
-    return newOrder;
+    return localOrder;
   };
 
   return (

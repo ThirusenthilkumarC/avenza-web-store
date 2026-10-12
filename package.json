@@ -1,0 +1,29 @@
+{
+  "name": "avenza-luxury-marketplace",
+  "version": "1.0.0",
+  "description": "AVENZA Luxury Marketplace — Full-Stack E-Commerce Platform",
+  "private": true,
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:backend": "npm --prefix backend run build",
+    "build:frontend": "npm --prefix frontend run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "test:backend": "npm --prefix backend test",
+    "test": "npm run test:backend",
+    "seed": "npm --prefix backend run seed",
+    "lint:frontend": "npm --prefix frontend run lint",
+    "lint": "npm run lint:frontend"
+  },
+  "keywords": [
+    "ecommerce",
+    "luxury-marketplace",
+    "fullstack",
+    "react",
+    "express",
+    "sqlite",
+    "typescript"
+  ],
+  "author": "AVENZA Luxury Engineering Team",
+  "license": "UNLICENSED"
+}

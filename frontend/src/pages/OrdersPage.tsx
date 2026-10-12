@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
-import { Package, Truck, ChevronRight, Eye } from 'lucide-react';
+import { Package, Truck, ChevronRight, Eye, ExternalLink } from 'lucide-react';
 import type { Order } from '../types';
+import { SEO } from '../components/SEO';
 
 export const OrdersPage: React.FC = () => {
   const { orders } = useShop();
@@ -10,6 +11,10 @@ export const OrdersPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 my-6 text-left">
+      <SEO
+        title="My Orders & Shipments | AVENZA Luxury Marketplace"
+        description="Track live order status, shipment milestones, and manage luxury order receipts and deliveries."
+      />
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-stone-500 mb-4">
         <Link to="/" className="hover:text-stone-900">Home</Link>
@@ -69,10 +74,18 @@ export const OrdersPage: React.FC = () => {
 
                   <button
                     onClick={() => setSelectedOrder(order)}
-                    className="bg-stone-900 hover:bg-stone-800 text-amber-400 font-bold px-3.5 py-1.5 rounded-xl text-xs flex items-center gap-1"
+                    className="bg-stone-900 hover:bg-stone-800 text-amber-400 font-bold px-3 py-1.5 rounded-xl text-xs flex items-center gap-1"
                   >
-                    <Eye className="w-3.5 h-3.5" /> Track Details
+                    <Eye className="w-3.5 h-3.5" /> Quick View
                   </button>
+
+                  <Link
+                    to={`/orders/${order.id}`}
+                    className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-3 py-1.5 rounded-xl text-xs flex items-center gap-1 transition-colors"
+                  >
+                    <span>Full Details</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
 

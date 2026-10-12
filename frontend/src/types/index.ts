@@ -146,6 +146,7 @@ export interface User {
   name: string;
   email: string;
   phone: string;
+  role?: 'customer' | 'admin';
   avatar?: string;
   membershipTier?: 'Privilege Gold' | 'Platinum' | 'Member';
   joinedDate?: string;

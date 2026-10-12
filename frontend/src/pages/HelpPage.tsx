@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, HelpCircle, ChevronDown, Mail, Phone, MessageSquare } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
@@ -58,6 +59,10 @@ export const HelpPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 my-8 text-left space-y-8">
+      <SEO
+        title="Help Center & FAQ Concierge | AVENZA Support"
+        description="Instant assistance for order tracking, insured shipping, 7-day returns, payment options, and authenticity guarantees on AVENZA."
+      />
       {/* Breadcrumbs */}
       <div className="flex items-center gap-2 text-xs text-stone-500">
         <Link to="/" className="hover:text-stone-900">Home</Link>

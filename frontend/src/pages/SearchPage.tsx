@@ -3,6 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from '../components/ProductCard';
 import { Search, Sparkles, ChevronRight } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const SearchPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -26,6 +27,10 @@ export const SearchPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 my-6 text-left">
+      <SEO
+        title={query ? `Search: "${query}" | AVENZA Luxury Marketplace` : 'Search Luxury Catalog | AVENZA'}
+        description={`Explore search results for "${query}" across luxury flagship electronics, fashion, and artisanal heritage goods.`}
+      />
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-stone-500 mb-4">
         <Link to="/" className="hover:text-stone-900">Home</Link>

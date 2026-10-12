@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from '../components/ProductCard';
 import { Heart, ArrowRight, ChevronRight } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const WishlistPage: React.FC = () => {
   const { wishlist } = useShop();
@@ -10,6 +11,10 @@ export const WishlistPage: React.FC = () => {
   if (wishlist.length === 0) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
+        <SEO
+          title="My Wishlist | AVENZA Luxury Marketplace"
+          description="Your personal luxury wishlist. Track price movements, stock updates, and save desired treasures."
+        />
         <div className="w-20 h-20 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center mx-auto mb-4 border border-rose-200">
           <Heart className="w-10 h-10 fill-rose-600" />
         </div>
@@ -30,6 +35,10 @@ export const WishlistPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 my-6 text-left">
+      <SEO
+        title={`My Wishlist (${wishlist.length}) | AVENZA Luxury Marketplace`}
+        description="Your personal luxury wishlist. Track price movements, stock updates, and save desired treasures."
+      />
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-stone-500 mb-4">
         <Link to="/" className="hover:text-stone-900">Home</Link>

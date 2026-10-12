@@ -87,6 +87,15 @@ export const AccountPage: React.FC = () => {
               </div>
             </div>
 
+            {currentUser?.role === 'admin' && (
+              <Link
+                to="/admin"
+                className="flex items-center gap-3 p-3 rounded-xl bg-amber-50 text-amber-950 border border-amber-300 font-bold text-xs hover:bg-amber-100 transition-colors mb-2 shadow-xs"
+              >
+                <ShieldCheck className="w-4 h-4 text-amber-700" /> Executive Admin Console
+              </Link>
+            )}
+
             <Link
               to="/account"
               className="flex items-center gap-3 p-3 rounded-xl bg-amber-100/70 text-amber-950 font-bold text-xs"

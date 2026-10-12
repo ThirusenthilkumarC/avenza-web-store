@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { Trash2, Plus, Minus, Heart, ShoppingBag, ShieldCheck, Tag, ArrowRight, ChevronRight } from 'lucide-react';
 import { coupons } from '../data/coupons';
+import { SEO } from '../components/SEO';
 
 export const CartPage: React.FC = () => {
   const navigate = useNavigate();
@@ -25,12 +26,12 @@ export const CartPage: React.FC = () => {
   const [couponInput, setCouponInput] = useState('');
   const [couponError, setCouponError] = useState('');
 
-  const handleApplyCoupon = (e: React.FormEvent) => {
+  const handleApplyCoupon = async (e: React.FormEvent) => {
     e.preventDefault();
     setCouponError('');
     if (!couponInput.trim()) return;
 
-    const res = applyCoupon(couponInput);
+    const res = await applyCoupon(couponInput);
     if (!res.success) {
       setCouponError(res.message);
     } else {
@@ -41,6 +42,10 @@ export const CartPage: React.FC = () => {
   if (cart.length === 0) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
+        <SEO
+          title="Shopping Cart | AVENZA Luxury Marketplace"
+          description="View items saved to your AVENZA shopping cart with transparent pricing and coupon discounts."
+        />
         <div className="w-20 h-20 rounded-full bg-amber-100 text-amber-900 flex items-center justify-center mx-auto mb-4 border border-amber-200">
           <ShoppingBag className="w-10 h-10 text-amber-700" />
         </div>
@@ -61,6 +66,10 @@ export const CartPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 my-6 text-left">
+      <SEO
+        title={`Shopping Cart (${cart.length}) | AVENZA Luxury Marketplace`}
+        description="Review your luxury selections, apply promotion vouchers, and proceed to secure checkout."
+      />
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-stone-500 mb-4">
         <Link to="/" className="hover:text-stone-900">Home</Link>

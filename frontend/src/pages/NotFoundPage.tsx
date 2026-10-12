@@ -2,10 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SearchBar } from '../components/SearchBar';
 import { Home, ShoppingBag } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const NotFoundPage: React.FC = () => {
   return (
     <div className="max-w-3xl mx-auto px-4 my-16 text-center space-y-8">
+      <SEO
+        title="404 — Avenue Not Found | AVENZA"
+        description="The requested page could not be located on AVENZA. Explore our luxury departments or search our catalog."
+      />
       <div className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200/90 shadow-xl space-y-6">
         <span className="text-6xl sm:text-8xl font-black font-serif-luxury text-amber-900 tracking-widest block">
           404

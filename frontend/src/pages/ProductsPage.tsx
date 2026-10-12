@@ -7,6 +7,7 @@ import type { FilterState } from '../components/FilterSidebar';
 import { SortDropdown } from '../components/SortDropdown';
 import { categories } from '../data/categories';
 import { Grid, List, ChevronRight, SlidersHorizontal, Sparkles } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const ProductsPage: React.FC = () => {
   const { category: urlCategory } = useParams<{ category?: string }>();
@@ -101,6 +102,10 @@ export const ProductsPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 my-6 text-left">
+      <SEO
+        title={`${filters.category === 'All' ? 'All Luxury Marketplace Products' : filters.category} | AVENZA`}
+        description={`Explore certified luxury ${filters.category.toLowerCase()} products with tamper-evident packaging, insured air courier, and authenticity guarantee on AVENZA.`}
+      />
       {/* BREADCRUMBS */}
       <div className="flex items-center gap-2 text-xs text-stone-500 mb-4">
         <Link to="/" className="hover:text-stone-900">Home</Link>

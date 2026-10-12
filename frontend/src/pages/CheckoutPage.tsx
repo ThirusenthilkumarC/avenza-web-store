@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import type { DeliveryAddress, Order } from '../types';
 import { ShieldCheck, CheckCircle2, CreditCard, QrCode, Building2, Truck, ArrowRight, User } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const CheckoutPage: React.FC = () => {
   const {
@@ -12,7 +13,8 @@ export const CheckoutPage: React.FC = () => {
     deliveryCharge,
     cartTotal,
     deliveryLocation,
-    placeOrder
+    placeOrder,
+    currentUser
   } = useShop();
 
   const [step, setStep] = useState<1 | 2 | 3 | 4 | 5>(1);
@@ -20,15 +22,15 @@ export const CheckoutPage: React.FC = () => {
 
   // Form State
   const [userInfo, setUserInfo] = useState({
-    email: 'vikram.roy@example.com',
-    fullName: 'Vikramaditya Roy',
-    phone: '+91 98765 43210'
+    email: currentUser?.email || 'vikram.roy@example.com',
+    fullName: currentUser?.name || 'Vikramaditya Roy',
+    phone: currentUser?.phone || '+91 98765 43210'
   });
 
   const [address, setAddress] = useState<DeliveryAddress>({
     id: 'addr-new',
-    fullName: 'Vikramaditya Roy',
-    phone: '+91 98765 43210',
+    fullName: currentUser?.name || 'Vikramaditya Roy',
+    phone: currentUser?.phone || '+91 98765 43210',
     pincode: deliveryLocation.pincode || '400001',
     street: 'Flat 402, Royal Palms Heights, Marine Drive',
     city: deliveryLocation.city || 'Mumbai',
@@ -36,6 +38,21 @@ export const CheckoutPage: React.FC = () => {
     type: 'Home',
     isDefault: true
   });
+
+  useEffect(() => {
+    if (currentUser) {
+      setUserInfo({
+        email: currentUser.email,
+        fullName: currentUser.name,
+        phone: currentUser.phone || '+91 98765 43210'
+      });
+      setAddress(prev => ({
+        ...prev,
+        fullName: currentUser.name,
+        phone: currentUser.phone || prev.phone
+      }));
+    }
+  }, [currentUser]);
 
   const [paymentMethod, setPaymentMethod] = useState<string>('UPI (Google Pay)');
   const [cardDetails, setCardDetails] = useState({ number: '', expiry: '', cvv: '' });
@@ -53,14 +70,18 @@ export const CheckoutPage: React.FC = () => {
     );
   }
 
-  const handleCompleteOrder = () => {
-    const order = placeOrder(address, paymentMethod);
+  const handleCompleteOrder = async () => {
+    const order = await placeOrder(address, paymentMethod);
     setCreatedOrder(order);
     setStep(5);
   };
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 my-8 text-left">
+      <SEO
+        title="Secure Checkout | AVENZA Luxury Marketplace"
+        description="Encrypted 256-bit luxury checkout. Enjoy white-glove packaging, insured courier dispatch, and multi-mode payment options."
+      />
       {/* STEPS PROGRESS BAR */}
       {step < 5 && (
         <div className="mb-8 bg-white p-4 rounded-2xl border border-stone-200 shadow-2xs">

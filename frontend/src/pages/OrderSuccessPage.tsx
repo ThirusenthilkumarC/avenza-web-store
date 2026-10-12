@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { CheckCircle2, Package, ArrowRight, ShoppingBag, ShieldCheck, MapPin } from 'lucide-react';
 import type { Order } from '../types';
+import { SEO } from '../components/SEO';
 
 export const OrderSuccessPage: React.FC = () => {
   const location = useLocation();
@@ -43,6 +44,10 @@ export const OrderSuccessPage: React.FC = () => {
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 my-10 text-left space-y-8">
+      <SEO
+        title="Order Confirmation | AVENZA Luxury Marketplace"
+        description="Your AVENZA luxury order has been confirmed. Tracking milestones and electronic receipts are dispatched."
+      />
       {/* Top Banner */}
       <div className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200/90 shadow-lg text-center space-y-6">
         <div className="w-20 h-20 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto border border-emerald-300 shadow-xs">

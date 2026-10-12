@@ -17,7 +17,8 @@ import {
   Laptop,
   Shirt,
   Home,
-  Dumbbell
+  Dumbbell,
+  ShieldCheck
 } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 import { Logo } from './Logo';
@@ -152,6 +153,14 @@ export const Header: React.FC = () => {
                   </span>
                 </div>
                 <div className="py-1">
+                  {currentUser.role === 'admin' && (
+                    <Link
+                      to="/admin"
+                      className="flex items-center gap-2.5 p-2 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-950 text-xs font-bold transition-colors border border-amber-200/80 mb-1"
+                    >
+                      <ShieldCheck className="w-4 h-4 text-amber-700" /> Admin Console
+                    </Link>
+                  )}
                   <Link
                     to="/account"
                     className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-stone-100 text-stone-800 text-xs font-medium transition-colors"

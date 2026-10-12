@@ -2,26 +2,27 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Star, ShoppingBag, Heart, ShieldCheck, ArrowRight } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
+import type { Product } from '../types';
 
-export const QuickViewModal: React.FC = () => {
+interface QuickViewContentProps {
+  product: Product;
+  onClose: () => void;
+}
+
+const QuickViewContent: React.FC<QuickViewContentProps> = ({ product, onClose }) => {
   const navigate = useNavigate();
-  const { quickViewProduct, setQuickViewProduct, addToCart, toggleWishlist, isInWishlist } = useShop();
-  
-  if (!quickViewProduct) return null;
-
-  const [selectedImg, setSelectedImg] = useState(quickViewProduct.images[0]);
-  const inWishlist = isInWishlist(quickViewProduct.id);
-
-  const handleClose = () => setQuickViewProduct(null);
+  const { addToCart, toggleWishlist, isInWishlist } = useShop();
+  const [selectedImg, setSelectedImg] = useState(product.images[0]);
+  const inWishlist = isInWishlist(product.id);
 
   const handleAddToCart = () => {
-    addToCart(quickViewProduct);
-    handleClose();
+    addToCart(product);
+    onClose();
   };
 
   const handleGoToDetails = () => {
-    handleClose();
-    navigate(`/product/${quickViewProduct.id}`);
+    onClose();
+    navigate(`/product/${product.id}`);
   };
 
   return (
@@ -29,7 +30,7 @@ export const QuickViewModal: React.FC = () => {
       <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-stone-200 animate-fade-in relative p-6">
         {/* Close Button */}
         <button
-          onClick={handleClose}
+          onClick={onClose}
           className="absolute top-4 right-4 bg-stone-100 hover:bg-stone-200 text-stone-700 p-2 rounded-full transition-colors z-10"
         >
           <X className="w-5 h-5" />
@@ -41,15 +42,15 @@ export const QuickViewModal: React.FC = () => {
             <div className="w-full h-64 bg-stone-50 rounded-2xl border border-stone-200 overflow-hidden flex items-center justify-center p-4 mb-3">
               <img
                 src={selectedImg}
-                alt={quickViewProduct.name}
+                alt={product.name}
                 className="w-full h-full object-contain"
               />
             </div>
 
             {/* Thumbnail selector */}
-            {quickViewProduct.images.length > 1 && (
+            {product.images.length > 1 && (
               <div className="flex items-center gap-2 overflow-x-auto pb-1">
-                {quickViewProduct.images.map((img, idx) => (
+                {product.images.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setSelectedImg(img)}
@@ -68,32 +69,32 @@ export const QuickViewModal: React.FC = () => {
           <div className="flex flex-col justify-between">
             <div>
               <span className="text-xs font-bold text-amber-800 uppercase tracking-widest">
-                {quickViewProduct.brand}
+                {product.brand}
               </span>
               <h2 className="text-lg font-bold text-stone-900 font-serif-luxury mt-1 leading-snug">
-                {quickViewProduct.name}
+                {product.name}
               </h2>
 
               <div className="flex items-center gap-2 mt-2">
                 <div className="flex items-center bg-amber-100 text-amber-900 px-2 py-0.5 rounded text-xs font-bold">
-                  <span>{quickViewProduct.rating}</span>
+                  <span>{product.rating}</span>
                   <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500 ml-1" />
                 </div>
-                <span className="text-xs text-stone-500">({quickViewProduct.reviews} verified reviews)</span>
+                <span className="text-xs text-stone-500">({product.reviews} verified reviews)</span>
               </div>
 
               {/* Price */}
               <div className="mt-4 flex items-baseline gap-3">
                 <span className="text-2xl font-extrabold text-stone-900">
-                  ₹{quickViewProduct.price.toLocaleString('en-IN')}
+                  ₹{product.price.toLocaleString('en-IN')}
                 </span>
-                {quickViewProduct.originalPrice > quickViewProduct.price && (
+                {product.originalPrice > product.price && (
                   <>
                     <span className="text-sm text-stone-400 line-through">
-                      ₹{quickViewProduct.originalPrice.toLocaleString('en-IN')}
+                      ₹{product.originalPrice.toLocaleString('en-IN')}
                     </span>
                     <span className="text-xs font-bold text-emerald-600">
-                      ({quickViewProduct.discount}% OFF)
+                      ({product.discount}% OFF)
                     </span>
                   </>
                 )}
@@ -101,12 +102,12 @@ export const QuickViewModal: React.FC = () => {
 
               {/* Description */}
               <p className="text-xs text-stone-600 mt-3 line-clamp-3 leading-relaxed">
-                {quickViewProduct.description}
+                {product.description}
               </p>
 
               {/* Features list */}
               <div className="mt-3 space-y-1">
-                {quickViewProduct.features.slice(0, 3).map((feat, i) => (
+                {product.features.slice(0, 3).map((feat, i) => (
                   <div key={i} className="flex items-center gap-2 text-xs text-stone-700">
                     <ShieldCheck className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                     <span>{feat}</span>
@@ -126,7 +127,7 @@ export const QuickViewModal: React.FC = () => {
                 </button>
 
                 <button
-                  onClick={() => toggleWishlist(quickViewProduct)}
+                  onClick={() => toggleWishlist(product)}
                   className={`p-3 rounded-xl border transition-colors ${
                     inWishlist ? 'bg-rose-50 border-rose-300 text-rose-600' : 'border-stone-300 text-stone-700 hover:bg-stone-50'
                   }`}
@@ -149,3 +150,17 @@ export const QuickViewModal: React.FC = () => {
     </div>
   );
 };
+
+export const QuickViewModal: React.FC = () => {
+  const { quickViewProduct, setQuickViewProduct } = useShop();
+
+  if (!quickViewProduct) return null;
+
+  return (
+    <QuickViewContent
+      product={quickViewProduct}
+      onClose={() => setQuickViewProduct(null)}
+    />
+  );
+};
+

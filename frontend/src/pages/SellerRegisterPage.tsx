@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { Store, ShieldCheck, CheckCircle2, ArrowRight, ChevronRight, User, Mail, Phone, MapPin, Building, Lock } from 'lucide-react';
 import { categories } from '../data/categories';
+import { SEO } from '../components/SEO';
 
 export const SellerRegisterPage: React.FC = () => {
   const navigate = useNavigate();
@@ -48,6 +49,10 @@ export const SellerRegisterPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 my-8 text-left">
+      <SEO
+        title="Become an Official AVENZA Seller | Luxury Partner Onboarding"
+        description="Partner with AVENZA to showcase your haute couture, master artisan, or flagship electronics collections to India's most affluent patrons."
+      />
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-stone-500 mb-4">
         <Link to="/" className="hover:text-stone-900">Home</Link>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { ChevronRight, Package, MapPin, CreditCard, ShieldCheck, CheckCircle2, RotateCcw, ArrowLeft, ShoppingBag } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const OrderDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -23,6 +24,10 @@ export const OrderDetailPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 my-8 text-left space-y-6">
+      <SEO
+        title={`Order #${order.id} Tracking & Invoice | AVENZA`}
+        description={`Real-time courier tracking milestones and electronic receipt for AVENZA Order #${order.id}.`}
+      />
       {/* Breadcrumbs */}
       <div className="flex items-center gap-2 text-xs text-stone-500">
         <Link to="/" className="hover:text-stone-900">Home</Link>

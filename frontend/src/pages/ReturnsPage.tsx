@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, RefreshCw } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const ReturnsPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 my-8 text-left space-y-6">
+      <SEO
+        title="Returns & Exchanges Policy | AVENZA Luxury Marketplace"
+        description="Learn about AVENZA 7-day complimentary doorstep pickup returns, white-glove exchange service, and expedited refund guidelines."
+      />
       <div className="flex items-center gap-2 text-xs text-stone-500">
         <Link to="/" className="hover:text-stone-900">Home</Link>
         <ChevronRight className="w-3.5 h-3.5" />

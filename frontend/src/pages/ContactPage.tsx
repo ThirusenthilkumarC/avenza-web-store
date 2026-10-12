@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { ChevronRight, Mail, Phone, MapPin, Headphones, Send } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const ContactPage: React.FC = () => {
   const { showToast } = useShop();
@@ -17,6 +18,10 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 my-8 text-left space-y-6">
+      <SEO
+        title="Contact Luxury Concierge | AVENZA Support Desk"
+        description="Connect with AVENZA 24/7 VIP concierge desk for bespoke orders, corporate gifting, order queries, and private previews."
+      />
       <div className="flex items-center gap-2 text-xs text-stone-500">
         <Link to="/" className="hover:text-stone-900">Home</Link>
         <ChevronRight className="w-3.5 h-3.5" />

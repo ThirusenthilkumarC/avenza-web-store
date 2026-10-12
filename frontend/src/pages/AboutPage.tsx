@@ -2,10 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ShieldCheck, Store, MapPin } from 'lucide-react';
 import { Logo } from '../components/Logo';
+import { SEO } from '../components/SEO';
 
 export const AboutPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 my-8 text-left space-y-8">
+      <SEO
+        title="About AVENZA | Luxury Marketplace Vision & Heritage"
+        description="Learn about the story, core ethos, and artisanal provenance behind AVENZA — India's premier luxury marketplace."
+      />
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-xs text-stone-500">
         <Link to="/" className="hover:text-stone-900">Home</Link>

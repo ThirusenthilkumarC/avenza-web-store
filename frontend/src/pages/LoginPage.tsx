@@ -33,21 +33,34 @@ export const LoginPage: React.FC = () => {
     return Object.keys(errs).length === 0;
   };
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsLoading(true);
-    setTimeout(() => {
-      login(email, password);
-      setIsLoading(false);
-      navigate('/account');
-    }, 400);
+    const res = await login(email, password);
+    setIsLoading(false);
+
+    if (res.success) {
+      if (email.toLowerCase().includes('admin')) {
+        navigate('/admin');
+      } else {
+        navigate('/account');
+      }
+    } else {
+      setErrors({ general: res.message });
+    }
   };
 
-  const handleUseDemo = () => {
+  const handleUseCustomerDemo = () => {
     setEmail('vikram.roy@example.com');
-    setPassword('Luxury@2026');
+    setPassword('password123');
+    setErrors({});
+  };
+
+  const handleUseAdminDemo = () => {
+    setEmail('admin@avenza.luxury');
+    setPassword('adminpassword123');
     setErrors({});
   };
 
@@ -66,21 +79,27 @@ export const LoginPage: React.FC = () => {
         </div>
 
         {/* Quick Demo Credentials Pill */}
-        <div className="bg-amber-50/80 border border-amber-200/80 rounded-2xl p-3 flex items-center justify-between text-xs">
+        <div className="bg-amber-50/80 border border-amber-200/80 rounded-2xl p-3 text-xs space-y-2">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-amber-700 shrink-0" />
-            <div>
-              <p className="font-bold text-amber-950 text-[11px]">Testing as Reviewer?</p>
-              <p className="text-[10px] text-amber-800">Auto-fill verified demo credentials</p>
-            </div>
+            <p className="font-bold text-amber-950 text-[11px]">Instant Verified Credentials</p>
           </div>
-          <button
-            type="button"
-            onClick={handleUseDemo}
-            className="bg-amber-600 hover:bg-amber-700 text-stone-950 font-bold px-3 py-1.5 rounded-lg text-[10px] transition-colors shrink-0 shadow-xs"
-          >
-            Fill Demo
-          </button>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={handleUseCustomerDemo}
+              className="flex-1 bg-amber-600 hover:bg-amber-700 text-stone-950 font-bold px-2.5 py-1.5 rounded-lg text-[10px] transition-colors shadow-xs"
+            >
+              Customer Demo
+            </button>
+            <button
+              type="button"
+              onClick={handleUseAdminDemo}
+              className="flex-1 bg-stone-900 hover:bg-stone-800 text-amber-400 font-bold px-2.5 py-1.5 rounded-lg text-[10px] transition-colors shadow-xs"
+            >
+              Admin Console Demo
+            </button>
+          </div>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
