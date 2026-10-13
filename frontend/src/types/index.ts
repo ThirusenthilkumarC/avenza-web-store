@@ -38,6 +38,9 @@ export interface Product {
   questions?: ProductQA[];
   isDealOfDay?: boolean;
   dealEndsAt?: string; // ISO string
+  sizes?: string[];
+  colors?: string[];
+  variants?: string[];
 }
 
 export interface Category {

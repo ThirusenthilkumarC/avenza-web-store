@@ -2,69 +2,104 @@ import type { Product } from '../types';
 
 /**
  * Normalizes category names and aliases across AVENZA.
- * Handles: 'men', 'women', 'fashion', 'electronics', 'beauty', 'accessories',
- * 'home-living', 'footwear', 'watches', etc.
+ * Supports standard categories:
+ * - Electronics
+ * - Smartphones
+ * - Laptops & Computers
+ * - Fashion — Men
+ * - Fashion — Women
+ * - Shoes & Sneakers
+ * - Watches
+ * - Bags & Accessories
+ * - Beauty & Personal Care
+ * - Home & Living
+ * - Kitchen Appliances
+ * - Furniture
+ * - Sports & Fitness
+ * - Books & Stationery
+ * - Gaming Accessories
  */
 export function getCanonicalCategoryName(slugOrName: string): string {
   if (!slugOrName || slugOrName === 'All') return 'All';
-  const clean = slugOrName.trim().toLowerCase().replace(/-/g, ' ');
+  const clean = slugOrName.trim().toLowerCase().replace(/-/g, ' ').replace(/—/g, ' ').replace(/&/g, 'and');
 
-  if (clean === 'men' || clean === 'mens' || clean === 'men fashion' || clean === "men's fashion" || clean === 'mens fashion') {
-    return "Men's Fashion";
+  // Smartphones
+  if (clean.includes('smartphone') || clean.includes('mobile') || clean.includes('phone') || clean.includes('tablet')) {
+    return 'Smartphones';
   }
-  if (clean === 'women' || clean === 'womens' || clean === 'women fashion' || clean === "women's fashion" || clean === 'womens fashion') {
-    return "Women's Fashion";
+
+  // Laptops & Computers
+  if (clean.includes('laptop') || clean.includes('computer') || clean.includes('pc') || clean.includes('desktop')) {
+    return 'Laptops & Computers';
   }
-  if (clean === 'fashion' || clean === 'apparel' || clean === 'clothing') {
-    return 'Fashion';
+
+  // Gaming Accessories
+  if (clean.includes('gaming') || clean.includes('console')) {
+    return 'Gaming Accessories';
   }
-  if (clean === 'footwear' || clean === 'shoes') {
-    return 'Footwear';
+
+  // Men's Fashion
+  if (clean.includes('men') && !clean.includes('women')) {
+    return 'Fashion — Men';
   }
-  if (clean === 'electronics' || clean === 'tech' || clean === 'gadgets') {
-    return 'Electronics';
+
+  // Women's Fashion
+  if (clean.includes('women')) {
+    return 'Fashion — Women';
   }
-  if (clean === 'mobiles' || clean === 'mobile' || clean === 'smartphones' || clean === 'tablets' || clean === 'mobiles & tablets') {
-    return 'Mobiles & Tablets';
+
+  // Shoes & Sneakers / Footwear
+  if (clean.includes('shoe') || clean.includes('sneaker') || clean.includes('footwear') || clean.includes('boot')) {
+    return 'Shoes & Sneakers';
   }
-  if (clean === 'watches' || clean === 'watch' || clean === 'horology') {
+
+  // Watches
+  if (clean.includes('watch') || clean.includes('horology') || clean.includes('timepiece')) {
     return 'Watches';
   }
-  if (clean === 'beauty' || clean === 'beauty & care' || clean === 'beauty and care' || clean === 'beauty and personal care' || clean === 'skincare') {
-    return 'Beauty & Care';
+
+  // Bags & Accessories
+  if (clean.includes('bag') || clean.includes('luggage') || clean.includes('backpack') || clean.includes('accessory') || clean.includes('accessories')) {
+    return 'Bags & Accessories';
   }
-  if (clean === 'bags' || clean === 'bags & luggage' || clean === 'bags and luggage' || clean === 'luggage') {
-    return 'Bags & Luggage';
+
+  // Beauty & Personal Care
+  if (clean.includes('beauty') || clean.includes('skincare') || clean.includes('cosmetic') || clean.includes('personal care') || clean.includes('care')) {
+    return 'Beauty & Personal Care';
   }
-  if (clean === 'accessories' || clean === 'accessories & lifestyle' || clean === 'bags and accessories') {
-    return 'Accessories';
+
+  // Kitchen Appliances
+  if (clean.includes('kitchen') || clean.includes('cookware') || clean.includes('appliance')) {
+    return 'Kitchen Appliances';
   }
-  if (clean === 'home' || clean === 'home & living' || clean === 'home and living' || clean === 'home living' || clean === 'decor') {
+
+  // Furniture
+  if (clean.includes('furniture') || clean.includes('sofa') || clean.includes('chair') || clean.includes('desk')) {
+    return 'Furniture';
+  }
+
+  // Home & Living
+  if (clean.includes('home') || clean.includes('living') || clean.includes('decor') || clean.includes('bedding') || clean.includes('rug')) {
     return 'Home & Living';
   }
-  if (clean === 'kitchen' || clean === 'kitchen & dining' || clean === 'kitchen and dining' || clean === 'cookware') {
-    return 'Kitchen & Dining';
-  }
-  if (clean === 'sports' || clean === 'sports & fitness' || clean === 'sports and fitness' || clean === 'fitness') {
+
+  // Sports & Fitness
+  if (clean.includes('sport') || clean.includes('fitness') || clean.includes('gym') || clean.includes('workout')) {
     return 'Sports & Fitness';
   }
-  if (clean === 'gourmet' || clean === 'gourmet food' || clean === 'food') {
-    return 'Gourmet Food';
+
+  // Books & Stationery
+  if (clean.includes('book') || clean.includes('stationery') || clean.includes('art') || clean.includes('journal')) {
+    return 'Books & Stationery';
   }
-  if (clean === 'books' || clean === 'art' || clean === 'books & art' || clean === 'books and art') {
-    return 'Books & Art';
+
+  // General Electronics
+  if (clean.includes('electronic') || clean.includes('audio') || clean.includes('gadget') || clean.includes('headphone')) {
+    return 'Electronics';
   }
-  if (clean === 'automotive' || clean === 'car') {
-    return 'Automotive';
-  }
-  if (clean === 'pet supplies' || clean === 'pets' || clean === 'pet') {
-    return 'Pet Supplies';
-  }
-  if (clean === 'health' || clean === 'health & wellness' || clean === 'health and wellness') {
-    return 'Health & Wellness';
-  }
-  if (clean === 'toys' || clean === 'toys & kids' || clean === 'toys and kids') {
-    return 'Toys & Kids';
+
+  if (clean.includes('fashion') || clean.includes('apparel') || clean.includes('clothing')) {
+    return 'Fashion — Men';
   }
 
   return slugOrName;
@@ -79,100 +114,189 @@ export function matchesProductCategory(product: Product, filterCategory: string)
   const target = getCanonicalCategoryName(filterCategory).toLowerCase();
   const prodCat = (product.category || '').toLowerCase();
   const prodSubcat = (product.subcategory || '').toLowerCase();
+  const prodName = (product.name || '').toLowerCase();
 
-  // Men's Fashion
-  if (target === "men's fashion") {
-    return prodCat.includes('men') || (prodCat === 'fashion' && prodSubcat.includes('men'));
+  // Smartphones
+  if (target === 'smartphones') {
+    return (
+      prodCat === 'smartphones' ||
+      prodCat === 'mobiles' ||
+      prodSubcat.includes('phone') ||
+      prodSubcat.includes('smartphone') ||
+      prodSubcat.includes('mobile') ||
+      prodSubcat.includes('tablet')
+    );
   }
 
-  // Women's Fashion
-  if (target === "women's fashion") {
-    return prodCat.includes('women') || (prodCat === 'fashion' && prodSubcat.includes('women'));
+  // Laptops & Computers
+  if (target === 'laptops & computers') {
+    return (
+      prodCat === 'laptops & computers' ||
+      prodCat === 'laptops' ||
+      prodSubcat.includes('laptop') ||
+      prodSubcat.includes('computer') ||
+      prodSubcat.includes('ultrabook') ||
+      prodSubcat.includes('desktop')
+    );
   }
 
-  // General Fashion (encompasses Men's, Women's, and Footwear)
-  if (target === 'fashion') {
-    return prodCat.includes('fashion') || prodCat === 'footwear';
+  // Gaming Accessories
+  if (target === 'gaming accessories') {
+    return (
+      prodCat === 'gaming accessories' ||
+      prodCat === 'gaming' ||
+      prodSubcat.includes('gaming') ||
+      prodSubcat.includes('controller') ||
+      prodSubcat.includes('gamepad')
+    );
   }
 
-  // Footwear
-  if (target === 'footwear') {
-    return prodCat === 'footwear' || prodSubcat.includes('footwear') || prodSubcat.includes('shoe');
+  // Fashion — Men
+  if (target === 'fashion — men' || target === "men's fashion" || target === 'men fashion') {
+    return (
+      prodCat === 'fashion — men' ||
+      prodCat === "men's fashion" ||
+      (prodCat.includes('men') && !prodCat.includes('women')) ||
+      (prodCat === 'fashion' && (prodSubcat.includes('men') || prodName.includes('men') || !prodSubcat.includes('women')))
+    );
   }
 
-  // Electronics (encompasses electronics & audio/video)
-  if (target === 'electronics') {
-    return prodCat === 'electronics' || prodCat === 'mobiles';
+  // Fashion — Women
+  if (target === 'fashion — women' || target === "women's fashion" || target === 'women fashion') {
+    return (
+      prodCat === 'fashion — women' ||
+      prodCat === "women's fashion" ||
+      prodCat.includes('women') ||
+      (prodCat === 'fashion' && (prodSubcat.includes('women') || prodName.includes('women') || prodSubcat.includes('saree') || prodSubcat.includes('lehenga')))
+    );
   }
 
-  // Mobiles & Tablets
-  if (target === 'mobiles & tablets' || target === 'mobiles') {
-    return prodCat === 'mobiles' || prodSubcat.includes('smartphone') || prodSubcat.includes('tablet');
+  // Shoes & Sneakers / Footwear
+  if (target === 'shoes & sneakers' || target === 'footwear') {
+    return (
+      prodCat === 'shoes & sneakers' ||
+      prodCat === 'footwear' ||
+      prodSubcat.includes('shoe') ||
+      prodSubcat.includes('sneaker') ||
+      prodSubcat.includes('boot') ||
+      prodSubcat.includes('oxford') ||
+      prodSubcat.includes('mojari')
+    );
   }
 
   // Watches
   if (target === 'watches') {
-    return prodCat === 'watches' || prodSubcat.includes('watch') || prodSubcat.includes('horology');
+    return (
+      prodCat === 'watches' ||
+      prodSubcat.includes('watch') ||
+      prodSubcat.includes('horology') ||
+      prodSubcat.includes('timepiece')
+    );
   }
 
-  // Beauty & Care
-  if (target === 'beauty & care' || target === 'beauty') {
-    return prodCat === 'beauty' || prodCat.includes('health') || prodSubcat.includes('skincare') || prodSubcat.includes('fragrance');
+  // Bags & Accessories
+  if (target === 'bags & accessories' || target === 'bags' || target === 'accessories') {
+    return (
+      prodCat === 'bags & accessories' ||
+      prodCat === 'bags' ||
+      prodCat === 'accessories' ||
+      prodSubcat.includes('bag') ||
+      prodSubcat.includes('luggage') ||
+      prodSubcat.includes('wallet') ||
+      prodSubcat.includes('backpack') ||
+      prodSubcat.includes('briefcase')
+    );
   }
 
-  // Bags & Luggage
-  if (target === 'bags & luggage' || target === 'bags') {
-    return prodCat === 'bags' || prodSubcat.includes('bag') || prodSubcat.includes('luggage');
+  // Beauty & Personal Care
+  if (target === 'beauty & personal care' || target === 'beauty') {
+    return (
+      prodCat === 'beauty & personal care' ||
+      prodCat === 'beauty' ||
+      prodCat.includes('health') ||
+      prodSubcat.includes('skincare') ||
+      prodSubcat.includes('fragrance') ||
+      prodSubcat.includes('perfume') ||
+      prodSubcat.includes('serum') ||
+      prodSubcat.includes('grooming')
+    );
   }
 
-  // Accessories
-  if (target === 'accessories') {
-    return prodCat === 'accessories' || prodCat === 'bags' || prodSubcat.includes('wallet') || prodSubcat.includes('eyewear');
+  // Kitchen Appliances
+  if (target === 'kitchen appliances' || target === 'kitchen') {
+    return (
+      prodCat === 'kitchen appliances' ||
+      prodCat === 'kitchen' ||
+      prodSubcat.includes('kitchen') ||
+      prodSubcat.includes('appliance') ||
+      prodSubcat.includes('espresso') ||
+      prodSubcat.includes('blender') ||
+      prodSubcat.includes('cookware')
+    );
+  }
+
+  // Furniture
+  if (target === 'furniture') {
+    return (
+      prodCat === 'furniture' ||
+      prodSubcat.includes('furniture') ||
+      prodSubcat.includes('sofa') ||
+      prodSubcat.includes('chair') ||
+      prodSubcat.includes('desk') ||
+      prodSubcat.includes('table')
+    );
   }
 
   // Home & Living
   if (target === 'home & living' || target === 'home') {
-    return prodCat === 'home' || prodCat === 'kitchen' || prodSubcat.includes('decor') || prodSubcat.includes('bedding') || prodSubcat.includes('furniture');
-  }
-
-  // Kitchen & Dining
-  if (target === 'kitchen & dining' || target === 'kitchen') {
-    return prodCat === 'kitchen' || prodSubcat.includes('cookware') || prodSubcat.includes('appliance');
+    return (
+      prodCat === 'home & living' ||
+      prodCat === 'home' ||
+      prodCat === 'furniture' ||
+      prodSubcat.includes('home') ||
+      prodSubcat.includes('bedding') ||
+      prodSubcat.includes('carpet') ||
+      prodSubcat.includes('rug') ||
+      prodSubcat.includes('decor') ||
+      prodSubcat.includes('living')
+    );
   }
 
   // Sports & Fitness
   if (target === 'sports & fitness' || target === 'sports') {
-    return prodCat === 'sports' || prodSubcat.includes('fitness') || prodSubcat.includes('gym');
+    return (
+      prodCat === 'sports & fitness' ||
+      prodCat === 'sports' ||
+      prodSubcat.includes('sport') ||
+      prodSubcat.includes('fitness') ||
+      prodSubcat.includes('gym') ||
+      prodSubcat.includes('workout') ||
+      prodSubcat.includes('cycle')
+    );
   }
 
-  // Gourmet Food
-  if (target === 'gourmet food') {
-    return prodCat.includes('gourmet') || prodSubcat.includes('pantry');
+  // Books & Stationery
+  if (target === 'books & stationery' || target === 'books & art') {
+    return (
+      prodCat === 'books & stationery' ||
+      prodCat === 'books & art' ||
+      prodSubcat.includes('book') ||
+      prodSubcat.includes('stationery') ||
+      prodSubcat.includes('pen') ||
+      prodSubcat.includes('journal')
+    );
   }
 
-  // Books & Art
-  if (target === 'books & art') {
-    return prodCat.includes('book') || prodCat.includes('art');
-  }
-
-  // Automotive
-  if (target === 'automotive') {
-    return prodCat === 'automotive';
-  }
-
-  // Pet Supplies
-  if (target === 'pet supplies') {
-    return prodCat.includes('pet');
-  }
-
-  // Health & Wellness
-  if (target === 'health & wellness') {
-    return prodCat.includes('health') || prodCat === 'beauty';
-  }
-
-  // Toys & Kids
-  if (target === 'toys & kids') {
-    return prodCat.includes('toy') || prodSubcat.includes('kid');
+  // General Electronics
+  if (target === 'electronics') {
+    return (
+      prodCat === 'electronics' ||
+      prodCat === 'audio' ||
+      prodSubcat.includes('audio') ||
+      prodSubcat.includes('speaker') ||
+      prodSubcat.includes('headphone') ||
+      prodSubcat.includes('camera')
+    );
   }
 
   // Fallback direct match or substring
