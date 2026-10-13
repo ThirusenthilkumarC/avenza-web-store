@@ -2889,5 +2889,3042 @@ export const products: Product[] = [
     badge: "Exclusive",
     delivery: "Free Express Insured Courier in 2 Days",
     seller: "ArtisanChef Culinary"
+  },
+  {
+    "id": 91,
+    "name": "AuraSound Studio Reference Planar Magnetic Hi-Fi Headphones",
+    "brand": "AuraSound",
+    "category": "Electronics",
+    "subcategory": "Audiophile Audio",
+    "price": 34999,
+    "originalPrice": 48000,
+    "discount": 27,
+    "rating": 4.9,
+    "reviews": 320,
+    "images": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Open-back planar magnetic headphones featuring ultra-thin nanometer diaphragms, lambskin memory foam pads, and balanced XLR cable for acoustic purists.",
+    "features": [
+      "Nanometer-Grade Planar Magnetic Transducers",
+      "Open-Back Acoustic Architecture with Spatial Soundstage",
+      "Handcrafted CNC Aluminum Yokes & Real Walnut Earcups",
+      "Detachable 4.4mm Pentaconn & 6.35mm Gold-Plated Cables"
+    ],
+    "specs": {
+      "Frequency Response": "5Hz – 55,000Hz",
+      "Impedance": "32 Ohms",
+      "Total Harmonic Distortion": "< 0.05% @ 1kHz",
+      "Warranty": "2 Years International Warranty"
+    },
+    "stock": 22,
+    "badge": "Exclusive",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "AuraSound Acoustics Lab",
+    "sizes": [
+      "Standard",
+      "XLR Balanced Edition"
+    ],
+    "colors": [
+      "Walnut & Gunmetal",
+      "Obsidian Black"
+    ],
+    "customerReviews": [
+      {
+        "id": "r91_1",
+        "userName": "Devendra Rathore",
+        "rating": 5,
+        "date": "3 days ago",
+        "comment": "Unbelievable resolution. You hear instrument separation you never knew existed.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Lumina Vision Pro 4K HDR Cinema Pocket Gimbal Camera",
+    "brand": "Lumina",
+    "category": "Electronics",
+    "subcategory": "Cameras & Vlogging",
+    "price": 38499,
+    "originalPrice": 49999,
+    "discount": 23,
+    "rating": 4.8,
+    "reviews": 410,
+    "images": [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Ultra-compact 3-axis mechanical stabilized camera capable of 4K 120fps recording with 1-inch CMOS sensor and AI tracking.",
+    "features": [
+      "1-Inch High-Sensitivity CMOS Sensor",
+      "3-Axis Mechanical Gimbal Hardware Stabilization",
+      "4K/120fps Cinematic Slow Motion & 10-bit D-Log M",
+      "ActiveTrack 6.0 Face & Object Tracking"
+    ],
+    "specs": {
+      "Video Resolution": "4K Ultra HD @ 120fps",
+      "Battery Life": "166 Minutes Continuous Recording",
+      "Display": "2-Inch Rotatable OLED Touchscreen",
+      "Weight": "179g Ultra-Lightweight"
+    },
+    "stock": 19,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Lumina Digital Store",
+    "sizes": [
+      "Standard Bundle",
+      "Creator Combo (Mic + Tripod)"
+    ],
+    "colors": [
+      "Matte Graphite",
+      "Alpine White"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Sonora Waveform Dual-Driver Spatial Soundbar with Wireless Subwoofer",
+    "brand": "Sonora",
+    "category": "Electronics",
+    "subcategory": "Home Audio",
+    "price": 24999,
+    "originalPrice": 35000,
+    "discount": 29,
+    "rating": 4.7,
+    "reviews": 580,
+    "images": [
+      "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Dolby Atmos 5.1.2 home theater soundbar system with wireless down-firing subwoofer, eARC HDMI pass-through, and Apple AirPlay 2.",
+    "features": [
+      "Dolby Atmos 3D Overhead Object Audio",
+      "380W Total Output with Wireless 8-Inch Subwoofer",
+      "HDMI eARC 4K Pass-Through with HDR10+",
+      "Wi-Fi, Bluetooth 5.3 & AirPlay 2 Built-in"
+    ],
+    "specs": {
+      "Channels": "5.1.2 Spatial Surround",
+      "Total Output": "380 Watts Peak",
+      "Connectivity": "HDMI eARC, Optical, AUX, Wi-Fi",
+      "Dimensions": "Soundbar: 98 x 6.5 x 10 cm"
+    },
+    "stock": 25,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Sonora Audio India",
+    "sizes": [
+      "Standard 380W",
+      "Pro 520W Edition"
+    ],
+    "colors": [
+      "Midnight Black",
+      "Anthracite Gray"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "AeroPulse ANC True Wireless Earbuds with Wireless Charging Case",
+    "brand": "TechNova",
+    "category": "Electronics",
+    "subcategory": "Earbuds",
+    "price": 6999,
+    "originalPrice": 12999,
+    "discount": 46,
+    "rating": 4.8,
+    "reviews": 840,
+    "images": [
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Compact in-ear wireless earbuds with 42dB smart adaptive noise cancellation, LDAC Hi-Res wireless audio, and 36-hour total battery life.",
+    "features": [
+      "42dB Adaptive Smart Active Noise Cancellation",
+      "LDAC Hi-Res Audio Certified with 11mm Beryllium Drivers",
+      "Triple Microphones with AI Wind-Reduction Call Tech",
+      "Qi Wireless Charging & IPX5 Water Resistance"
+    ],
+    "specs": {
+      "Driver": "11mm Beryllium Coated Dynamic",
+      "Battery Life": "8.5 Hrs Earbuds | 36 Hrs with Case",
+      "Water Resistance": "IPX5 Sweat & Water Resistant",
+      "Bluetooth": "v5.3 Multipoint"
+    },
+    "stock": 40,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "TechNova Official Outlet",
+    "sizes": [
+      "Standard Fit (S/M/L Tips)"
+    ],
+    "colors": [
+      "Pearl White",
+      "Obsidian Black",
+      "Sage Green"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "ApexPro 4K HDR Drone with 3-Axis Obstacle Avoidance",
+    "brand": "ApexFlight",
+    "category": "Electronics",
+    "subcategory": "Drones & Tech",
+    "price": 54999,
+    "originalPrice": 69999,
+    "discount": 21,
+    "rating": 4.9,
+    "reviews": 210,
+    "images": [
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Foldable aerial photography drone with Hasselblad optical color solution, omnidirectional obstacle sensors, and 46-minute flight time.",
+    "features": [
+      "4K 60fps HDR Video with 48MP Stills",
+      "Omnidirectional APAS 5.0 Obstacle Sensing",
+      "15km HD Video Transmission Range (O3+)",
+      "46 Minutes Ultra-Long Flight Duration"
+    ],
+    "specs": {
+      "Sensor": "1/1.3-Inch CMOS Dual Native ISO",
+      "Max Flight Time": "46 Minutes per Battery",
+      "Weight": "249g (No Pilot License Required)",
+      "Max Speed": "57.6 km/h"
+    },
+    "stock": 14,
+    "badge": "Exclusive",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "ApexFlight Aerial Systems",
+    "sizes": [
+      "Single Battery Kit",
+      "Fly More Combo (3 Batteries)"
+    ],
+    "colors": [
+      "Arctic Gray"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Nexus Titan 5G Flagship Smartphone with Periscope Zoom",
+    "brand": "Nexus",
+    "category": "Smartphones",
+    "subcategory": "Flagship 5G",
+    "price": 84999,
+    "originalPrice": 99999,
+    "discount": 15,
+    "rating": 4.9,
+    "reviews": 1120,
+    "images": [
+      "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Premium titanium frame smartphone with 6.8-inch Dynamic AMOLED 2X 120Hz display, Snapdragon 8 Gen 3, and 200MP quad camera setup.",
+    "features": [
+      "Aerospace-Grade Grade-5 Titanium Frame",
+      "6.8-Inch QHD+ Dynamic AMOLED 2X 1-120Hz LTPO",
+      "200MP Quad Camera with 5x & 10x Optical Periscope Zoom",
+      "5000mAh Battery with 45W Fast Charging"
+    ],
+    "specs": {
+      "Processor": "Snapdragon 8 Gen 3 for Galaxy (4nm)",
+      "Display": "6.8\" Quad HD+ 2600 Nits Peak Brightness",
+      "RAM & Storage": "12GB RAM | 256GB / 512GB UFS 4.0",
+      "OS": "OxygenOS 14 (7 Years OS Updates Guarantee)"
+    },
+    "stock": 30,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Nexus Official Flagship Store",
+    "sizes": [
+      "256 GB",
+      "512 GB",
+      "1 TB"
+    ],
+    "colors": [
+      "Titanium Gray",
+      "Titanium Black",
+      "Titanium Violet"
+    ],
+    "customerReviews": [
+      {
+        "id": "r96_1",
+        "userName": "Kunal Mehra",
+        "rating": 5,
+        "date": "Yesterday",
+        "comment": "The camera is unmatched in low light. Titanium body feels incredibly premium in hand.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Aura Fold X Dual-Screen Seamless Foldable 5G Smartphone",
+    "brand": "AuraPhone",
+    "category": "Smartphones",
+    "subcategory": "Foldable Phones",
+    "price": 124999,
+    "originalPrice": 149999,
+    "discount": 17,
+    "rating": 4.8,
+    "reviews": 430,
+    "images": [
+      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Ultra-slim foldable smartphone featuring a zero-crease teardrop hinge, 7.92-inch 120Hz inner foldable screen, and stylus pen support.",
+    "features": [
+      "Zero-Crease Flexion Hinge Tested for 400,000 Folds",
+      "7.92-Inch Foldable LTPO OLED Inner Screen + 6.43-Inch Outer Screen",
+      "Flagship Triple 50MP Falcon Camera System",
+      "5000mAh Silicon-Carbon Battery with 66W SuperCharge"
+    ],
+    "specs": {
+      "Thickness": "4.7mm Unfolded | 9.9mm Folded",
+      "Weight": "231g Ultra-Slim",
+      "Processor": "Qualcomm Snapdragon 8 Gen 3",
+      "Inner Display": "7.92\" 2156x2344 120Hz HDR10+"
+    },
+    "stock": 15,
+    "badge": "Exclusive",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "Aura Innovations Flagship",
+    "sizes": [
+      "512 GB",
+      "1 TB"
+    ],
+    "colors": [
+      "Phantom Black",
+      "Silk Gold",
+      "Imperial Blue"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Veloce Pure 12 Pro Ceramic Edition 5G",
+    "brand": "Veloce",
+    "category": "Smartphones",
+    "subcategory": "Flagship 5G",
+    "price": 64999,
+    "originalPrice": 79999,
+    "discount": 19,
+    "rating": 4.7,
+    "reviews": 690,
+    "images": [
+      "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Ceramic back flagship smartphone engineered with Hasselblad color calibration, 100W SuperVOOC rapid charging, and Aqua Touch screen technology.",
+    "features": [
+      "Micro-Arc Oxidation Ceramic Unibody Finish",
+      "50MP Sony LYT-808 Sensor with OIS",
+      "100W GaN Fast Charger Included in Box (0 to 100% in 26 Min)",
+      "IP68 Water & Dust Immersion Resistance"
+    ],
+    "specs": {
+      "Display": "6.82\" 2K 120Hz ProXDR Display with Dolby Vision",
+      "Processor": "Snapdragon 8 Gen 3",
+      "Battery": "5400mAh Dual-Cell",
+      "RAM": "16GB LPDDR5X"
+    },
+    "stock": 28,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Veloce Mobile Hub",
+    "sizes": [
+      "256 GB",
+      "512 GB"
+    ],
+    "colors": [
+      "Emerald Green",
+      "Silky Black",
+      "Flowy Silver"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Zenith Note 14 Ultra Camera Specialist 5G",
+    "brand": "Zenith",
+    "category": "Smartphones",
+    "subcategory": "Camera Phones",
+    "price": 74999,
+    "originalPrice": 89999,
+    "discount": 17,
+    "rating": 4.8,
+    "reviews": 510,
+    "images": [
+      "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Professional imaging smartphone equipped with 1-inch Sony LYT-900 sensor with stepless variable aperture f/1.63 - f/4.0 and Leica Summilux lens.",
+    "features": [
+      "1-Inch Sony LYT-900 Main Camera Sensor",
+      "Stepless Physical Variable Aperture (f/1.63 - f/4.0)",
+      "Quad 50MP Leica Focal Range (12mm to 120mm)",
+      "Ultra-Tough Dragon Crystal Glass Shield"
+    ],
+    "specs": {
+      "Camera Setup": "50MP (1\") + 50MP Ultra-Wide + 50MP Tele + 50MP Periscope",
+      "Display": "6.73\" WQHD+ 120Hz AMOLED 3000 nits",
+      "Charging": "90W Wired + 80W Wireless HyperCharge",
+      "Weight": "224g"
+    },
+    "stock": 20,
+    "badge": "New Arrival",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Zenith India Retail",
+    "sizes": [
+      "512 GB",
+      "1 TB"
+    ],
+    "colors": [
+      "Titanium Black",
+      "Optic White"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Pulse Lite Compact 5G with Symmetrical Bezel Display",
+    "brand": "Pulse",
+    "category": "Smartphones",
+    "subcategory": "Compact Phones",
+    "price": 39999,
+    "originalPrice": 49999,
+    "discount": 20,
+    "rating": 4.6,
+    "reviews": 730,
+    "images": [
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Pocket-friendly 6.1-inch compact smartphone with uniform ultra-thin 1.45mm bezels, aerospace aluminum frame, and pure bloatware-free OS.",
+    "features": [
+      "Compact 6.1-Inch Symmetrical Bezel AMOLED Display",
+      "Clean Stock Android Experience with Zero Bloatware",
+      "Dual 50MP Sony Flagship Cameras with Horizon Steady",
+      "IP68 Rated with Gorilla Glass Armor"
+    ],
+    "specs": {
+      "Display": "6.1\" Full HD+ 120Hz OLED",
+      "Processor": "Dimensity 9300+ Octa-Core",
+      "Battery": "4600mAh with 67W Fast Charging",
+      "Weight": "168g Featherlight"
+    },
+    "stock": 35,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Pulse Technologies",
+    "sizes": [
+      "128 GB",
+      "256 GB"
+    ],
+    "colors": [
+      "Sky Blue",
+      "Graphite Gray",
+      "Sunset Rose"
+    ]
+  },
+  {
+    "id": 101,
+    "name": "MacBook Air 15 M3 Chip Liquid Retina Ultrabook",
+    "brand": "Apple",
+    "category": "Laptops & Computers",
+    "subcategory": "Ultrabooks",
+    "price": 134900,
+    "originalPrice": 144900,
+    "discount": 7,
+    "rating": 4.9,
+    "reviews": 1450,
+    "images": [
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Impossibly thin 15.3-inch laptop powered by the next-generation M3 chip with up to 18 hours of battery life and silent fanless aluminum architecture.",
+    "features": [
+      "Apple M3 8-Core CPU and 10-Core GPU with Hardware Ray Tracing",
+      "15.3-Inch Liquid Retina Display with 500 Nits True Tone",
+      "Six-Speaker Sound System with Spatial Audio",
+      "MagSafe 3 Charging Port & Dual Thunderbolt / USB 4 Ports"
+    ],
+    "specs": {
+      "Processor": "Apple M3 Chip (3nm)",
+      "Memory": "16GB Unified Memory",
+      "Storage": "512GB High-Speed SSD",
+      "Battery Life": "Up to 18 Hours Wireless Web",
+      "Weight": "1.51 kg"
+    },
+    "stock": 25,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Avenza Authorized Apple Partner",
+    "sizes": [
+      "16GB / 512GB SSD",
+      "24GB / 1TB SSD"
+    ],
+    "colors": [
+      "Midnight",
+      "Starlight",
+      "Space Gray",
+      "Silver"
+    ],
+    "customerReviews": [
+      {
+        "id": "r101_1",
+        "userName": "Rohan Varma",
+        "rating": 5,
+        "date": "3 days ago",
+        "comment": "Silent, cool, and battery literally lasts 2 full workdays. The 15-inch screen is gorgeous.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Zenith AeroBook 14 OLED Intel Core Ultra 9 Touchscreen Laptop",
+    "brand": "Zenith",
+    "category": "Laptops & Computers",
+    "subcategory": "Ultrabooks",
+    "price": 119999,
+    "originalPrice": 139999,
+    "discount": 14,
+    "rating": 4.8,
+    "reviews": 620,
+    "images": [
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Premium Intel Evo certified laptop with 14-inch 3K 120Hz OLED touchscreen, AI NPU boost, Intel Core Ultra 9 processor, and military-grade magnesium alloy chassis.",
+    "features": [
+      "14-Inch 3K (2880x1800) 120Hz 0.2ms Lumina OLED Display",
+      "Intel Core Ultra 9 185H with Dedicated Intel AI Boost NPU",
+      "32GB LPDDR5X 7467MHz RAM & 1TB PCIe 4.0 NVMe SSD",
+      "Harman Kardon Dolby Atmos Audio with Smart Amp"
+    ],
+    "specs": {
+      "Display": "14.0\" 3K OLED 16:10 100% DCI-P3 Color",
+      "Processor": "Intel Core Ultra 9 185H (16 Cores, 22 Threads)",
+      "Weight": "1.20 kg Ultra-Light",
+      "Battery": "75Wh with 65W USB-C PD Charging"
+    },
+    "stock": 18,
+    "badge": "Exclusive",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Zenith Official Hub",
+    "sizes": [
+      "32GB / 1TB SSD",
+      "32GB / 2TB SSD"
+    ],
+    "colors": [
+      "Ponder Blue",
+      "Fog Silver"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Predator Stealth 16 Gaming Laptop RTX 4080",
+    "brand": "TechNova",
+    "category": "Laptops & Computers",
+    "subcategory": "Gaming Laptops",
+    "price": 189999,
+    "originalPrice": 225000,
+    "discount": 16,
+    "rating": 4.9,
+    "reviews": 380,
+    "images": [
+      "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "High-performance gaming laptop equipped with NVIDIA GeForce RTX 4080 12GB GPU, AMD Ryzen 9 8945HS processor, and 240Hz QHD+ G-Sync display.",
+    "features": [
+      "NVIDIA GeForce RTX 4080 12GB GDDR6 (175W Max TGP)",
+      "16-Inch WQXGA (2560x1600) 240Hz 3ms Mini-LED Display",
+      "Liquid Metal Thermal Cooling with Dual 5th Gen AeroBlade Fans",
+      "Per-Key RGB Backlit Mechanical Switch Keyboard"
+    ],
+    "specs": {
+      "CPU": "AMD Ryzen 9 8945HS (8 Cores, 16 Threads, up to 5.2GHz)",
+      "GPU": "NVIDIA GeForce RTX 4080 12GB VRAM",
+      "RAM": "32GB DDR5 5600MHz (Upgradable to 64GB)",
+      "SSD": "2TB Gen4 NVMe M.2 SSD"
+    },
+    "stock": 11,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "TechNova Extreme Gaming",
+    "sizes": [
+      "RTX 4080 / 32GB / 2TB"
+    ],
+    "colors": [
+      "Abyssal Black"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "UltraView 34-Inch Curved 4K WQHD OLED Professional Monitor",
+    "brand": "UltraView",
+    "category": "Laptops & Computers",
+    "subcategory": "Monitors",
+    "price": 64999,
+    "originalPrice": 85000,
+    "discount": 24,
+    "rating": 4.8,
+    "reviews": 490,
+    "images": [
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "34-inch 1800R curved QD-OLED workstation display with 175Hz refresh rate, 99.3% DCI-P3 color gamut, USB-C 90W PD single cable hub, and KVM switch.",
+    "features": [
+      "Quantum Dot OLED Panel with Infinite Contrast Ratio",
+      "34-Inch WQHD (3440 x 1440) UltraWide 21:9 Aspect",
+      "175Hz Refresh Rate with 0.03ms GtG Response Time",
+      "USB-C 90W Power Delivery Hub with Built-in KVM Switch"
+    ],
+    "specs": {
+      "Curvature": "1800R Ergonomic Curve",
+      "Color Accuracy": "Delta E < 1 Factory Calibrated",
+      "Ports": "1x USB-C 90W, 2x HDMI 2.1, 1x DP 1.4, 4x USB 3.2",
+      "Stand": "Height, Tilt and Swivel Adjustable"
+    },
+    "stock": 16,
+    "badge": "Exclusive",
+    "delivery": "Free Express Delivery in 2 Days",
+    "seller": "UltraView Display Systems",
+    "sizes": [
+      "34-Inch WQHD OLED",
+      "38-Inch 4K OLED"
+    ],
+    "colors": [
+      "Titanium Silver & White"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "DeskMatrix Pro Studio Mac & PC Thunderbolt 4 Docking Station",
+    "brand": "DeskMatrix",
+    "category": "Laptops & Computers",
+    "subcategory": "Computer Accessories",
+    "price": 18499,
+    "originalPrice": 24999,
+    "discount": 26,
+    "rating": 4.7,
+    "reviews": 340,
+    "images": [
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "16-in-1 Thunderbolt 4 dock delivering 98W host charging, dual 4K 120Hz display outputs, 2.5GbE Ethernet, and SD 4.0 card reader.",
+    "features": [
+      "Universal Thunderbolt 4 & USB4 40Gbps High-Speed Bandwidth",
+      "98W Power Delivery Smart Laptop Charging",
+      "Supports Dual 4K 120Hz or Single 8K 60Hz Displays",
+      "16 Ports Total with High-Speed UHS-II SD/microSD Readers"
+    ],
+    "specs": {
+      "Host Connection": "Thunderbolt 4 (40Gbps)",
+      "Power Adapter": "180W External DC Power Brick",
+      "Enclosure": "Extruded Aluminum Heat-Dissipation Casing",
+      "Compatibility": "macOS Sonoma, Windows 11, iPadOS"
+    },
+    "stock": 32,
+    "badge": "New Arrival",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "DeskMatrix Workspaces",
+    "sizes": [
+      "16-in-1 Thunderbolt 4"
+    ],
+    "colors": [
+      "Space Gray Aluminum"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Sartorial Bespoke Super 180s Wool Double-Breasted Suit",
+    "brand": "Aurelia",
+    "category": "Fashion — Men",
+    "subcategory": "Suits & Blazers",
+    "price": 48999,
+    "originalPrice": 65000,
+    "discount": 25,
+    "rating": 4.9,
+    "reviews": 280,
+    "images": [
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Hand-tailored double-breasted suit crafted from authentic Biella Italian Super 180s merino wool with horn buttons, peak lapels, and silk cupro lining.",
+    "features": [
+      "100% Italian Super 180s Pure Virgin Merino Wool",
+      "Full Floating Horsehair Canvas Construction",
+      "Natural Buffalo Horn Buttons & Hand-Finished Boutonnière",
+      "Includes Double-Breasted Jacket & Flat-Front Trousers"
+    ],
+    "specs": {
+      "Fabric Origin": "Biella, Northern Italy",
+      "Fit": "Tailored Contemporary Fit",
+      "Care": "Specialist Dry Clean Only",
+      "Lapel": "10cm Classic Peak Lapel"
+    },
+    "stock": 12,
+    "badge": "Exclusive",
+    "delivery": "Complimentary White-Glove Courier in 2 Days",
+    "seller": "Aurelia Sartoria Guild",
+    "sizes": [
+      "38R",
+      "40R",
+      "42R",
+      "44R"
+    ],
+    "colors": [
+      "Midnight Navy Pinstripe",
+      "Charcoal Herringbone"
+    ],
+    "customerReviews": [
+      {
+        "id": "r106_1",
+        "userName": "Armaan Singhania",
+        "rating": 5,
+        "date": "5 days ago",
+        "comment": "Drapes like a dream. The full canvas chest piece adapts to your posture within hours.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Varanasi Silk Brocade Handcrafted Imperial Sherwani",
+    "brand": "Devika Heritage",
+    "category": "Fashion — Men",
+    "subcategory": "Ethnic & Wedding",
+    "price": 58999,
+    "originalPrice": 75000,
+    "discount": 21,
+    "rating": 5,
+    "reviews": 190,
+    "images": [
+      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Royal royal wedding sherwani woven on vintage Jacquard pit looms in Varanasi with antique gold zari motifs and mother-of-pearl buttons.",
+    "features": [
+      "Pure Banarasi Katan Silk with Antique Metallic Zari",
+      "Intricate French Wire & Dabka Hand-Embroidery",
+      "Concealed Mandarin Collar with Velvet Piped Placket",
+      "Includes Churidar & Silk Pocket Square"
+    ],
+    "specs": {
+      "Weave Type": "Varanasi Kadwa Silk Brocade",
+      "Lining": "100% Breathable Mulberry Silk Satin",
+      "Embellishment": "Zardozi & Semi-Precious Stone Studs",
+      "Care": "Dry Clean & Preserved Muslin Storage"
+    },
+    "stock": 9,
+    "badge": "Exclusive",
+    "delivery": "Insured Express White-Glove in 2 Days",
+    "seller": "Devika Master Weavers",
+    "sizes": [
+      "38",
+      "40",
+      "42",
+      "44"
+    ],
+    "colors": [
+      "Imperial Cream & Gold",
+      "Heritage Maroon & Zari"
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Highland 100% Pure Mongolian Cashmere Overcoat",
+    "brand": "Aurelia",
+    "category": "Fashion — Men",
+    "subcategory": "Coats & Jackets",
+    "price": 36999,
+    "originalPrice": 48000,
+    "discount": 23,
+    "rating": 4.8,
+    "reviews": 240,
+    "images": [
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Double-faced unlined coat hand-stitched from 100% Grade-A Mongolian cashmere fibers, offering weightless warmth and silky soft drape.",
+    "features": [
+      "100% Grade-A Mongolian Long-Staple Cashmere (480 GSM)",
+      "Hand-Split & Turned Edges (Doppio Tessuto Technique)",
+      "Notched Lapels & Deep Welted Fleece-Lined Pockets",
+      "Genuine Corozo Nut Buttons"
+    ],
+    "specs": {
+      "Material": "100% Mongolian Cashmere",
+      "Length": "Mid-Thigh Overcoat Length (102cm)",
+      "Fit": "Relaxed Tailored Layering Fit",
+      "Care": "Professional Cashmere Dry Clean"
+    },
+    "stock": 15,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery in 2 Days",
+    "seller": "Aurelia Sartoria Guild",
+    "sizes": [
+      "38",
+      "40",
+      "42",
+      "44"
+    ],
+    "colors": [
+      "Camel Tan",
+      "Charcoal Melange",
+      "Black Pearl"
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Artisan Sea Island Cotton Casual Cutaway Shirt",
+    "brand": "Gilded Thread",
+    "category": "Fashion — Men",
+    "subcategory": "Casual & Formal Shirts",
+    "price": 6499,
+    "originalPrice": 9500,
+    "discount": 32,
+    "rating": 4.7,
+    "reviews": 420,
+    "images": [
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "World-renowned West Indian Sea Island cotton shirt woven at 140/2 ply, providing unparalleled silkiness and cool breathability in Indian summers.",
+    "features": [
+      "Certified 140/2 Extra-Long Staple Sea Island Cotton",
+      "Italian Semi-Spread Cutaway Collar with Removable Stays",
+      "Thick Australian Mother-of-Pearl Trocas Buttons",
+      "Single-Needle French Seam Stitching (22 Stitches per Inch)"
+    ],
+    "specs": {
+      "Weave": "Fine Poplin Weave",
+      "Cuff": "Chiseled Barrel Cuffs",
+      "Fit": "Tailored Slim Fit",
+      "Care": "Machine Wash Cold or Gentle Hand Wash"
+    },
+    "stock": 30,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Gilded Thread Shirthouse",
+    "sizes": [
+      "39 (15.5\")",
+      "40 (15.75\")",
+      "42 (16.5\")",
+      "44 (17.5\")"
+    ],
+    "colors": [
+      "Crisp Chalk White",
+      "Sky Blue Bengal Stripe",
+      "Powder Pink"
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Raw Silk Bandhgala Nehru Jacket with Silver Buttons",
+    "brand": "Devika Heritage",
+    "category": "Fashion — Men",
+    "subcategory": "Ethnic Vests",
+    "price": 12999,
+    "originalPrice": 17500,
+    "discount": 26,
+    "rating": 4.9,
+    "reviews": 310,
+    "images": [
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Sophisticated sleeveless bandhgala jacket crafted from textured Bhagalpur raw tussar silk with cast silver filigree buttons.",
+    "features": [
+      "100% Hand-Spun Bhagalpur Raw Tussar Silk",
+      "Cast Sterling Silver Plated Embossed Filigree Buttons",
+      "Structured Mandarin Collar with Piped Welt Pockets",
+      "Inner Bemberg Cupro Breathable Lining"
+    ],
+    "specs": {
+      "Style": "Sleeveless Royal Bandhgala Waistcoat",
+      "Fabric Weight": "Mid-Weight Structured Tussar",
+      "Dry Clean": "Yes",
+      "Closure": "Five Button Front"
+    },
+    "stock": 22,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Devika Master Weavers",
+    "sizes": [
+      "38",
+      "40",
+      "42",
+      "44"
+    ],
+    "colors": [
+      "Emerald Green",
+      "Royal Navy",
+      "Burnt Saffron"
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Kanjivaram Korvai Gold Zari Pure Silk Bridal Saree",
+    "brand": "Devika Heritage",
+    "category": "Fashion — Women",
+    "subcategory": "Sarees",
+    "price": 64999,
+    "originalPrice": 85000,
+    "discount": 24,
+    "rating": 5,
+    "reviews": 360,
+    "images": [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Authentic Silk Mark certified Kanchipuram bridal saree hand-loomed with Korvai interlocking border technique and pure silver electroplated in 24K gold zari.",
+    "features": [
+      "Certified 100% Pure Mulberry Silk (Silk Mark Guaranteed)",
+      "Traditional Korvai Double-Weft Interlocking Borders",
+      "Pure Silver Thread Electroplated in 24K Gold Zari",
+      "Includes Matching Unstitched Blouse Piece with Zari Border"
+    ],
+    "specs": {
+      "Length": "6.3 Meters (Includes 0.8m Blouse Fabric)",
+      "Origin": "Kanchipuram, Tamil Nadu",
+      "Weight": "850g Rich Heavy Silk",
+      "Zari Purity": "Pure Tested Zari"
+    },
+    "stock": 10,
+    "badge": "Exclusive",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "Devika Master Weavers",
+    "sizes": [
+      "Free Size (6.3m with Blouse)"
+    ],
+    "colors": [
+      "Vermillion Crimson & Temple Gold",
+      "Peacock Blue & Copper Zari"
+    ],
+    "customerReviews": [
+      {
+        "id": "r111_1",
+        "userName": "Ananya Iyer",
+        "rating": 5,
+        "date": "4 days ago",
+        "comment": "The sheer weight and gleam of the zari is breathtaking. Wore it for my reception and received endless compliments.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Zardozi Hand-Embroidered Velvet Kalidar Bridal Lehenga",
+    "brand": "Aurelia Couture",
+    "category": "Fashion — Women",
+    "subcategory": "Lehengas",
+    "price": 94999,
+    "originalPrice": 125000,
+    "discount": 24,
+    "rating": 4.9,
+    "reviews": 220,
+    "images": [
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Masterwork 16-kali bridal lehenga in plush micro-velvet, hand-embroidered with dabka, gota patti, and Swarovski crystals over 320 artisan hours.",
+    "features": [
+      "Opulent 16-Kalidar Flare with 4.5 Meter Circumference",
+      "320+ Hours of Detailed Hand Zardozi Embroidery",
+      "Includes Embroidered Velvet Blouse & Hand-Dyed Organza Dupatta",
+      "Custom Micro-Can-Can Layering for Voluminous Silhouette"
+    ],
+    "specs": {
+      "Skirt Material": "Pure Silk Micro-Velvet",
+      "Dupatta": "Silk Organza with Four-Sided Scalloped Border",
+      "Waist": "Customizable up to 42 Inches",
+      "Care": "Museum-Grade Preservation Dry Clean"
+    },
+    "stock": 7,
+    "badge": "Exclusive",
+    "delivery": "Free White-Glove Concierge in 3 Days",
+    "seller": "Aurelia Bridal Atelier",
+    "sizes": [
+      "Custom Stitched",
+      "Semi-Stitched"
+    ],
+    "colors": [
+      "Deep Wine Velvet",
+      "Heritage Vermilion Red"
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Pleated Chiffon Grecian Gown with Embroidered Crystal Bodice",
+    "brand": "Aurelia Couture",
+    "category": "Fashion — Women",
+    "subcategory": "Evening Gowns",
+    "price": 28999,
+    "originalPrice": 38000,
+    "discount": 24,
+    "rating": 4.8,
+    "reviews": 310,
+    "images": [
+      "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Floor-length evening gown with hand-pleated silk chiffon skirt, semi-corseted boned bodice with celestial glass crystal embellishments.",
+    "features": [
+      "Hand-Draped Floating Pure Silk Chiffon",
+      "Couture Boned Corsetry Bodice with Built-in Support",
+      "Hand-Applied Swarovski Crystals & Cut-Bead Fringe",
+      "Thigh-High Front Slit with Flowing Sweep Train"
+    ],
+    "specs": {
+      "Silhouette": "A-Line Grecian Draped",
+      "Closure": "Hidden Back Zip with Hook-and-Eye",
+      "Lining": "100% Stretch Silk Charmeuse",
+      "Length": "Floor Length (155cm from Shoulder)"
+    },
+    "stock": 14,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery in 2 Days",
+    "seller": "Aurelia Bridal Atelier",
+    "sizes": [
+      "XS (UK 6)",
+      "S (UK 8)",
+      "M (UK 10)",
+      "L (UK 12)"
+    ],
+    "colors": [
+      "Champagne Gold",
+      "Midnight Sapphire",
+      "Emerald Mist"
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Pure Mulberry Silk Trench Coat with Horn Belt Buckle",
+    "brand": "Gilded Thread",
+    "category": "Fashion — Women",
+    "subcategory": "Outerwear",
+    "price": 24999,
+    "originalPrice": 32000,
+    "discount": 22,
+    "rating": 4.8,
+    "reviews": 270,
+    "images": [
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Modernized classic double-breasted trench coat reimagined in fluid heavyweight 30-momme mulberry silk twill with water-resistant finish.",
+    "features": [
+      "Heavyweight 30-Momme Pure Mulberry Silk Twill",
+      "Water-Repellent Eco-Shield Finish",
+      "Removable Waist Tie Belt with Natural Buffalo Horn Buckle",
+      "Storm Flap, Epaulettes, and Storm Shield Back"
+    ],
+    "specs": {
+      "Material": "100% Mulberry Silk",
+      "Buttons": "Engraved Horn Buttons",
+      "Length": "Knee Length (108cm)",
+      "Care": "Professional Dry Clean Only"
+    },
+    "stock": 16,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Gilded Thread Studio",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Honey Beige",
+      "Noir Black",
+      "Pistachio Sage"
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Chanderi Silk Hand-Block Printed Anarkali Kurta Set",
+    "brand": "Devika Heritage",
+    "category": "Fashion — Women",
+    "subcategory": "Kurtas & Suits",
+    "price": 11499,
+    "originalPrice": 15999,
+    "discount": 28,
+    "rating": 4.9,
+    "reviews": 450,
+    "images": [
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Flowing 28-kali Anarkali suit set in gossamer Chanderi silk with authentic Sanganeri vegetable dye hand-block prints and delicate gota patti work.",
+    "features": [
+      "Pure Handwoven Chanderi Silk with Sheer Luster",
+      "Traditional Wooden Block Hand-Print with Natural Dyes",
+      "Delicate Gota Patti Yoke & Hem Detailing",
+      "Includes Mulmul Trousers & Organza Scalloped Dupatta"
+    ],
+    "specs": {
+      "Set Includes": "Kurta, Trousers & Dupatta (3 Pieces)",
+      "Kurta Length": "Calf Length (124cm)",
+      "Fabric": "Chanderi Silk with Pure Cotton Mulmul Lining",
+      "Wash": "Dry Clean Recommended"
+    },
+    "stock": 25,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Devika Master Weavers",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Powder Blue & Gold",
+      "Blush Peach & Silver"
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Stradale Full-Grain Italian Calfskin Oxford Dress Shoes",
+    "brand": "Calzolaio",
+    "category": "Shoes & Sneakers",
+    "subcategory": "Formal Shoes",
+    "price": 18999,
+    "originalPrice": 26000,
+    "discount": 27,
+    "rating": 4.9,
+    "reviews": 380,
+    "images": [
+      "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Hand-burnished closed-lacing Oxford shoes handcrafted in Tuscany using full-grain French calfskin with Goodyear-welted leather soles.",
+    "features": [
+      "Goodyear Welted Construction (Resoleable for Decades)",
+      "Full-Grain French Boxcalf Leather Hand-Patinated in Tuscany",
+      "Oak-Bark Tanned Leather Outsole with Beveled Waist",
+      "Cushioned Cork Bed Molded to Foot Anatomy"
+    ],
+    "specs": {
+      "Origin": "Florence, Italy",
+      "Sole": "Hand-Stitched Leather Sole with Brass Nails",
+      "Lining": "Full Glove Calf Leather",
+      "Includes": "Solid Cedarwood Shoe Trees & Velour Dustbags"
+    },
+    "stock": 18,
+    "badge": "Exclusive",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "Calzolaio Artisans Florence",
+    "sizes": [
+      "UK 7",
+      "UK 8",
+      "UK 9",
+      "UK 10",
+      "UK 11"
+    ],
+    "colors": [
+      "Burnished Antique Cognac",
+      "Espresso Dark Brown",
+      "Onyx Black"
+    ],
+    "customerReviews": [
+      {
+        "id": "r116_1",
+        "userName": "Vicky Singhal",
+        "rating": 5,
+        "date": "1 week ago",
+        "comment": "The leather quality and hand-painted patina are museum-grade. Incredibly comfortable after break-in.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Apex Velocity Runner Luxury Chunky Designer Sneakers",
+    "brand": "ApexFlight",
+    "category": "Shoes & Sneakers",
+    "subcategory": "Designer Sneakers",
+    "price": 14999,
+    "originalPrice": 21999,
+    "discount": 32,
+    "rating": 4.8,
+    "reviews": 640,
+    "images": [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Futuristic luxury runner combining Italian nappa leather, technical ballistic mesh, sculpted lightweight Vibram outsole, and reflective 3M details.",
+    "features": [
+      "Mixed-Media Upper (Italian Nappa Leather & Technical Mesh)",
+      "Ultra-Lightweight Ergonomic Vibram MegaGrip Outsole",
+      "Ortholite Breathable Antimicrobial Cushioned Footbed",
+      "Reflective 3M Piping Accents"
+    ],
+    "specs": {
+      "Outsole": "Vibram High-Rebound Foam",
+      "Lacing": "Quick-Cinch Speed Toggle System",
+      "Drop": "8mm Athletic Heel-to-Toe Drop",
+      "Weight": "380g per Shoe"
+    },
+    "stock": 26,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "ApexFlight Footwear",
+    "sizes": [
+      "UK 7",
+      "UK 8",
+      "UK 9",
+      "UK 10",
+      "UK 11"
+    ],
+    "colors": [
+      "Triple White & Silver",
+      "Monochrome Shadow Black",
+      "Volt Neon & Slate"
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Classic Minimalist Low-Top Leather Court Sneakers",
+    "brand": "Calzolaio",
+    "category": "Shoes & Sneakers",
+    "subcategory": "Minimalist Sneakers",
+    "price": 9999,
+    "originalPrice": 14500,
+    "discount": 31,
+    "rating": 4.8,
+    "reviews": 920,
+    "images": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "The timeless wardrobe essential: clean monochromatic court sneaker handcrafted from buttery Italian nappa leather with Margom rubber cupsole.",
+    "features": [
+      "Supple Full-Grain Italian Nappa Leather Upper",
+      "Authentic Italian Margom Vulcanized Rubber Cupsole",
+      "Calfskin Interior Lining with Arch-Support Insole",
+      "Gold Foil Serial Number Embossing on Heel"
+    ],
+    "specs": {
+      "Sole": "Stitched Margom Cupsole (Never Glued)",
+      "Laces": "Waxed Egyptian Cotton Laces",
+      "Origin": "Civitanova Marche, Italy",
+      "Care": "Leather Balm & Sneaker Protector"
+    },
+    "stock": 35,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Calzolaio Artisans Florence",
+    "sizes": [
+      "UK 6",
+      "UK 7",
+      "UK 8",
+      "UK 9",
+      "UK 10",
+      "UK 11"
+    ],
+    "colors": [
+      "Pure Chalk White",
+      "Off-White & Gum Sole",
+      "Matte Black & White"
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Heritage Tuscan Suede Chelsea Boots with Crepe Sole",
+    "brand": "Calzolaio",
+    "category": "Shoes & Sneakers",
+    "subcategory": "Boots",
+    "price": 16499,
+    "originalPrice": 22000,
+    "discount": 25,
+    "rating": 4.9,
+    "reviews": 310,
+    "images": [
+      "https://images.unsplash.com/photo-1582588678413-dbf45f4823e9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Effortlessly stylish pull-on Chelsea boots in water-resistant velvety Italian suede with flexible natural crepe rubber soles and pull tabs.",
+    "features": [
+      "Hydro-Treated Weather-Resistant Italian Reverse Suede",
+      "Heavy-Duty Elastic Side Gussets for Easy Slip-On",
+      "Natural Plantation Crepe Cushion Sole",
+      "Blake Stitched Construction"
+    ],
+    "specs": {
+      "Shaft Height": "6 Inches Ankle Height",
+      "Upper": "100% Calf Suede",
+      "Sole": "100% Natural Crepe Rubber",
+      "Country of Origin": "Italy"
+    },
+    "stock": 20,
+    "badge": "Exclusive",
+    "delivery": "Free Express Delivery in 2 Days",
+    "seller": "Calzolaio Artisans Florence",
+    "sizes": [
+      "UK 7",
+      "UK 8",
+      "UK 9",
+      "UK 10",
+      "UK 11"
+    ],
+    "colors": [
+      "Snuff Tobacco Brown",
+      "Sandy Taupe",
+      "Charcoal Suede"
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Imperial Double Monk Strap Handcrafted Leather Shoes",
+    "brand": "Calzolaio",
+    "category": "Shoes & Sneakers",
+    "subcategory": "Monk Straps",
+    "price": 17999,
+    "originalPrice": 24000,
+    "discount": 25,
+    "rating": 4.8,
+    "reviews": 280,
+    "images": [
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Distinguished double monk strap dress shoes featuring solid palladium-finished brass buckles, hand-burnished toe medallion, and Goodyear welt.",
+    "features": [
+      "Full-Grain Vegetable-Tanned Tuscan Calf Leather",
+      "Double Solid Brass Buckles with Palladium Electroplating",
+      "Goodyear Welted with Channelled Leather Insole",
+      "Hand-Finished Museum Patina Dip"
+    ],
+    "specs": {
+      "Toe Style": "Chiseled Cap Toe with Brogue Perforations",
+      "Insole": "Poron High-Density Shock Absorber",
+      "Weight": "490g per Shoe",
+      "Warranty": "5 Years Structural Guarantee"
+    },
+    "stock": 15,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Calzolaio Artisans Florence",
+    "sizes": [
+      "UK 7",
+      "UK 8",
+      "UK 9",
+      "UK 10"
+    ],
+    "colors": [
+      "Museum Burgundy",
+      "Deep Espresso",
+      "Black Onyx"
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Chronos Perpetual Master Tourbillon Sapphire Mechanical Watch",
+    "brand": "Chronos",
+    "category": "Watches",
+    "subcategory": "Haute Horlogerie",
+    "price": 89999,
+    "originalPrice": 125000,
+    "discount": 28,
+    "rating": 5,
+    "reviews": 140,
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Fine horology timepiece housing a 60-second flying tourbillon cage at 6 o'clock, exhibition sapphire caseback, Côtes de Genève finishing, and hand-stitched alligator strap.",
+    "features": [
+      "Open-Heart Flying Tourbillon Complication (28,800 vph)",
+      "Sapphire Crystal with Double Anti-Reflective Glare Coat",
+      "72-Hour Power Reserve Twin-Barrel Movement",
+      "Louisiana Farmed Alligator Leather Deployment Buckle Strap"
+    ],
+    "specs": {
+      "Case Diameter": "41.5mm | Thickness 11.2mm",
+      "Case Material": "316L Surgical Grade Stainless Steel",
+      "Water Resistance": "50 Meters (5 ATM)",
+      "Accuracy": "COSC Certified Criteria (-3/+5 sec/day)"
+    },
+    "stock": 8,
+    "badge": "Exclusive",
+    "delivery": "Armored Courier Insured Delivery in 2 Days",
+    "seller": "Chronos Horlogerie Geneve",
+    "sizes": [
+      "41.5mm Case"
+    ],
+    "colors": [
+      "Sunburst Silver & Blue Hands",
+      "Rose Gold Bezel & Obsidian Dial"
+    ],
+    "customerReviews": [
+      {
+        "id": "r121_1",
+        "userName": "Sameer Nambiar",
+        "rating": 5,
+        "date": "2 days ago",
+        "comment": "The hypnotic rotation of the tourbillon cage is art. Absolute pinnacle of mechanical mastery.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Aura Oceanographer 300M Automatic Titanium Diver Watch",
+    "brand": "Chronos",
+    "category": "Watches",
+    "subcategory": "Diver Watches",
+    "price": 42999,
+    "originalPrice": 58000,
+    "discount": 26,
+    "rating": 4.9,
+    "reviews": 380,
+    "images": [
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Grade 5 titanium professional saturation diving watch rated to 300 meters with ceramic unidirectional countdown bezel and Super-LumiNova BGW9 lume.",
+    "features": [
+      "Full Grade-5 Titanium Case and Bracelet (40% Lighter than Steel)",
+      "300 Meters (30 ATM) Water Resistance with Helium Escape Valve",
+      "Swiss ETA 2824-2 Automatic Movement (28,800 BPH)",
+      "Zirconia Ceramic 120-Click Unidirectional Bezel"
+    ],
+    "specs": {
+      "Case": "42mm Grade 5 Titanium",
+      "Lume": "Swiss Super-LumiNova BGW9 Grade X1",
+      "Crystal": "4mm Domed Sapphire with Undercoating",
+      "Clasp": "Titanium Diver Extension On-the-Fly Micro-Adjust"
+    },
+    "stock": 16,
+    "badge": "Best Seller",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "Chronos Horlogerie Geneve",
+    "sizes": [
+      "42mm Case"
+    ],
+    "colors": [
+      "Deep Sea Ocean Blue",
+      "Matte Stealth Black"
+    ]
+  },
+  {
+    "id": 123,
+    "name": "Vanguard Heritage Gold Chronograph with Enamel Dial",
+    "brand": "Chronos",
+    "category": "Watches",
+    "subcategory": "Chronographs",
+    "price": 49999,
+    "originalPrice": 65000,
+    "discount": 23,
+    "rating": 4.8,
+    "reviews": 290,
+    "images": [
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Vintage-inspired column wheel chronograph watch with high-fire Grand Feu enamel dial, blued Breguet hands, and 18K yellow gold PVD case.",
+    "features": [
+      "Mechanical Column-Wheel Column Chronograph Movement",
+      "High-Fire Grand Feu White Enamel Scratchproof Dial",
+      "Heat-Blued Steel Breguet Moon Hands",
+      "Hand-Stitched Italian Horween Shell Cordovan Strap"
+    ],
+    "specs": {
+      "Movement": "Seagull ST1901 Column Wheel Manual Wind",
+      "Diameter": "39mm Vintage Proportions",
+      "Glass": "Boxed Sapphire Crystal with AR Coating",
+      "Case": "316L Steel with 18K Yellow Gold 10-Micron PVD"
+    },
+    "stock": 14,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery in 2 Days",
+    "seller": "Chronos Horlogerie Geneve",
+    "sizes": [
+      "39mm Case"
+    ],
+    "colors": [
+      "Grand Feu Enamel White",
+      "Salmon Vintage Dial"
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Elegance Ultra-Slim Dress Watch with Onyx Cabochon Crown",
+    "brand": "Gilded Thread",
+    "category": "Watches",
+    "subcategory": "Dress Watches",
+    "price": 21999,
+    "originalPrice": 29999,
+    "discount": 27,
+    "rating": 4.7,
+    "reviews": 410,
+    "images": [
+      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Ultra-thin 6.2mm minimalist dress watch featuring genuine black onyx cabochon crown, guilloché silver dial, and butterfly deployment clasp.",
+    "features": [
+      "Ultra-Slim 6.2mm Case Slides Effortlessly Under Shirt Cuffs",
+      "Guilloché Roman Numeral Textured Dial",
+      "Natural Black Onyx Gemstone Inset Crown",
+      "Quick-Release Italian Saddle Leather Strap"
+    ],
+    "specs": {
+      "Case Thickness": "6.2mm Ultra-Thin",
+      "Movement": "Swiss Ronda Slimtech Quartz Movement",
+      "Battery Life": "5 Years Continuous",
+      "Glass": "Sapphire Crystal Glass"
+    },
+    "stock": 28,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Gilded Thread Studio",
+    "sizes": [
+      "38mm Case"
+    ],
+    "colors": [
+      "Polished Rose Gold & White",
+      "Steel & Midnight Blue"
+    ]
+  },
+  {
+    "id": 125,
+    "name": "TechNova Pulse Horizon GPS Titanium Smartwatch",
+    "brand": "TechNova",
+    "category": "Watches",
+    "subcategory": "Smartwatches",
+    "price": 27999,
+    "originalPrice": 36999,
+    "discount": 24,
+    "rating": 4.9,
+    "reviews": 780,
+    "images": [
+      "https://images.unsplash.com/photo-1539185441755-769473a23570?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Aviation-grade titanium smartwatch with sapphire crystal touch display, dual-band GPS, 14-day battery life, ECG heart telemetry, and 100+ sport modes.",
+    "features": [
+      "Grade-5 Titanium Unibody with Ceramic Caseback",
+      "1.43-Inch 466x466 AMOLED Always-On Display (1500 Nits)",
+      "Medical-Grade Optical Heart, SpO2 & ECG Telemetry",
+      "Dual-Frequency L1+L5 GNSS Route Tracking with Offline Maps"
+    ],
+    "specs": {
+      "Battery Life": "14 Days Regular | 40 Hours Continuous GPS",
+      "Waterproof": "5 ATM + 40m Recreational Scuba Diving (EN13319)",
+      "Connectivity": "Bluetooth 5.3, Wi-Fi, NFC Contactless Payments",
+      "Compatibility": "iOS & Android Companion App"
+    },
+    "stock": 35,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "TechNova Official Outlet",
+    "sizes": [
+      "46mm Titanium"
+    ],
+    "colors": [
+      "Titanium Silver & Orange Strap",
+      "Titanium Black & Leather Strap"
+    ]
+  },
+  {
+    "id": 126,
+    "name": "Firenze Full-Grain Saddle Leather Weekender Duffle Bag",
+    "brand": "Tuscan Craft",
+    "category": "Bags & Accessories",
+    "subcategory": "Travel Bags",
+    "price": 19999,
+    "originalPrice": 28000,
+    "discount": 29,
+    "rating": 4.9,
+    "reviews": 390,
+    "images": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Spacious airline carry-on weekender duffle made from 2.2mm thick Tuscan vegetable-tanned saddle leather, antique solid brass hardware, and dedicated shoe compartment.",
+    "features": [
+      "100% Certified Full-Grain Tuscan Saddle Leather",
+      "Separate Exterior Water-Resistant Shoe / Laundry Compartment",
+      "Solid Cast Antiqued Brass YKK Excella Zippers",
+      "Reinforced Padded Ergonomic Leather Shoulder Strap"
+    ],
+    "specs": {
+      "Dimensions": "52 x 28 x 26 cm (Airline Cabin Approved 42L)",
+      "Lining": "Heavyweight 16oz Scottish Waxed Cotton Canvas",
+      "Hardware": "100% Solid Cast Brass",
+      "Weight": "2.1 kg"
+    },
+    "stock": 22,
+    "badge": "Exclusive",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "Tuscan Craft Guild",
+    "sizes": [
+      "42L Weekender"
+    ],
+    "colors": [
+      "Rich Cognac Brown",
+      "Espresso Walnut",
+      "Classic Black"
+    ],
+    "customerReviews": [
+      {
+        "id": "r126_1",
+        "userName": "Tarun Kapoor",
+        "rating": 5,
+        "date": "3 days ago",
+        "comment": "The leather aroma filled the room right out of the box. Extremely rugged and looks better every time I travel.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Saffiano Leather Executive Laptop Briefcase with Brass Lock",
+    "brand": "Tuscan Craft",
+    "category": "Bags & Accessories",
+    "subcategory": "Briefcases",
+    "price": 16999,
+    "originalPrice": 23500,
+    "discount": 28,
+    "rating": 4.8,
+    "reviews": 410,
+    "images": [
+      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Slim professional briefcase crafted from scratch-resistant Italian Saffiano calf leather, dedicated 16-inch padded laptop sleeve, and key-lock push latch.",
+    "features": [
+      "Water & Scratch-Resistant Italian Saffiano Cross-Grain Leather",
+      "Padded Shock-Absorbing Sleeve Fits up to 16\" MacBook Pro",
+      "Solid Brass Combination & Key Dual-Lock Mechanism",
+      "Trolley Pass-Through Sleeve for Rolling Luggage"
+    ],
+    "specs": {
+      "Dimensions": "40 x 30 x 8 cm",
+      "Pockets": "Laptop sleeve, 2 phone pockets, 3 pen holders, RFID passport pocket",
+      "Strap": "Detachable Leather Shoulder Strap",
+      "Hardware": "Palladium Plated Brass"
+    },
+    "stock": 20,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Tuscan Craft Guild",
+    "sizes": [
+      "16-Inch Briefcase"
+    ],
+    "colors": [
+      "Midnight Black",
+      "Bordeaux Burgundy",
+      "Navy Blue"
+    ]
+  },
+  {
+    "id": 128,
+    "name": "Palermo Handwoven Soft Nappa Leather Crossbody Hobo Tote",
+    "brand": "Aurelia",
+    "category": "Bags & Accessories",
+    "subcategory": "Handbags & Totes",
+    "price": 18499,
+    "originalPrice": 25000,
+    "discount": 26,
+    "rating": 4.9,
+    "reviews": 330,
+    "images": [
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Supple intrecciato hand-woven calf leather shoulder tote with magnetic closure, detachable interior zip pouch, and gold-plated hardware.",
+    "features": [
+      "Intrecciato Seamless Hand-Woven Italian Nappa Leather",
+      "Detachable Zippered Calfskin Document Pouch Included",
+      "Dual Top Handles + Adjustable Crossbody Shoulder Strap",
+      "Magnetic Foldover Closure with Suede Interior"
+    ],
+    "specs": {
+      "Dimensions": "36 x 26 x 14 cm",
+      "Material": "100% Full-Grain Nappa Calfskin",
+      "Weight": "720g Ultra-Soft",
+      "Origin": "Milan, Italy"
+    },
+    "stock": 18,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery in 2 Days",
+    "seller": "Aurelia Luxury Accessories",
+    "sizes": [
+      "Medium Tote"
+    ],
+    "colors": [
+      "Butter Cream",
+      "Caramel Tan",
+      "Emerald Forest"
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Bespoke Horween Shell Cordovan Bifold Wallet with RFID Shield",
+    "brand": "Tuscan Craft",
+    "category": "Bags & Accessories",
+    "subcategory": "Wallets",
+    "price": 7499,
+    "originalPrice": 10999,
+    "discount": 32,
+    "rating": 4.9,
+    "reviews": 580,
+    "images": [
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "The rarest leather in the world: hand-stitched wallet made from genuine Horween Shell Cordovan leather that never creases, featuring 8 card slots and full RFID protection.",
+    "features": [
+      "Genuine Chicago Horween Shell Cordovan Leather (Horsehide Membrane)",
+      "Six-Month Vegetable Tanning Process with Mirror-Like Sheen",
+      "8 Dedicated Credit Card Slots + 2 Hidden Currency Pockets",
+      "Certified 13.56 MHz RFID Shielding Barrier"
+    ],
+    "specs": {
+      "Thickness": "Only 9mm Slim Profile when Folded",
+      "Thread": "Japanese Fil Au Chinois Waxed Linen Thread",
+      "Edges": "Hand-Beveled, Burnished with Beeswax",
+      "Lifespan": "Inheritable Lifetime Durability"
+    },
+    "stock": 29,
+    "badge": "Exclusive",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Tuscan Craft Guild",
+    "sizes": [
+      "Bifold 8-Slot"
+    ],
+    "colors": [
+      "Color #8 Deep Burgundy",
+      "Natural Glazed Tan",
+      "Black Cordovan"
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Kashmiri Royal Saffron & 24K Gold Youth Restoring Night Elixir",
+    "brand": "AyurVeda Luxe",
+    "category": "Beauty & Personal Care",
+    "subcategory": "Skincare Serums",
+    "price": 6499,
+    "originalPrice": 8999,
+    "discount": 28,
+    "rating": 5,
+    "reviews": 510,
+    "images": [
+      "https://images.unsplash.com/photo-1608248597359-573523315dfa?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Cold-infused face oil blending Grade-1 Pamore Kashmiri Mogra Saffron, 24K colloidal gold leaf flakes, and cold-pressed wild rosehip oil to visibly restore cellular radiance.",
+    "features": [
+      "Certified Grade-1 Kashmiri Mogra Saffron (Pampore Harvest)",
+      "Real 24K Pure Cosmetic Gold Leaf Suspended Micro-Flakes",
+      "Cold-Pressed Cold-Infused Rosehip & Kumkumadi Botanical Actives",
+      "Free from Parabens, Sulfates, Mineral Oils & Synthetic Fragrances"
+    ],
+    "specs": {
+      "Volume": "30 ml / 1.0 fl. oz. Miron Violet Glass Dropper Bottle",
+      "Skin Type": "All Skin Types (Mature, Dry, & Combination)",
+      "Usage": "3-4 Drops Nightly Before Moisturizer",
+      "Certifications": "Ecocert Organic & Dermatologically Tested"
+    },
+    "stock": 45,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "AyurVeda Luxe Botanical Labs",
+    "sizes": [
+      "30 ml",
+      "50 ml Deluxe"
+    ],
+    "colors": [
+      "Gold Amber Elixir"
+    ],
+    "customerReviews": [
+      {
+        "id": "r130_1",
+        "userName": "Geetika Bansal",
+        "rating": 5,
+        "date": "Yesterday",
+        "comment": "This elixir changed my skin texture completely in 10 days. The glow when waking up is genuine.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "name": "Royal Oudh & Damascena Rose Extrait de Parfum (50ml)",
+    "brand": "Maison d'Avenza",
+    "category": "Beauty & Personal Care",
+    "subcategory": "Fine Fragrances",
+    "price": 11999,
+    "originalPrice": 16500,
+    "discount": 27,
+    "rating": 4.9,
+    "reviews": 320,
+    "images": [
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Concentrated 35% Extrait de Parfum blending aged Assam Agarwood Oudh, morning-harvested Taif Damascena roses, warm ambergris, and smoky Cambodian incense.",
+    "features": [
+      "35% Pure Perfume Oil Concentration (Over 14+ Hours Longevity)",
+      "Vintage 12-Year Aged Natural Assam Agarwood (Aquilaria)",
+      "Handcrafted Heavy Crystal Flacon with Gold Magnetic Cap",
+      "Artisanal Micro-Batch Macerated in Grasse, France"
+    ],
+    "specs": {
+      "Olfactory Family": "Woody Floral Oriental",
+      "Top Notes": "Taif Rose, Bergamot, Saffron",
+      "Heart Notes": "Bulgarian Rose Absolute, Patchouli, Amber",
+      "Base Notes": "Natural Assam Oudh, Frankincense, Sandalwood"
+    },
+    "stock": 20,
+    "badge": "Exclusive",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "Maison d'Avenza Parfumerie",
+    "sizes": [
+      "50 ml Extrait",
+      "100 ml Flacon"
+    ],
+    "colors": [
+      "Amber Glass"
+    ]
+  },
+  {
+    "id": 132,
+    "name": "Botanical Ceramide Barrier Repair Intensive Cream",
+    "brand": "AyurVeda Luxe",
+    "category": "Beauty & Personal Care",
+    "subcategory": "Face Creams",
+    "price": 4499,
+    "originalPrice": 6200,
+    "discount": 27,
+    "rating": 4.8,
+    "reviews": 670,
+    "images": [
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1608248597359-573523315dfa?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Deeply nourishing recovery cream enriched with 5 skin-identical ceramides, bio-fermented hyaluronic acid, and centella asiatica to repair the lipid barrier.",
+    "features": [
+      "5 Essential Ceramide Complex (EOP, NP, AP, AS, NS)",
+      "Centella Asiatica (Cica) & Madecassoside Anti-Inflammatory Actives",
+      "Non-Comedogenic Velvety Whipped Texture with Zero Stickiness",
+      "Clinically Proven 72-Hour Continuous Hydration Lock"
+    ],
+    "specs": {
+      "Volume": "50 ml / 1.7 oz Opal Glass Jar with Spatula",
+      "pH": "Balanced at 5.5",
+      "Formula": "Hypoallergenic & Fragrance-Free",
+      "Origin": "Formulated in Switzerland & Handcrafted in India"
+    },
+    "stock": 35,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "AyurVeda Luxe Botanical Labs",
+    "sizes": [
+      "50 ml Jar"
+    ],
+    "colors": [
+      "Cream White"
+    ]
+  },
+  {
+    "id": 133,
+    "name": "Mysore Pure Sandalwood & Vetiver Botanical Body Cleanser",
+    "brand": "AyurVeda Luxe",
+    "category": "Beauty & Personal Care",
+    "subcategory": "Bath & Body",
+    "price": 2499,
+    "originalPrice": 3500,
+    "discount": 29,
+    "rating": 4.8,
+    "reviews": 820,
+    "images": [
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Luxurious foaming gel body wash infused with certified wild-harvested Mysore Sandalwood oil, earthy Khus (Vetiver) root extract, and organic aloe vera.",
+    "features": [
+      "Authentic GI-Tagged Mysore White Sandalwood (Santalum Album)",
+      "Hydrating Organic Aloe Leaf Juice & Vegetable Glycerin Base",
+      "Sulfate-Free Coconut Cleansing Agents that Protect Skin Moisture",
+      "Earthy Calming Aromatherapy Scent Profile"
+    ],
+    "specs": {
+      "Volume": "300 ml Pump Bottle",
+      "Scent": "Mysore Sandalwood & Khus Root",
+      "Texture": "Rich Silk Foaming Gel",
+      "Cruelty-Free": "100% Leaping Bunny Certified"
+    },
+    "stock": 50,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "AyurVeda Luxe Botanical Labs",
+    "sizes": [
+      "300 ml Pump"
+    ],
+    "colors": [
+      "Amber Bottle"
+    ]
+  },
+  {
+    "id": 134,
+    "name": "SonicPulse Ultra Titanium Facial Sculpting & LED Light Device",
+    "brand": "Lumina",
+    "category": "Beauty & Personal Care",
+    "subcategory": "Beauty Tech",
+    "price": 13999,
+    "originalPrice": 19999,
+    "discount": 30,
+    "rating": 4.9,
+    "reviews": 410,
+    "images": [
+      "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1608248597359-573523315dfa?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Handheld microcurrent and sonic sculpting wand with red (630nm) and near-infrared (830nm) LED light therapy to tighten jawline contours and stimulate collagen.",
+    "features": [
+      "Dual Microcurrent Rollers (350 Microamps) for Facial Lifting",
+      "Medical-Grade Red (630nm) & Near-Infrared (830nm) LED Phototherapy",
+      "12,000 Sonic Vibrations Per Minute for Deep Product Absorption",
+      "Thermal Heating at 42°C for Lymphatic Drainage"
+    ],
+    "specs": {
+      "Battery": "Rechargeable Lithium-Ion (Up to 3 Weeks on Single Charge)",
+      "Water Resistance": "IPX7 Waterproof for In-Shower Use",
+      "Warranty": "2 Years Official Replacement Guarantee",
+      "Includes": "Conductive Peptide Gel Primer (50ml)"
+    },
+    "stock": 22,
+    "badge": "Exclusive",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Lumina Digital Store",
+    "sizes": [
+      "Device + Primer Gel Kit"
+    ],
+    "colors": [
+      "Rose Gold",
+      "Titanium Graphite"
+    ]
+  },
+  {
+    "id": 135,
+    "name": "Hand-Knotted Kashmiri Pure Mulberry Silk Carpet (6x4 Feet)",
+    "brand": "Artisan Guild",
+    "category": "Home & Living",
+    "subcategory": "Rugs & Carpets",
+    "price": 89999,
+    "originalPrice": 120000,
+    "discount": 25,
+    "rating": 5,
+    "reviews": 180,
+    "images": [
+      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Masterwork hand-knotted silk carpet boasting 600 knots per square inch (KPSI), created over 14 months by master weavers in Srinagar using Persian Tree-of-Life motifs.",
+    "features": [
+      "100% Pure Mulberry Silk on Cotton Foundation",
+      "High Density: Over 600 Knots Per Square Inch (KPSI)",
+      "Traditional Natural Vegetable Dye Color Palette",
+      "Silk Mark Certificate of Provenance Included"
+    ],
+    "specs": {
+      "Dimensions": "6 x 4 Feet (183 x 122 cm)",
+      "Origin": "Srinagar, Kashmir Valley",
+      "Weave Duration": "14 Months by Master Artisan",
+      "Maintenance": "Professional Silk Carpet Care"
+    },
+    "stock": 6,
+    "badge": "Exclusive",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "Artisan Kashmir Guild",
+    "sizes": [
+      "6x4 Feet (183x122cm)",
+      "9x6 Feet (274x183cm)"
+    ],
+    "colors": [
+      "Jeweled Ivory & Ruby Medallion",
+      "Midnight Indigo & Gold"
+    ],
+    "customerReviews": [
+      {
+        "id": "r135_1",
+        "userName": "Sunita Chawla",
+        "rating": 5,
+        "date": "1 week ago",
+        "comment": "The luminosity of the silk changes depending on the light angle. A true heirloom investment.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "name": "Artisan Hand-Cast Brass & Alabaster Ambient Table Lamp",
+    "brand": "Lumina Home",
+    "category": "Home & Living",
+    "subcategory": "Lighting",
+    "price": 18499,
+    "originalPrice": 24999,
+    "discount": 26,
+    "rating": 4.8,
+    "reviews": 320,
+    "images": [
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Architectural bedside table lamp sculptured from solid hand-burnished brass and natural veined Spanish alabaster globe diffuser with touch dimming.",
+    "features": [
+      "Solid Hand-Turned Antiqued Brass Base with Protective Wax Finish",
+      "Genuine Spanish Translucent Alabaster Stone Sphere",
+      "Integrated 2700K Warm Filament LED with 3-Step Touch Dimmer",
+      "Hand-Knotted Braided Silk Cord with Solid Brass Inline Switch"
+    ],
+    "specs": {
+      "Height": "42 cm | Base Diameter: 18 cm",
+      "Weight": "4.8 kg Solid Stone & Brass",
+      "Bulb": "Included Dimmable Warm LED (25,000 Hr Lifespan)",
+      "Power": "Universal 110-240V"
+    },
+    "stock": 19,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery in 2 Days",
+    "seller": "Lumina Home Design Studio",
+    "sizes": [
+      "Medium 42cm Table Lamp"
+    ],
+    "colors": [
+      "Aged Brass & Veined White Alabaster"
+    ]
+  },
+  {
+    "id": 137,
+    "name": "Pure Belgian Washed Linen King Duvet Ensemble (4-Piece)",
+    "brand": "Solace Living",
+    "category": "Home & Living",
+    "subcategory": "Bedding",
+    "price": 16999,
+    "originalPrice": 22500,
+    "discount": 24,
+    "rating": 4.9,
+    "reviews": 480,
+    "images": [
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Naturally thermoregulating stonewashed bedding set woven from 100% certified Flanders Belgian flax linen, getting softer with every wash.",
+    "features": [
+      "100% Certified European Flax Grown in Flanders, Belgium",
+      "Pre-Washed Using Pumice Stones for Supreme Lived-In Softness",
+      "Naturally Breathable, Moisture-Wicking and Hypoallergenic",
+      "Set Includes King Duvet Cover, Fitted Sheet, and 2 Oxford Shams"
+    ],
+    "specs": {
+      "Dimensions": "Duvet: 230 x 260 cm | Fitted Sheet: 180 x 200 x 40 cm",
+      "Weight": "175 GSM Heavyweight Flax",
+      "Certifications": "OEKO-TEX Standard 100 Certified Toxic-Free",
+      "Closures": "Natural Olive Wood Buttons & Interior Corner Ties"
+    },
+    "stock": 25,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Solace Bedding Studio",
+    "sizes": [
+      "King (Set of 4)",
+      "Queen (Set of 4)"
+    ],
+    "colors": [
+      "Oatmeal Natural Flax",
+      "French White",
+      "Muted Sage"
+    ]
+  },
+  {
+    "id": 138,
+    "name": "Hand-Carved Black Marquina Marble Scented Candle Trio",
+    "brand": "Solace Living",
+    "category": "Home & Living",
+    "subcategory": "Home Fragrance",
+    "price": 6999,
+    "originalPrice": 9500,
+    "discount": 26,
+    "rating": 4.8,
+    "reviews": 390,
+    "images": [
+      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Trio of clean-burning soy wax candles housed inside reusable solid hand-carved Nero Marquina Spanish marble vessels with wood wicks.",
+    "features": [
+      "Solid Hand-Turned Spanish Nero Marquina Black Marble Jars",
+      "100% Biodegradable Organic Soy & Coconut Wax Blend",
+      "Crackling FSC-Certified Double Wooden Wicks",
+      "Signature Aromas: Smoked Amber, Cardamom Fig, Bergamot Cedar"
+    ],
+    "specs": {
+      "Burn Time": "65 Hours per Candle (195 Hours Total Trio)",
+      "Wax Weight": "300g per Vessel",
+      "Vessel": "Permanent Keepsake Marble Container",
+      "Safety": "Lead-Free Wicks & Phthalate-Free Oils"
+    },
+    "stock": 35,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Solace Bedding Studio",
+    "sizes": [
+      "Trio Set (3x 300g Jars)"
+    ],
+    "colors": [
+      "Black Marquina Marble"
+    ]
+  },
+  {
+    "id": 139,
+    "name": "BaristaPro Dual-Boiler Commercial Espresso Machine with Rotary Pump",
+    "brand": "ArtisanChef",
+    "category": "Kitchen Appliances",
+    "subcategory": "Coffee & Espresso",
+    "price": 68999,
+    "originalPrice": 89999,
+    "discount": 23,
+    "rating": 5,
+    "reviews": 240,
+    "images": [
+      "https://images.unsplash.com/photo-1517668808822-9ebd02f2a8ea?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Italian commercial espresso machine for the home barista featuring dual stainless steel boilers, PID thermal regulation, commercial 58mm portafilter, and silent rotary pump.",
+    "features": [
+      "Dual Dedicated Boilers for Simultaneous Brewing & High-Pressure Steaming",
+      "Digital PID Temperature Controller Configurable to 0.1°C Precision",
+      "Commercial Silent Rotary Vane Pump with Direct Plumbing Option",
+      "Commercial Grade 58mm Stainless Steel Portafilter & IMS Precision Baskets"
+    ],
+    "specs": {
+      "Brew Boiler": "0.75L Stainless Steel",
+      "Steam Boiler": "1.5L Stainless Steel with Cool-Touch Wand",
+      "Body": "Heavy-Duty Mirror-Polished AISI 304 Stainless Steel",
+      "Power": "2200W Rapid Ready in 9 Minutes"
+    },
+    "stock": 12,
+    "badge": "Exclusive",
+    "delivery": "Free Express Insured Courier in 2 Days",
+    "seller": "ArtisanChef Culinary Store",
+    "sizes": [
+      "Standard 58mm Kit",
+      "Barista Deluxe Kit with Tamper"
+    ],
+    "colors": [
+      "Polished Stainless Steel",
+      "Matte Carbon Black"
+    ],
+    "customerReviews": [
+      {
+        "id": "r139_1",
+        "userName": "Aditya Khurana",
+        "rating": 5,
+        "date": "4 days ago",
+        "comment": "Produces thick, syrupy café-quality espresso shots effortlessly. Steaming power is monstrous.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "name": "Apex MasterBlend 1800W Commercial High-Velocity Vacuum Blender",
+    "brand": "ArtisanChef",
+    "category": "Kitchen Appliances",
+    "subcategory": "Blenders & Juicers",
+    "price": 21999,
+    "originalPrice": 29999,
+    "discount": 27,
+    "rating": 4.8,
+    "reviews": 490,
+    "images": [
+      "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517668808822-9ebd02f2a8ea?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Ultra-quiet commercial blender featuring high-power vacuum de-aeration chamber that removes air before blending to eliminate oxidation and preserve 100% nutrients.",
+    "features": [
+      "Vacuum Blending Chamber (0.8 Bar Negative Pressure Extraction)",
+      "1800W Peak Horsepower Motor Rotating at 32,000 RPM",
+      "Aircraft-Grade Laser-Cut Japanese 6-Leaf Titanium Blades",
+      "Acoustic Sound Enclosure Shield Reduces Operating Noise to 62dB"
+    ],
+    "specs": {
+      "Capacity": "2.0 Liter BPA-Free Eastman Tritan Pitcher",
+      "Speeds": "Variable 10 Speeds + 5 One-Touch Presets",
+      "Safety": "Child-Lock Interlock Mechanism",
+      "Warranty": "7 Years Motor Guarantee"
+    },
+    "stock": 24,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "ArtisanChef Culinary Store",
+    "sizes": [
+      "2.0L Pitcher + Vacuum Tumbler"
+    ],
+    "colors": [
+      "Brushed Gunmetal",
+      "Onyx Black"
+    ]
+  },
+  {
+    "id": 141,
+    "name": "Heritage Enameled Cast Iron Dutch Oven (6.5 Quarts / 6.2L)",
+    "brand": "ArtisanChef",
+    "category": "Kitchen Appliances",
+    "subcategory": "Cookware",
+    "price": 9499,
+    "originalPrice": 13999,
+    "discount": 32,
+    "rating": 4.9,
+    "reviews": 730,
+    "images": [
+      "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Heavy-duty enameled cast iron Dutch oven with self-basting condensation spikes in the lid, engineered for braising, slow cooking, bread baking, and stews.",
+    "features": [
+      "Heavy-Gauge Cast Iron for Superior Heat Retention & Distribution",
+      "Triple-Layer Non-Reactive Vitreous Enamel Glaze",
+      "Self-Basting Dimpled Heavy Lid Keeps Moisture Trapped",
+      "Oven Safe up to 260°C (500°F) on Induction, Gas, and Electric"
+    ],
+    "specs": {
+      "Capacity": "6.2 Liters (Feeds 6-8 People)",
+      "Diameter": "28 cm Across",
+      "Weight": "6.8 kg Solid Cast Iron",
+      "Knob": "Cast Stainless Steel Ergonomic Knob"
+    },
+    "stock": 30,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "ArtisanChef Culinary Store",
+    "sizes": [
+      "6.2 Liter Round"
+    ],
+    "colors": [
+      "Cherry Glaze Crimson",
+      "Ocean Cerulean Blue",
+      "Emerald Pine"
+    ]
+  },
+  {
+    "id": 142,
+    "name": "Artisan Precision Gooseneck Electric Pour-Over Kettle",
+    "brand": "ArtisanChef",
+    "category": "Kitchen Appliances",
+    "subcategory": "Coffee & Tea",
+    "price": 6499,
+    "originalPrice": 8999,
+    "discount": 28,
+    "rating": 4.8,
+    "reviews": 580,
+    "images": [
+      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517668808822-9ebd02f2a8ea?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Counterbalanced gooseneck variable temperature kettle with 1°C precision digital base, brew stopwatch, and 60-minute temperature hold.",
+    "features": [
+      "Precision Gooseneck Spout for Controlled Spiral Pour Rate",
+      "PID Temperature Strix Controller Configurable from 40°C to 100°C",
+      "60-Minute Automatic Keep Warm Function & Integrated Brew Timer",
+      "Food-Grade 304 Stainless Steel Interior with Zero Plastic Contact"
+    ],
+    "specs": {
+      "Capacity": "0.9 Liters",
+      "Power": "1200W Rapid Boil (Water reaches 93°C in 3 Minutes)",
+      "Display": "Hidden Backlit LCD Screen in Base",
+      "Cord": "360-Degree Swivel Base with Cord Wrap"
+    },
+    "stock": 38,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "ArtisanChef Culinary Store",
+    "sizes": [
+      "0.9L Precision Kettle"
+    ],
+    "colors": [
+      "Matte Black & Walnut Handle",
+      "Warm Copper & Walnut"
+    ]
+  },
+  {
+    "id": 143,
+    "name": "Milanese Mid-Century 3-Seater Velvet Sofa in Emerald Green",
+    "brand": "Habitat Luxe",
+    "category": "Furniture",
+    "subcategory": "Living Room",
+    "price": 64999,
+    "originalPrice": 85000,
+    "discount": 24,
+    "rating": 4.9,
+    "reviews": 210,
+    "images": [
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Architectural 3-seater sofa upholstered in stain-resistant performance cotton velvet with kiln-dried solid teakwood frame and brushed brass stiletto legs.",
+    "features": [
+      "Stain-Shield Performance Cotton Velvet Upholstery (50,000 Rubs)",
+      "Kiln-Dried Solid Teakwood Internal Frame with Lifetime Warranty",
+      "High-Resiliency Multi-Density Foam Core with Down Feather Blend Wrap",
+      "Tapered Brushed Brass Stiletto Legs with Floor Protectors"
+    ],
+    "specs": {
+      "Dimensions": "218 cm Length x 92 cm Depth x 82 cm Height",
+      "Seating Capacity": "Comfortable 3-Seater",
+      "Cushioning": "High-Resilience 32-Density Foam + Feather Plump",
+      "Assembly": "Delivered Pre-Assembled with White-Glove Placement"
+    },
+    "stock": 8,
+    "badge": "Exclusive",
+    "delivery": "Free White-Glove In-Home Placement in 3 Days",
+    "seller": "Habitat Luxe Furniture Studio",
+    "sizes": [
+      "3-Seater (218cm)",
+      "4-Seater (250cm)"
+    ],
+    "colors": [
+      "Emerald Jewel Green",
+      "Royal Navy Blue",
+      "Warm Ochre Velvet"
+    ],
+    "customerReviews": [
+      {
+        "id": "r143_1",
+        "userName": "Manish Somani",
+        "rating": 5,
+        "date": "5 days ago",
+        "comment": "The centerpiece of our drawing room. The velvet is sumptuous and the seating depth is extremely relaxing.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "name": "Ergonomic Executive High-Back Lounge Armchair with Ottoman",
+    "brand": "Habitat Luxe",
+    "category": "Furniture",
+    "subcategory": "Chairs & Recliners",
+    "price": 49999,
+    "originalPrice": 68000,
+    "discount": 26,
+    "rating": 5,
+    "reviews": 310,
+    "images": [
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Iconic mid-century lounge chair and matching ottoman set engineered with molded 7-ply walnut wood veneer shells and premium top-grain Italian leather.",
+    "features": [
+      "7-Ply Molded FSC-Certified Walnut Hardwood Veneer Shells",
+      "Hand-Upholstered Top-Grain Italian Semi-Aniline Leather",
+      "Die-Cast Aluminum 5-Star Swivel Base with Built-In 15-Degree Tilt",
+      "Includes Matching Ergonomic Padded Leather Ottoman"
+    ],
+    "specs": {
+      "Chair Dimensions": "85 cm Width x 85 cm Depth x 82 cm Height",
+      "Ottoman Dimensions": "65 cm Width x 54 cm Depth x 44 cm Height",
+      "Swivel": "360-Degree Smooth Bearing Rotation",
+      "Leather": "Top-Grain Supple Black Leather"
+    },
+    "stock": 12,
+    "badge": "Best Seller",
+    "delivery": "Free White-Glove In-Home Placement in 3 Days",
+    "seller": "Habitat Luxe Furniture Studio",
+    "sizes": [
+      "Chair + Ottoman Set"
+    ],
+    "colors": [
+      "Walnut & Black Leather",
+      "Palisander & Caramel Leather"
+    ]
+  },
+  {
+    "id": 145,
+    "name": "Scandinavian Solid White Oak Dining Table (6-8 Seater)",
+    "brand": "Habitat Luxe",
+    "category": "Furniture",
+    "subcategory": "Dining Room",
+    "price": 54999,
+    "originalPrice": 72000,
+    "discount": 24,
+    "rating": 4.8,
+    "reviews": 190,
+    "images": [
+      "https://images.unsplash.com/photo-1580481077195-c0e86b89f5ce?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Handcrafted 2-meter dining table constructed from sustainable solid European White Oak planks with natural beveled live edge and matte oil protection.",
+    "features": [
+      "100% Solid European White Oak (No Particle Board or Veneers)",
+      "Treated with Natural Organic Plant-Based Hardwax Oil",
+      "Subtle 45-Degree Chamfered Edge Profiles",
+      "Heavy Solid Oak Trestle Leg Base Engineered for Maximum Legroom"
+    ],
+    "specs": {
+      "Dimensions": "200 cm Length x 95 cm Width x 76 cm Height",
+      "Tabletop Thickness": "38 mm Solid Oak",
+      "Seating Capacity": "Comfortable 6-8 Seater",
+      "Weight": "78 kg Solid Timber"
+    },
+    "stock": 9,
+    "badge": "Exclusive",
+    "delivery": "Free White-Glove In-Home Placement in 3 Days",
+    "seller": "Habitat Luxe Furniture Studio",
+    "sizes": [
+      "6-8 Seater (200x95cm)"
+    ],
+    "colors": [
+      "Natural Light Oak",
+      "Smoked Brown Oak"
+    ]
+  },
+  {
+    "id": 146,
+    "name": "Calacatta Gold Italian Marble Top Coffee Table",
+    "brand": "Habitat Luxe",
+    "category": "Furniture",
+    "subcategory": "Living Room Tables",
+    "price": 28999,
+    "originalPrice": 38000,
+    "discount": 24,
+    "rating": 4.9,
+    "reviews": 260,
+    "images": [
+      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Round statement coffee table with hand-honed genuine Italian Calacatta Gold marble slab and fluted solid ash wood pedestal base.",
+    "features": [
+      "Genuine 20mm Italian Calacatta Gold Marble Slab with Polished Edges",
+      "Coated with Invisible Anti-Stain Nano-Sealant Protection",
+      "Fluted Solid Hardwood Column Pedestal Base",
+      "Beveled Reverse Bullnose Edge Profile"
+    ],
+    "specs": {
+      "Diameter": "90 cm Round | Height: 42 cm",
+      "Marble Origin": "Carrara, Tuscany, Italy",
+      "Weight": "42 kg Heavyweight Stability",
+      "Assembly": "Fully Assembled with Leveling Feet"
+    },
+    "stock": 14,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery in 2 Days",
+    "seller": "Habitat Luxe Furniture Studio",
+    "sizes": [
+      "90cm Round Coffee Table"
+    ],
+    "colors": [
+      "Calacatta White & Walnut Pedestal",
+      "Nero Marquina & Black Pedestal"
+    ]
+  },
+  {
+    "id": 147,
+    "name": "Solid Teakwood Floating Platform Bed with Upholstered Headboard",
+    "brand": "Habitat Luxe",
+    "category": "Furniture",
+    "subcategory": "Bedroom",
+    "price": 68999,
+    "originalPrice": 89000,
+    "discount": 22,
+    "rating": 4.9,
+    "reviews": 170,
+    "images": [
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Architectural King size platform bed frame constructed from aged Indian teakwood with recessed cantilever legs and linen-padded headboard.",
+    "features": [
+      "Seasoned Grade-A CP Teakwood Frame with Mortise & Tenon Joinery",
+      "Recessed Hidden Cantilever Base Gives Effortless Floating Appearance",
+      "Belgian Washed Linen Padded Ergonomic Angled Headboard",
+      "Integrated Slat System Supporting up to 600kg Weight Capacity"
+    ],
+    "specs": {
+      "Mattress Size": "King (183 x 198 cm / 72 x 78 in)",
+      "Headboard Height": "105 cm",
+      "Material": "100% Solid Indian Teakwood + Belgian Linen",
+      "Warranty": "10 Years Structural Frame Warranty"
+    },
+    "stock": 7,
+    "badge": "Exclusive",
+    "delivery": "Free White-Glove Installation in 3 Days",
+    "seller": "Habitat Luxe Furniture Studio",
+    "sizes": [
+      "King Size",
+      "Queen Size"
+    ],
+    "colors": [
+      "Honey Teak & Natural Linen",
+      "Dark Walnut & Charcoal Linen"
+    ]
+  },
+  {
+    "id": 148,
+    "name": "ApexPro Smart Magnetic Indoor Studio Cycle with 22\" HD Screen",
+    "brand": "ApexFlight",
+    "category": "Sports & Fitness",
+    "subcategory": "Cardio Equipment",
+    "price": 54999,
+    "originalPrice": 72000,
+    "discount": 24,
+    "rating": 4.9,
+    "reviews": 340,
+    "images": [
+      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Silent magnetic resistance stationary studio cycle with 22-inch rotating HD touchscreen, automatic resistance adjustments, and SPD dual pedals.",
+    "features": [
+      "Silent Magnetic Resistance (SMR) with 100 Micro-Adjust Levels",
+      "22-Inch 360-Degree Swiveling HD Touchscreen for On/Off Bike Workouts",
+      "Dual-Sided Pedals (SPD Cleats & Standard Toe Cages)",
+      "Real-Time Metrics: Wattage, RPM, Cadence, and Heart Rate Telemetry"
+    ],
+    "specs": {
+      "Flywheel": "18 kg High-Inertia Precision Balanced",
+      "Max User Weight": "150 kg",
+      "Audio": "Front-Facing 20W Stereo Speakers with Bluetooth 5.0",
+      "Footprint": "140 x 56 x 145 cm"
+    },
+    "stock": 15,
+    "badge": "Best Seller",
+    "delivery": "Free Express In-Home Delivery in 2 Days",
+    "seller": "ApexFlight Fitness Systems",
+    "sizes": [
+      "Studio Cycle + 22\" Screen"
+    ],
+    "colors": [
+      "Matte Anthracite & Crimson Accents"
+    ],
+    "customerReviews": [
+      {
+        "id": "r148_1",
+        "userName": "Kavita Rao",
+        "rating": 5,
+        "date": "1 week ago",
+        "comment": "Completely whisper silent. You can workout at 5 AM without disturbing anyone. The screen rotation is a huge plus.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "name": "Machined Steel Quick-Adjust Dumbbell Set (5 to 32 kg Pair)",
+    "brand": "ApexFlight",
+    "category": "Sports & Fitness",
+    "subcategory": "Strength Training",
+    "price": 24999,
+    "originalPrice": 32000,
+    "discount": 22,
+    "rating": 4.8,
+    "reviews": 470,
+    "images": [
+      "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Space-saving dumbbell pair replacing 16 pairs of individual weights; rotate the knurled handle to switch between 5kg and 32kg in 2-second increments.",
+    "features": [
+      "Instant 1-Second Twist Dial Selection System (5kg to 32kg per Hand)",
+      "Machined Solid Steel Weight Plates with Zero Plastic Shells",
+      "Diamond Knurled Stainless Steel Ergonomic Grip Handles",
+      "Includes Heavy-Duty Compact Storage Cradle Trays"
+    ],
+    "specs": {
+      "Weight Range": "5, 7, 9, 11, 14, 16, 18, 20, 23, 25, 27, 30, 32 kg",
+      "Total Pair Weight": "64 kg Combined",
+      "Material": "Solid Steel with Electro-Coated Scratch Resistance",
+      "Mechanism": "Internal Steel Cam Locking Pins"
+    },
+    "stock": 20,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Insured Delivery in 2 Days",
+    "seller": "ApexFlight Fitness Systems",
+    "sizes": [
+      "Pair (5kg to 32kg per hand)"
+    ],
+    "colors": [
+      "Gunmetal Steel & Black"
+    ]
+  },
+  {
+    "id": 150,
+    "name": "Carbon Pro Gravel & Endurance Road Bicycle (Shimano GRX 12-Speed)",
+    "brand": "ApexFlight",
+    "category": "Sports & Fitness",
+    "subcategory": "Cycling",
+    "price": 98999,
+    "originalPrice": 125000,
+    "discount": 21,
+    "rating": 4.9,
+    "reviews": 180,
+    "images": [
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Toray T800 high-modulus carbon fiber gravel bike with Shimano GRX 820 1x12 groupset, hydraulic disc brakes, and tubeless 700x42c tires.",
+    "features": [
+      "Toray T800 Monocoque Carbon Fiber Frame & Fork (Weight: 8.4kg)",
+      "Shimano GRX 820 12-Speed Dedicated Gravel Groupset",
+      "Hydraulic Ice-Tech 160mm Freeza Disc Brakes",
+      "Tubeless Ready DT Swiss Gravel LN Wheels with Maxxis Rambler Tires"
+    ],
+    "specs": {
+      "Frame Weight": "980g Raw Frame",
+      "Tire Clearance": "Up to 700x47c or 650bx50",
+      "Cables": "Fully Integrated Internal Routing",
+      "Bottom Bracket": "Threaded T47 Inboard"
+    },
+    "stock": 8,
+    "badge": "Exclusive",
+    "delivery": "Shipped in 95% Assembled Bike Flight Case in 3 Days",
+    "seller": "ApexFlight Velocity Cycles",
+    "sizes": [
+      "52cm (S)",
+      "54cm (M)",
+      "56cm (L)"
+    ],
+    "colors": [
+      "Sage Green & Raw Carbon",
+      "Desert Sand Matte"
+    ]
+  },
+  {
+    "id": 151,
+    "name": "Organic Cork & Natural Tree Rubber Luxury Yoga Mat (5mm)",
+    "brand": "Solace Living",
+    "category": "Sports & Fitness",
+    "subcategory": "Yoga & Wellness",
+    "price": 4499,
+    "originalPrice": 5999,
+    "discount": 25,
+    "rating": 4.8,
+    "reviews": 620,
+    "images": [
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Extra-long non-slip yoga mat made from sustainable Portuguese oak cork with high-density natural rubber base and laser-etched alignment guides.",
+    "features": [
+      "100% Sustainable Portuguese Oak Bark Cork Surface",
+      "High-Density Non-Slip Natural Tree Rubber Base (No PVC / TPE)",
+      "Grip Increases as You Sweat (Natural Antimicrobial Cork Properties)",
+      "Precision Laser-Etched Body Alignment Navigation Lines"
+    ],
+    "specs": {
+      "Dimensions": "183 x 66 cm (Extra-Long & Wide)",
+      "Thickness": "5mm Joint-Protecting Cushion",
+      "Weight": "2.7 kg Stable Grounding Weight",
+      "Includes": "100% Cotton Mat Carry Strap"
+    },
+    "stock": 45,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Solace Bedding Studio",
+    "sizes": [
+      "5mm Cushion (183x66cm)"
+    ],
+    "colors": [
+      "Natural Golden Cork"
+    ]
+  },
+  {
+    "id": 152,
+    "name": "The Complete Works of William Shakespeare Leatherbound Collector's Folio",
+    "brand": "Folio Heritage",
+    "category": "Books & Stationery",
+    "subcategory": "Collector Editions",
+    "price": 8999,
+    "originalPrice": 12000,
+    "discount": 25,
+    "rating": 5,
+    "reviews": 210,
+    "images": [
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Hardcover deluxe folio edition bound in genuine bonded burgundy goat leather with 24K gilded page edges, ribbon markers, and archival acid-free paper.",
+    "features": [
+      "Real Bonded Moroccan Leather Binding with Gilded Foil Stamping",
+      "24K Gold Leaf Edged Pages (Gilt Edge Craftsmanship)",
+      "Acid-Free 120 GSM Muted Ivory Paper (Preserved for Centuries)",
+      "Includes Satin Ribbon Markers and Custom Hand-Numbered Bookplate"
+    ],
+    "specs": {
+      "Pages": "1,280 Pages Complete Folio Edition",
+      "Dimensions": "28 x 20 x 7 cm Heavyweight Tome",
+      "Language": "English",
+      "Publisher": "Folio Heritage Press London"
+    },
+    "stock": 16,
+    "badge": "Exclusive",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Folio Heritage Booksellers",
+    "sizes": [
+      "Deluxe Leatherbound Folio"
+    ],
+    "colors": [
+      "Imperial Burgundy & 24K Gold",
+      "Forest Green & Gold"
+    ],
+    "customerReviews": [
+      {
+        "id": "r152_1",
+        "userName": "Prof. Arvind Sen",
+        "rating": 5,
+        "date": "4 days ago",
+        "comment": "Exquisite binding. The gold leaf on the page edges reflects light magnificently.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "name": "Artisan Handcrafted Full-Grain Buffalo Leather Journal (A5)",
+    "brand": "Folio Heritage",
+    "category": "Books & Stationery",
+    "subcategory": "Notebooks & Journals",
+    "price": 2999,
+    "originalPrice": 4200,
+    "discount": 29,
+    "rating": 4.9,
+    "reviews": 580,
+    "images": [
+      "https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Refillable A5 journal wrapped in thick crazy horse oil-tanned water buffalo leather with hand-sewn binding, brass pen loop, and fountain pen friendly cotton paper.",
+    "features": [
+      "Full-Grain Rustic Oil-Tanned Buffalo Leather Cover",
+      "240 Pages of 140 GSM Bleed-Proof Recycled Cotton Paper",
+      "Fountain Pen Friendly with Zero Feathering or Ghosting",
+      "Leather Wrap-Around Tie with Antique Brass Key Charm"
+    ],
+    "specs": {
+      "Size": "A5 Format (21 x 15 cm)",
+      "Paper": "140 GSM Unlined Deckle Edge Rag Paper",
+      "Refillable": "Yes (3-Section Coptic Hand-Stitched Spine)",
+      "Packaging": "Kraft Gift Box with Wax Seal"
+    },
+    "stock": 35,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Folio Heritage Booksellers",
+    "sizes": [
+      "A5 Standard (240 Pages)"
+    ],
+    "colors": [
+      "Distressed Saddle Brown",
+      "Espresso Dark",
+      "Vintage Tan"
+    ]
+  },
+  {
+    "id": 154,
+    "name": "Imperial Solid Brass & Urushi Lacquer Fountain Pen (Fine Nib)",
+    "brand": "Gilded Thread",
+    "category": "Books & Stationery",
+    "subcategory": "Luxury Pens",
+    "price": 8499,
+    "originalPrice": 11999,
+    "discount": 29,
+    "rating": 4.8,
+    "reviews": 340,
+    "images": [
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Precision-balanced fountain pen turned from solid brass bar, coated in traditional Japanese Urushi-style glossy lacquer, and fitted with an 18K gold-plated German Schmidt nib.",
+    "features": [
+      "Solid Brass Core Weight Balanced for Fatigue-Free Writing",
+      "Hand-Polished High-Gloss Multi-Layered Lacquer Finish",
+      "German Schmidt 18K Gold Plated Stainless Steel Fine (F) Nib",
+      "Includes Smooth Piston Ink Converter & 6 International Ink Cartridges"
+    ],
+    "specs": {
+      "Nib Size": "Fine (0.5mm)",
+      "Filling System": "Piston Converter / Standard International Cartridge",
+      "Weight": "44g Weighted Luxury Feel",
+      "Gift Box": "Solid Walnut Presentation Case Included"
+    },
+    "stock": 24,
+    "badge": "Exclusive",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Gilded Thread Studio",
+    "sizes": [
+      "Fine (0.5mm) Nib",
+      "Medium (0.7mm) Nib"
+    ],
+    "colors": [
+      "Deep Piano Black & Gold",
+      "Emerald Green Lacquer",
+      "Brushed Raw Brass"
+    ]
+  },
+  {
+    "id": 155,
+    "name": "India: A Journey Across Empires Illustrated Coffee Table Book",
+    "brand": "Folio Heritage",
+    "category": "Books & Stationery",
+    "subcategory": "Art & Photography",
+    "price": 5499,
+    "originalPrice": 7500,
+    "discount": 27,
+    "rating": 4.9,
+    "reviews": 290,
+    "images": [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Oversized collector photography tome exploring 5,000 years of Indian royal palaces, textiles, temples, and artisan guilds with archival museum photography.",
+    "features": [
+      "Large Format (32 x 26 cm) Hardcover with Cloth Bound Spine",
+      "Over 400 Full-Color High-Resolution Archival Photographs",
+      "Printed on Heavy 170 GSM Semi-Gloss Art Paper in Italy",
+      "Foreword by Renowned Historians and Curators"
+    ],
+    "specs": {
+      "Pages": "384 Pages Hardcover with Embossed Dust Jacket",
+      "Weight": "3.4 kg Heavyweight Statement Tome",
+      "Dimensions": "32 x 26 x 4.5 cm",
+      "Publisher": "Folio Heritage Fine Art Editions"
+    },
+    "stock": 20,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "Folio Heritage Booksellers",
+    "sizes": [
+      "Hardcover Coffee Table Book"
+    ],
+    "colors": [
+      "Cloth Bound Crimson & Gold"
+    ]
+  },
+  {
+    "id": 156,
+    "name": "ApexForge Pro 75% Wireless Mechanical Keyboard with Brass Weight",
+    "brand": "ApexForge",
+    "category": "Gaming Accessories",
+    "subcategory": "Keyboards",
+    "price": 14999,
+    "originalPrice": 19999,
+    "discount": 25,
+    "rating": 4.9,
+    "reviews": 680,
+    "images": [
+      "https://images.unsplash.com/photo-1612287233207-6b45eb9d04ba?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Enthusiast-grade gasket-mounted 75% mechanical keyboard with CNC aluminum chassis, internal brass weight, pre-lubed Gateron Oil King linear switches, and per-key RGB.",
+    "features": [
+      "Full CNC Anodized 6063 Aluminum Case with Mirror Brass Weight (1.8kg)",
+      "Flex-Cut Polycarbonate Plate with Multi-Layer Poron Foam Dampening",
+      "Pre-Lubed Gateron Oil King Factory Linear Switches (Hot-Swappable 5-Pin)",
+      "Tri-Mode Connectivity: 2.4GHz Low-Latency, Bluetooth 5.1 & USB-C"
+    ],
+    "specs": {
+      "Layout": "75% Exploded Layout with CNC Rotary Volume Knob",
+      "Keycaps": "Thick 1.5mm Doubleshot PBT Cherry Profile",
+      "Battery": "4000mAh Battery (Up to 200 Hours RGB Off)",
+      "Software": "QMK / VIA Open-Source Keymap Programmable"
+    },
+    "stock": 22,
+    "badge": "Exclusive",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "ApexForge Gaming Labs",
+    "sizes": [
+      "Pre-Built Keyboard",
+      "Barebones Kit (No Switches)"
+    ],
+    "colors": [
+      "Anodized Midnight Black",
+      "Retro E-White",
+      "Navy Blue & Gold"
+    ],
+    "customerReviews": [
+      {
+        "id": "r156_1",
+        "userName": "Aryan Chhabra",
+        "rating": 5,
+        "date": "2 days ago",
+        "comment": "The typing acoustic sound profile is pure 'creamy thock'. Heavy aluminum build feels indestructible.",
+        "verifiedPurchase": true
+      }
+    ]
+  },
+  {
+    "id": 157,
+    "name": "ApexGlide Ultralight 49g Wireless Gaming Mouse (4000Hz Polling)",
+    "brand": "ApexForge",
+    "category": "Gaming Accessories",
+    "subcategory": "Gaming Mice",
+    "price": 8999,
+    "originalPrice": 12499,
+    "discount": 28,
+    "rating": 4.8,
+    "reviews": 540,
+    "images": [
+      "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1612287233207-6b45eb9d04ba?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Solid-shell ultralight 49-gram symmetrical wireless mouse equipped with PixArt PAW3395 26,000 DPI sensor and 4000Hz hyper-polling rate wireless dongle.",
+    "features": [
+      "Solid Shell 49g Featherweight Ergonomic Symmetrical Design",
+      "PixArt PAW3395 Flagship 26,000 DPI Optical Sensor (650 IPS, 50G)",
+      "4000Hz (4K) High-Speed Wireless Dongle Included for 0.25ms Latency",
+      "Optical Dustproof Micro-Switches Rated for 100 Million Clicks"
+    ],
+    "specs": {
+      "Weight": "49 Grams Ultra-Light",
+      "Skates": "100% Virgin Grade Curved PTFE Feet",
+      "Battery Life": "80 Hours at 1000Hz | 35 Hours at 4000Hz",
+      "Cable": "Superflex Paracord USB-C Charging Cable"
+    },
+    "stock": 35,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "ApexForge Gaming Labs",
+    "sizes": [
+      "4K Dongle Edition"
+    ],
+    "colors": [
+      "Matte Polar White",
+      "Stealth Carbon Black",
+      "Pastel Lilac"
+    ]
+  },
+  {
+    "id": 158,
+    "name": "SoundStorm 7.1 Spatial Audio Wireless Esports Gaming Headset",
+    "brand": "ApexForge",
+    "category": "Gaming Accessories",
+    "subcategory": "Headsets",
+    "price": 11499,
+    "originalPrice": 15999,
+    "discount": 28,
+    "rating": 4.8,
+    "reviews": 430,
+    "images": [
+      "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1612287233207-6b45eb9d04ba?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Pro tournament wireless gaming headset with 50mm bio-cellulose drivers, detachable broadcast-grade cardioid microphone, and dual 2.4GHz + Bluetooth audio mixing.",
+    "features": [
+      "50mm Bio-Cellulose Acoustic Neodymium Drivers",
+      "Simultaneous 2.4GHz Wireless Gaming + Bluetooth Mobile Chat",
+      "Detachable 9.7mm Broadcast-Grade ClearVoice Microphone",
+      "Memory Foam Breathable Mesh Cooling-Gel Earcups"
+    ],
+    "specs": {
+      "Battery Life": "60 Hours Continuous Gameplay with Fast Charge",
+      "Wireless Range": "Up to 20 Meters (65 Feet)",
+      "Weight": "285g Lightweight Comfort",
+      "Compatibility": "PC, PS5, Xbox Series X, Nintendo Switch, Mac, Mobile"
+    },
+    "stock": 28,
+    "badge": "Hot Trend",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "ApexForge Gaming Labs",
+    "sizes": [
+      "Wireless Pro Headset"
+    ],
+    "colors": [
+      "Gunmetal & Carbon",
+      "Arctic Frost White"
+    ]
+  },
+  {
+    "id": 159,
+    "name": "ApexStrike Hall-Effect Wireless Pro Controller with Back Paddles",
+    "brand": "ApexForge",
+    "category": "Gaming Accessories",
+    "subcategory": "Controllers",
+    "price": 8499,
+    "originalPrice": 11500,
+    "discount": 26,
+    "rating": 4.9,
+    "reviews": 390,
+    "images": [
+      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1612287233207-6b45eb9d04ba?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Zero-stick-drift pro gamepad equipped with electromagnetic Hall Effect thumbsticks, microswitch mechanical triggers, 4 remappable rear paddles, and 1000Hz polling.",
+    "features": [
+      "Electromagnetic Hall Effect Joysticks (Guaranteed Zero Stick Drift)",
+      "Mechanical Microswitch D-Pad and Action Buttons (0.3mm Actuation)",
+      "Adjustable 2-Way Trigger Stops (Hair Triggers for FPS / Analog for Racing)",
+      "4 Ergonomic Programmable Back Paddles with On-the-Fly Macro Mapping"
+    ],
+    "specs": {
+      "Polling Rate": "1000Hz (1ms Wired & 2.4G Wireless)",
+      "Vibration": "Dual Asymmetric Rotor Motors + Impulse Trigger Rumble",
+      "Battery": "1200mAh Lithium Rechargeable (20+ Hours Playtime)",
+      "Platform Support": "PC, Steam Deck, Switch, Android, iOS"
+    },
+    "stock": 30,
+    "badge": "Deal of the Day",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "ApexForge Gaming Labs",
+    "sizes": [
+      "Pro Controller with 2.4G Dongle"
+    ],
+    "colors": [
+      "Smoky Translucent Black",
+      "Cyberpunk Yellow",
+      "Alpine White"
+    ]
+  },
+  {
+    "id": 160,
+    "name": "TitanDesk XL Cordura Precision Waterproof Gaming Desk Pad (90x40cm)",
+    "brand": "ApexForge",
+    "category": "Gaming Accessories",
+    "subcategory": "Desk Mats",
+    "price": 2499,
+    "originalPrice": 3800,
+    "discount": 34,
+    "rating": 4.8,
+    "reviews": 760,
+    "images": [
+      "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&auto=format&fit=crop&q=80"
+    ],
+    "description": "Extra-large desk mat crafted from military-spec authentic Cordura fabric with spill-proof water repellent treatment and reinforced low-profile stitched edges.",
+    "features": [
+      "Authentic Cordura Military-Grade High-Density Weave Surface",
+      "Waterproof & Stain-Repellent Coating (Liquids Bead Up for Easy Wipe)",
+      "Anti-Fray Ultra-Dense Micro-Stitched Edge Seams Flush with Surface",
+      "4mm Non-Slip Natural Textured Herringbone Rubber Base"
+    ],
+    "specs": {
+      "Dimensions": "900 x 400 x 4 mm (35.4 x 15.7 Inches)",
+      "Surface": "Cordura Speed-Control Hybrid Texture",
+      "Base": "Eco-Friendly Natural Rubber",
+      "Cleaning": "Water Washable"
+    },
+    "stock": 50,
+    "badge": "Best Seller",
+    "delivery": "Free Express Delivery by Tomorrow",
+    "seller": "ApexForge Gaming Labs",
+    "sizes": [
+      "XL (90x40cm)",
+      "XXL (120x60cm)"
+    ],
+    "colors": [
+      "Stealth Carbon Black",
+      "Deep Slate Gray"
+    ]
   }
 ];

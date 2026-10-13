@@ -174,7 +174,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Sync products and active user session on initial mount
   useEffect(() => {
-    productsApi.getAll({ limit: 100 })
+    productsApi.getAll({ limit: 250 })
       .then(res => {
         if (res.products && res.products.length > 0) {
           setProductsList(res.products);

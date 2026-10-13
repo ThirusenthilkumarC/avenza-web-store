@@ -44,28 +44,46 @@ productsRouter.get('/', (req: Request, res: Response): void => {
       deal,
       sortBy,
       page = '1',
-      limit = '100'
+      limit = '250'
     } = req.query;
 
     let query = 'SELECT * FROM products WHERE 1=1';
     const params: any[] = [];
 
     if (category && category !== 'All') {
-      const catStr = String(category).trim().toLowerCase();
-      if (catStr === 'men' || catStr === 'men-fashion' || catStr === "men's fashion" || catStr === 'mens') {
+      const catStr = String(category).trim().toLowerCase().replace(/-/g, ' ').replace(/—/g, ' ');
+      if (catStr.includes('smartphone') || catStr.includes('mobile') || catStr.includes('phone')) {
+        query += " AND (LOWER(category) LIKE '%phone%' OR LOWER(category) LIKE '%mobile%' OR LOWER(subcategory) LIKE '%phone%')";
+      } else if (catStr.includes('laptop') || catStr.includes('computer')) {
+        query += " AND (LOWER(category) LIKE '%laptop%' OR LOWER(category) LIKE '%computer%' OR LOWER(subcategory) LIKE '%laptop%')";
+      } else if (catStr.includes('gaming')) {
+        query += " AND (LOWER(category) LIKE '%gaming%' OR LOWER(subcategory) LIKE '%gaming%')";
+      } else if (catStr.includes('shoe') || catStr.includes('sneaker') || catStr === 'footwear') {
+        query += " AND (LOWER(category) LIKE '%shoe%' OR LOWER(category) LIKE '%sneaker%' OR LOWER(category) = 'footwear' OR LOWER(subcategory) LIKE '%footwear%')";
+      } else if (catStr.includes('furniture')) {
+        query += " AND (LOWER(category) LIKE '%furniture%' OR LOWER(subcategory) LIKE '%furniture%')";
+      } else if (catStr.includes('kitchen')) {
+        query += " AND (LOWER(category) LIKE '%kitchen%' OR LOWER(subcategory) LIKE '%kitchen%')";
+      } else if (catStr.includes('sport') || catStr.includes('fitness')) {
+        query += " AND (LOWER(category) LIKE '%sport%' OR LOWER(category) LIKE '%fitness%')";
+      } else if (catStr.includes('book') || catStr.includes('stationery')) {
+        query += " AND (LOWER(category) LIKE '%book%' OR LOWER(category) LIKE '%stationery%')";
+      } else if (catStr.includes('men') && !catStr.includes('women')) {
         query += " AND (LOWER(category) LIKE '%men%' OR (LOWER(category) = 'fashion' AND LOWER(subcategory) LIKE '%men%'))";
-      } else if (catStr === 'women' || catStr === 'women-fashion' || catStr === "women's fashion" || catStr === 'womens') {
+      } else if (catStr.includes('women')) {
         query += " AND (LOWER(category) LIKE '%women%' OR (LOWER(category) = 'fashion' AND LOWER(subcategory) LIKE '%women%'))";
       } else if (catStr === 'fashion') {
         query += " AND (LOWER(category) LIKE '%fashion%' OR LOWER(category) = 'footwear')";
-      } else if (catStr === 'home-living' || catStr === 'home') {
-        query += " AND (LOWER(category) LIKE '%home%' OR LOWER(category) = 'kitchen')";
-      } else if (catStr === 'bags') {
-        query += " AND (LOWER(category) LIKE '%bag%' OR LOWER(subcategory) LIKE '%bag%')";
-      } else if (catStr === 'beauty') {
+      } else if (catStr.includes('home')) {
+        query += " AND (LOWER(category) LIKE '%home%' OR LOWER(category) LIKE '%furniture%')";
+      } else if (catStr.includes('bag') || catStr.includes('accessor')) {
+        query += " AND (LOWER(category) LIKE '%bag%' OR LOWER(category) LIKE '%accessor%' OR LOWER(subcategory) LIKE '%bag%')";
+      } else if (catStr.includes('beauty') || catStr.includes('care')) {
         query += " AND (LOWER(category) LIKE '%beauty%' OR LOWER(category) LIKE '%health%')";
-      } else if (catStr === 'footwear') {
-        query += " AND (LOWER(category) LIKE '%footwear%' OR LOWER(subcategory) LIKE '%footwear%')";
+      } else if (catStr.includes('watch')) {
+        query += " AND (LOWER(category) LIKE '%watch%' OR LOWER(subcategory) LIKE '%watch%')";
+      } else if (catStr.includes('electronic')) {
+        query += " AND (LOWER(category) LIKE '%electronic%' OR LOWER(category) LIKE '%mobile%')";
       } else {
         query += ' AND (LOWER(category) = LOWER(?) OR LOWER(subcategory) = LOWER(?) OR LOWER(category) LIKE ?)';
         params.push(catStr, catStr, `%${catStr}%`);
