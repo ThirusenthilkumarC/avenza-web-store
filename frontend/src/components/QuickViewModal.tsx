@@ -15,8 +15,21 @@ const QuickViewContent: React.FC<QuickViewContentProps> = ({ product, onClose })
   const [selectedImg, setSelectedImg] = useState(product.images[0]);
   const inWishlist = isInWishlist(product.id);
 
+  const availableSizes = (product.sizes && product.sizes.length > 0)
+    ? product.sizes
+    : product.category.toLowerCase().includes('fashion') || product.category.toLowerCase().includes('shoes')
+    ? ['S', 'M', 'L', 'XL']
+    : [];
+
+  const availableColors = (product.colors && product.colors.length > 0)
+    ? product.colors
+    : ['Obsidian Black', 'Warm Gold', 'Sterling Silver'];
+
+  const [selectedSize, setSelectedSize] = useState<string>(availableSizes[0] || '');
+  const [selectedColor, setSelectedColor] = useState<string>(availableColors[0] || 'Default');
+
   const handleAddToCart = () => {
-    addToCart(product);
+    addToCart(product, 1, selectedSize, selectedColor);
     onClose();
   };
 
@@ -114,6 +127,56 @@ const QuickViewContent: React.FC<QuickViewContentProps> = ({ product, onClose })
                   </div>
                 ))}
               </div>
+
+              {/* Color selection */}
+              {availableColors.length > 0 && (
+                <div className="mt-3">
+                  <span className="text-[10px] font-bold text-stone-700 uppercase tracking-wider block mb-1">
+                    Color: <span className="font-semibold text-stone-900">{selectedColor}</span>
+                  </span>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    {availableColors.map(col => (
+                      <button
+                        key={col}
+                        type="button"
+                        onClick={() => setSelectedColor(col)}
+                        className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border transition-all ${
+                          selectedColor === col
+                            ? 'border-amber-600 bg-amber-50 text-amber-950 ring-1 ring-amber-500/20'
+                            : 'border-stone-200 text-stone-600 bg-white hover:border-stone-300'
+                        }`}
+                      >
+                        {col}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Size selection */}
+              {availableSizes.length > 0 && (
+                <div className="mt-3">
+                  <span className="text-[10px] font-bold text-stone-700 uppercase tracking-wider block mb-1">
+                    Size: <span className="font-semibold text-stone-900">{selectedSize}</span>
+                  </span>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    {availableSizes.map(sz => (
+                      <button
+                        key={sz}
+                        type="button"
+                        onClick={() => setSelectedSize(sz)}
+                        className={`min-w-8 px-2.5 py-1 rounded-lg text-[11px] font-bold border transition-all ${
+                          selectedSize === sz
+                            ? 'border-stone-900 bg-stone-900 text-amber-400'
+                            : 'border-stone-200 text-stone-700 bg-white hover:border-stone-300'
+                        }`}
+                      >
+                        {sz}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Actions */}

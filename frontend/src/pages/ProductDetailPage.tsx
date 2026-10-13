@@ -28,17 +28,21 @@ export const ProductDetailPage: React.FC = () => {
 
   const product = products.find(p => p.id === Number(id));
 
-  const availableSizes = product?.category.toLowerCase() === 'fashion'
+  const availableSizes = (product?.sizes && product.sizes.length > 0)
+    ? product.sizes
+    : product?.category.toLowerCase().includes('fashion') || product?.category.toLowerCase().includes('shoes')
     ? ['S', 'M', 'L', 'XL']
-    : product?.category.toLowerCase() === 'electronics'
+    : product?.category.toLowerCase().includes('electronics') || product?.category.toLowerCase().includes('smartphones') || product?.category.toLowerCase().includes('laptops')
     ? ['128 GB', '256 GB', '512 GB']
     : [];
 
-  const availableColors = ['Obsidian Black', 'Warm Gold', 'Sterling Silver'];
+  const availableColors = (product?.colors && product.colors.length > 0)
+    ? product.colors
+    : ['Obsidian Black', 'Warm Gold', 'Sterling Silver'];
 
   const [selectedImg, setSelectedImg] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>(availableSizes[0] || '');
-  const [selectedColor, setSelectedColor] = useState<string>(availableColors[0]);
+  const [selectedColor, setSelectedColor] = useState<string>(availableColors[0] || 'Default');
   const [quantity, setQuantity] = useState<number>(1);
   const [activeTab, setActiveTab] = useState<'desc' | 'specs' | 'reviews' | 'qa'>('desc');
   const [checkPincode, setCheckPincode] = useState<string>(deliveryLocation.pincode);
@@ -51,10 +55,16 @@ export const ProductDetailPage: React.FC = () => {
       setSelectedImg(product.images[0]);
       if (availableSizes.length > 0) {
         setSelectedSize(availableSizes[0]);
+      } else {
+        setSelectedSize('');
+      }
+      if (availableColors.length > 0) {
+        setSelectedColor(availableColors[0]);
       }
       addRecentlyViewed(product);
       window.scrollTo(0, 0);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, product]);
 
   if (!product) {

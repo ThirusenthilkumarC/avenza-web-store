@@ -139,6 +139,9 @@ productsRouter.get('/', (req: Request, res: Response): void => {
       case 'price-high':
         query += ' ORDER BY price DESC';
         break;
+      case 'popularity':
+        query += ' ORDER BY reviews_count DESC';
+        break;
       case 'rating':
         query += ' ORDER BY rating DESC';
         break;
@@ -154,7 +157,7 @@ productsRouter.get('/', (req: Request, res: Response): void => {
     }
 
     const pageNum = Math.max(1, parseInt(String(page), 10) || 1);
-    const limitNum = Math.min(200, Math.max(1, parseInt(String(limit), 10) || 100));
+    const limitNum = Math.min(500, Math.max(1, parseInt(String(limit), 10) || 250));
     const offset = (pageNum - 1) * limitNum;
 
     query += ' LIMIT ? OFFSET ?';

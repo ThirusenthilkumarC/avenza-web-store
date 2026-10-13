@@ -5,7 +5,7 @@ import { ProductCard } from '../components/ProductCard';
 import { FilterSidebar } from '../components/FilterSidebar';
 import type { FilterState } from '../components/FilterSidebar';
 import { SortDropdown } from '../components/SortDropdown';
-import { Grid, List, ChevronRight, SlidersHorizontal, Sparkles, ArrowDown } from 'lucide-react';
+import { Grid, List, ChevronRight, SlidersHorizontal, Sparkles, ArrowDown, X } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { getCanonicalCategoryName, matchesProductCategory } from '../utils/categoryMatcher';
 
@@ -33,7 +33,9 @@ export const ProductsPage: React.FC = () => {
     selectedBrands: [],
     minRating: 0,
     minDiscount: searchDeal ? 20 : 0,
-    inStockOnly: false
+    inStockOnly: false,
+    searchName: '',
+    searchBrand: ''
   });
 
   const [sortBy, setSortBy] = useState<string>(
@@ -95,11 +97,28 @@ export const ProductsPage: React.FC = () => {
       if (filters.category !== 'All' && !matchesProductCategory(p, filters.category)) {
         return false;
       }
+      // Search by product name / keyword match
+      if (filters.searchName && filters.searchName.trim() !== '') {
+        const term = filters.searchName.toLowerCase().trim();
+        const matchesName = p.name.toLowerCase().includes(term);
+        const matchesDesc = p.description.toLowerCase().includes(term);
+        const matchesBrand = p.brand.toLowerCase().includes(term);
+        if (!matchesName && !matchesDesc && !matchesBrand) {
+          return false;
+        }
+      }
+      // Search by brand text filter
+      if (filters.searchBrand && filters.searchBrand.trim() !== '') {
+        const bTerm = filters.searchBrand.toLowerCase().trim();
+        if (!p.brand.toLowerCase().includes(bTerm)) {
+          return false;
+        }
+      }
       // Price range match
       if (p.price < filters.minPrice || p.price > filters.maxPrice) {
         return false;
       }
-      // Brands match
+      // Selected brands match
       if (filters.selectedBrands.length > 0 && !filters.selectedBrands.includes(p.brand)) {
         return false;
       }
@@ -123,6 +142,8 @@ export const ProductsPage: React.FC = () => {
       list.sort((a, b) => a.price - b.price);
     } else if (sortBy === 'price-high') {
       list.sort((a, b) => b.price - a.price);
+    } else if (sortBy === 'popularity') {
+      list.sort((a, b) => (b.reviews || 0) - (a.reviews || 0));
     } else if (sortBy === 'rating') {
       list.sort((a, b) => (b.rating || 0) - (a.rating || 0));
     } else if (sortBy === 'discount') {
@@ -248,6 +269,119 @@ export const ProductsPage: React.FC = () => {
         </div>
       </div>
 
+      {/* ACTIVE FILTER PILLS */}
+      {(filters.category !== 'All' ||
+        Boolean(filters.searchName) ||
+        Boolean(filters.searchBrand) ||
+        filters.selectedBrands.length > 0 ||
+        filters.minRating > 0 ||
+        filters.minDiscount > 0 ||
+        filters.minPrice > 0 ||
+        filters.maxPrice < 250000 ||
+        filters.inStockOnly) && (
+        <div className="flex items-center gap-2 flex-wrap mb-5 bg-amber-50/50 p-3 rounded-xl border border-amber-200/60 text-xs">
+          <span className="font-bold text-stone-700 uppercase tracking-wider text-[10px]">Active Filters:</span>
+
+          {filters.category !== 'All' && (
+            <button
+              onClick={() => handleFilterChange({ ...filters, category: 'All' })}
+              className="inline-flex items-center gap-1 bg-white border border-stone-300 hover:border-amber-600 px-2.5 py-1 rounded-lg text-stone-800 font-medium"
+            >
+              <span>Category: {filters.category}</span>
+              <X className="w-3 h-3 text-stone-400" />
+            </button>
+          )}
+
+          {filters.searchName && (
+            <button
+              onClick={() => handleFilterChange({ ...filters, searchName: '' })}
+              className="inline-flex items-center gap-1 bg-white border border-stone-300 hover:border-amber-600 px-2.5 py-1 rounded-lg text-stone-800 font-medium"
+            >
+              <span>Keyword: "{filters.searchName}"</span>
+              <X className="w-3 h-3 text-stone-400" />
+            </button>
+          )}
+
+          {filters.searchBrand && (
+            <button
+              onClick={() => handleFilterChange({ ...filters, searchBrand: '' })}
+              className="inline-flex items-center gap-1 bg-white border border-stone-300 hover:border-amber-600 px-2.5 py-1 rounded-lg text-stone-800 font-medium"
+            >
+              <span>Brand Search: "{filters.searchBrand}"</span>
+              <X className="w-3 h-3 text-stone-400" />
+            </button>
+          )}
+
+          {filters.selectedBrands.map(b => (
+            <button
+              key={b}
+              onClick={() => handleFilterChange({ ...filters, selectedBrands: filters.selectedBrands.filter(sb => sb !== b) })}
+              className="inline-flex items-center gap-1 bg-white border border-stone-300 hover:border-amber-600 px-2.5 py-1 rounded-lg text-stone-800 font-medium"
+            >
+              <span>{b}</span>
+              <X className="w-3 h-3 text-stone-400" />
+            </button>
+          ))}
+
+          {filters.minRating > 0 && (
+            <button
+              onClick={() => handleFilterChange({ ...filters, minRating: 0 })}
+              className="inline-flex items-center gap-1 bg-white border border-stone-300 hover:border-amber-600 px-2.5 py-1 rounded-lg text-stone-800 font-medium"
+            >
+              <span>≥ {filters.minRating}★</span>
+              <X className="w-3 h-3 text-stone-400" />
+            </button>
+          )}
+
+          {filters.minDiscount > 0 && (
+            <button
+              onClick={() => handleFilterChange({ ...filters, minDiscount: 0 })}
+              className="inline-flex items-center gap-1 bg-white border border-stone-300 hover:border-amber-600 px-2.5 py-1 rounded-lg text-stone-800 font-medium"
+            >
+              <span>≥ {filters.minDiscount}% Off</span>
+              <X className="w-3 h-3 text-stone-400" />
+            </button>
+          )}
+
+          {(filters.minPrice > 0 || filters.maxPrice < 250000) && (
+            <button
+              onClick={() => handleFilterChange({ ...filters, minPrice: 0, maxPrice: 250000 })}
+              className="inline-flex items-center gap-1 bg-white border border-stone-300 hover:border-amber-600 px-2.5 py-1 rounded-lg text-stone-800 font-medium"
+            >
+              <span>₹{filters.minPrice} - ₹{filters.maxPrice}</span>
+              <X className="w-3 h-3 text-stone-400" />
+            </button>
+          )}
+
+          {filters.inStockOnly && (
+            <button
+              onClick={() => handleFilterChange({ ...filters, inStockOnly: false })}
+              className="inline-flex items-center gap-1 bg-white border border-stone-300 hover:border-amber-600 px-2.5 py-1 rounded-lg text-stone-800 font-medium"
+            >
+              <span>In Stock Only</span>
+              <X className="w-3 h-3 text-stone-400" />
+            </button>
+          )}
+
+          <button
+            onClick={() => handleFilterChange({
+              category: 'All',
+              minPrice: 0,
+              maxPrice: 250000,
+              selectedBrands: [],
+              minRating: 0,
+              minDiscount: 0,
+              inStockOnly: false,
+              searchName: '',
+              searchBrand: ''
+            })}
+            className="text-amber-900 font-bold hover:underline ml-2 text-xs"
+          >
+            Clear All
+          </button>
+        </div>
+      )}
+
       {/* MAIN CONTENT SPLIT */}
       <div className="flex gap-6 items-start">
         {/* SIDEBAR FILTERS */}
@@ -349,7 +483,9 @@ export const ProductsPage: React.FC = () => {
                     selectedBrands: [],
                     minRating: 0,
                     minDiscount: 0,
-                    inStockOnly: false
+                    inStockOnly: false,
+                    searchName: '',
+                    searchBrand: ''
                   })
                 }
                 className="mt-4 bg-stone-900 text-amber-400 font-bold px-6 py-3 rounded-xl text-xs hover:bg-amber-600 hover:text-stone-950 transition-colors shadow-sm min-h-[44px]"

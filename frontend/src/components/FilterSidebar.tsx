@@ -1,6 +1,6 @@
 import React from 'react';
 import { categories } from '../data/categories';
-import { RotateCcw, Star, X, Filter } from 'lucide-react';
+import { RotateCcw, Star, X, Filter, Search } from 'lucide-react';
 
 export interface FilterState {
   category: string;
@@ -10,6 +10,8 @@ export interface FilterState {
   minRating: number;
   minDiscount: number;
   inStockOnly: boolean;
+  searchName: string;
+  searchBrand: string;
 }
 
 interface FilterSidebarProps {
@@ -46,9 +48,15 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
       selectedBrands: [],
       minRating: 0,
       minDiscount: 0,
-      inStockOnly: false
+      inStockOnly: false,
+      searchName: '',
+      searchBrand: ''
     });
   };
+
+  const displayedBrands = availableBrands.filter(b =>
+    b.toLowerCase().includes((filters.searchBrand || '').toLowerCase().trim())
+  );
 
   const content = (
     <div className="space-y-6 text-left">
@@ -67,19 +75,45 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
         </button>
       </div>
 
-      {/* CATEGORIES FILTER */}
+      {/* SEARCH BY PRODUCT NAME */}
       <div>
-        <h4 className="text-xs font-bold text-stone-900 uppercase tracking-wider mb-2.5">
-          Departments
+        <h4 className="text-xs font-bold text-stone-900 uppercase tracking-wider mb-2">
+          Search Products
         </h4>
-        <div className="space-y-1.5 max-h-52 overflow-y-auto pr-1">
+        <div className="relative">
+          <input
+            type="text"
+            value={filters.searchName}
+            onChange={(e) => onChange({ ...filters, searchName: e.target.value })}
+            placeholder="Search in catalog..."
+            className="w-full pl-8 pr-7 py-2 text-xs border border-stone-300 rounded-xl outline-none focus:border-amber-600 font-sans"
+          />
+          <Search className="w-3.5 h-3.5 text-stone-400 absolute left-2.5 top-2.5" />
+          {filters.searchName && (
+            <button
+              onClick={() => onChange({ ...filters, searchName: '' })}
+              className="absolute right-2.5 top-2.5 text-stone-400 hover:text-stone-700"
+              aria-label="Clear product name search"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* CATEGORIES FILTER */}
+      <div className="pt-4 border-t border-stone-200">
+        <h4 className="text-xs font-bold text-stone-900 uppercase tracking-wider mb-2.5">
+          Categories ({categories.length})
+        </h4>
+        <div className="space-y-1 max-h-56 overflow-y-auto pr-1">
           <button
             onClick={() => handleCategoryChange('All')}
             className={`w-full text-left text-xs px-2.5 py-1.5 rounded-lg font-medium transition-colors flex items-center justify-between ${
               filters.category === 'All' ? 'bg-amber-100 text-amber-950 font-bold' : 'text-stone-700 hover:bg-stone-100'
             }`}
           >
-            <span>All Categories</span>
+            <span>All Products</span>
           </button>
           {categories.map((cat) => (
             <button
@@ -91,8 +125,8 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
                   : 'text-stone-700 hover:bg-stone-100'
               }`}
             >
-              <span>{cat.name}</span>
-              <span className="text-[10px] text-stone-400 font-normal">({cat.count})</span>
+              <span className="truncate pr-1">{cat.name}</span>
+              <span className="text-[10px] text-stone-400 font-normal shrink-0">({cat.count})</span>
             </button>
           ))}
         </div>
@@ -137,25 +171,61 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
       {/* BRAND FILTER */}
       {availableBrands.length > 0 && (
         <div className="pt-4 border-t border-stone-200">
-          <h4 className="text-xs font-bold text-stone-900 uppercase tracking-wider mb-2.5">
-            Brands
-          </h4>
-          <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
-            {availableBrands.map((brand) => (
-              <label
-                key={brand}
-                className="flex items-center gap-2 text-xs text-stone-700 hover:text-stone-900 cursor-pointer"
+          <div className="flex items-center justify-between mb-2">
+            <h4 className="text-xs font-bold text-stone-900 uppercase tracking-wider">
+              Filter by Brand
+            </h4>
+            {filters.selectedBrands.length > 0 && (
+              <button
+                onClick={() => onChange({ ...filters, selectedBrands: [] })}
+                className="text-[10px] text-amber-800 font-bold hover:underline"
               >
-                <input
-                  type="checkbox"
-                  checked={filters.selectedBrands.includes(brand)}
-                  onChange={() => handleBrandToggle(brand)}
-                  className="rounded border-stone-300 text-amber-600 focus:ring-amber-500 accent-amber-600"
-                />
-                <span className="font-medium">{brand}</span>
-              </label>
-            ))}
+                Clear ({filters.selectedBrands.length})
+              </button>
+            )}
           </div>
+
+          {/* Search Brand Input */}
+          <div className="relative mb-2.5">
+            <input
+              type="text"
+              value={filters.searchBrand}
+              onChange={(e) => onChange({ ...filters, searchBrand: e.target.value })}
+              placeholder="Search brand name..."
+              className="w-full pl-7 pr-6 py-1.5 text-xs border border-stone-300 rounded-lg outline-none focus:border-amber-600"
+            />
+            <Search className="w-3 h-3 text-stone-400 absolute left-2 top-2" />
+            {filters.searchBrand && (
+              <button
+                onClick={() => onChange({ ...filters, searchBrand: '' })}
+                className="absolute right-2 top-1.5 text-stone-400 hover:text-stone-700"
+                aria-label="Clear brand search"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            )}
+          </div>
+
+          {displayedBrands.length > 0 ? (
+            <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
+              {displayedBrands.map((brand) => (
+                <label
+                  key={brand}
+                  className="flex items-center gap-2 text-xs text-stone-700 hover:text-stone-900 cursor-pointer py-0.5"
+                >
+                  <input
+                    type="checkbox"
+                    checked={filters.selectedBrands.includes(brand)}
+                    onChange={() => handleBrandToggle(brand)}
+                    className="rounded border-stone-300 text-amber-600 focus:ring-amber-500 accent-amber-600"
+                  />
+                  <span className="font-medium">{brand}</span>
+                </label>
+              ))}
+            </div>
+          ) : (
+            <p className="text-[11px] text-stone-400 italic">No matching brands found</p>
+          )}
         </div>
       )}
 

@@ -101,7 +101,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             {product.name}
           </h3>
 
-          {/* Rating */}
+          {/* Rating & Review Count */}
           <div className="flex items-center gap-1.5 mt-2">
             <div className="flex items-center bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 text-amber-900 text-[11px] font-bold">
               <span>{product.rating}</span>
@@ -109,6 +109,25 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             </div>
             <span className="text-[11px] text-stone-500 font-medium">({product.reviews} reviews)</span>
           </div>
+
+          {/* Variants preview if present */}
+          {product.colors && product.colors.length > 0 && (
+            <div className="flex items-center gap-1.5 mt-1.5">
+              <span className="text-[10px] text-stone-400 font-medium">Variants:</span>
+              <div className="flex items-center gap-1">
+                {product.colors.slice(0, 3).map((col, idx) => (
+                  <span
+                    key={idx}
+                    title={col}
+                    className="w-2 h-2 rounded-full border border-stone-300 bg-stone-500 inline-block"
+                  />
+                ))}
+                {product.colors.length > 3 && (
+                  <span className="text-[9px] text-stone-400 font-semibold">+{product.colors.length - 3}</span>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="mt-4 pt-3 border-t border-stone-100">
