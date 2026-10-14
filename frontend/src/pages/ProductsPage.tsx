@@ -26,11 +26,13 @@ export const ProductsPage: React.FC = () => {
     ? getCanonicalCategoryName(initialRawCategory)
     : 'All';
 
+  const queryBrand = searchParams.get('brand');
+
   const [filters, setFilters] = useState<FilterState>({
     category: initialCategory,
     minPrice: 0,
     maxPrice: 250000,
-    selectedBrands: [],
+    selectedBrands: queryBrand ? [queryBrand] : [],
     minRating: 0,
     minDiscount: searchDeal ? 20 : 0,
     inStockOnly: false,
@@ -56,6 +58,7 @@ export const ProductsPage: React.FC = () => {
   useEffect(() => {
     const rawCat = urlCategory || searchParams.get('category');
     const canonicalCat = rawCat ? getCanonicalCategoryName(rawCat) : 'All';
+    const brandParam = searchParams.get('brand');
 
     const isDealRoute = location.pathname.includes('deals') || location.pathname.includes('offers') || searchParams.get('deal') === 'true';
     const isBestSellerRoute = location.pathname.includes('best-sellers') || searchParams.get('sort') === 'rating';
@@ -64,6 +67,7 @@ export const ProductsPage: React.FC = () => {
     setFilters(prev => ({
       ...prev,
       category: canonicalCat,
+      selectedBrands: brandParam ? [brandParam] : (prev.selectedBrands.length > 0 && !rawCat ? prev.selectedBrands : []),
       minDiscount: isDealRoute ? 20 : 0
     }));
 

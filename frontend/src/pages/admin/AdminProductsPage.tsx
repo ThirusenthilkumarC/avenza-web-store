@@ -41,7 +41,7 @@ export const AdminProductsPage: React.FC = () => {
     try {
       setLoading(true);
       const [prodRes, catRes] = await Promise.all([
-        productsApi.getAll({ limit: 100 }),
+        productsApi.getAll({ limit: 250 }),
         categoriesApi.getAll().catch(() => ({ categories: [] }))
       ]);
       setProducts(prodRes.products || []);

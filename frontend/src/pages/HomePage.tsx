@@ -5,10 +5,14 @@ import { PromoCards } from '../components/PromoCards';
 import { CategoryGrid } from '../components/CategoryGrid';
 import { DealOfDay } from '../components/DealOfDay';
 import { TrendingProducts } from '../components/TrendingProducts';
+import { BestSellersSection } from '../components/BestSellersSection';
+import { NewArrivalsSection } from '../components/NewArrivalsSection';
 import { ElectronicsSection } from '../components/ElectronicsSection';
 import { FashionSection } from '../components/FashionSection';
-import { SellerCTA } from '../components/SellerCTA';
+import { FeaturedBrands } from '../components/FeaturedBrands';
 import { RecommendedProducts } from '../components/RecommendedProducts';
+import { RecentlyViewedSection } from '../components/RecentlyViewedSection';
+import { SellerCTA } from '../components/SellerCTA';
 import { CustomerReviewsSection } from '../components/CustomerReviewsSection';
 import { NewsletterSection } from '../components/NewsletterSection';
 
@@ -16,42 +20,54 @@ export const HomePage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
       <SEO
-        title="AVENZA | Luxury Marketplace - Premium E-Commerce"
-        description="Discover authentic flagship electronics, haute fashion, fine watches and master artisan creations on AVENZA."
+        title="AVENZA | A New Avenue for You — Luxury Online Shopping Marketplace"
+        description="Discover authentic flagship electronics, haute fashion, Swiss timepieces, fine leathercraft, and master artisan creations on AVENZA. Insured air express delivery across India."
       />
-      {/* 1. HERO CAROUSEL */}
+
+      {/* 1. LARGE PROMOTIONAL HERO CAROUSEL */}
       <HeroCarousel />
 
-      {/* 2. PROMOTIONAL BENEFITS CARDS */}
+      {/* 2. PROMOTIONAL ASSURANCE & BENEFITS CARDS */}
       <PromoCards />
 
-      {/* 3. SHOP BY CURATED CATEGORIES */}
+      {/* 3. EXPLORE BY 15 CURATED LUXURY CATEGORIES */}
       <CategoryGrid />
 
-      {/* 4. DEAL OF THE DAY WITH LIVE COUNTDOWN */}
+      {/* 4. EXCLUSIVE DEALS & OFFER OF THE DAY WITH LIVE COUNTDOWN */}
       <DealOfDay />
 
       {/* 5. TRENDING PRODUCTS ACROSS INDIA */}
       <TrendingProducts />
 
-      {/* 6. BEST OF ELECTRONICS & GADGETS */}
+      {/* 6. BEST SELLERS CURATION */}
+      <BestSellersSection />
+
+      {/* 7. NEW ARRIVALS COLLECTION */}
+      <NewArrivalsSection />
+
+      {/* 8. BEST OF FLAGSHIP ELECTRONICS & AUDIO */}
       <ElectronicsSection />
 
-      {/* 7. HAUTE FASHION & HERITAGE APPAREL */}
+      {/* 9. HAUTE FASHION & HERITAGE APPAREL */}
       <FashionSection />
 
-      {/* 8. SELLER CTA SECTION */}
-      <SellerCTA />
+      {/* 10. FEATURED LUXURY PARTNER BRANDS */}
+      <FeaturedBrands />
 
-      {/* 9. RECOMMENDED PRODUCTS BASED ON BROWSING */}
+      {/* 11. PERSONALIZED LUXURY RECOMMENDATIONS */}
       <RecommendedProducts />
 
-      {/* 10. CUSTOMER REVIEWS & PATRON TESTIMONIALS */}
+      {/* 12. RECENTLY VIEWED BROWSING HISTORY */}
+      <RecentlyViewedSection />
+
+      {/* 13. SELLER HUB & CONCIERGE CTA */}
+      <SellerCTA />
+
+      {/* 14. VERIFIED PATRON TESTIMONIALS */}
       <CustomerReviewsSection />
 
-      {/* 11. THE AVENZA PRIVATE CIRCLE NEWSLETTER */}
+      {/* 15. PRIVATE CIRCLE NEWSLETTER SUBSCRIPTION */}
       <NewsletterSection />
     </div>
   );
 };
-

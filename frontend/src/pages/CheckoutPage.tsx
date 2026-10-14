@@ -295,7 +295,20 @@ export const CheckoutPage: React.FC = () => {
             </div>
             <div>
               <h2 className="text-xl font-bold font-serif-luxury text-stone-900">Step 3: Payment Options</h2>
-              <p className="text-xs text-stone-500">256-Bit SSL Encrypted Mock Gateway</p>
+              <p className="text-xs text-amber-800 font-semibold mt-0.5">
+                Portfolio Sandbox Demo — Select your preferred simulation method
+              </p>
+            </div>
+          </div>
+
+          {/* Sandbox Demo Banner */}
+          <div className="p-3 bg-amber-50 border border-amber-300/80 rounded-2xl text-xs text-amber-950 flex items-start gap-2.5">
+            <ShieldCheck className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+            <div>
+              <p className="font-bold">Demonstration Payment Flow</p>
+              <p className="text-[11px] text-stone-600 mt-0.5 leading-relaxed">
+                Live payment gateway integrations are unconfigured in this showcase environment. No real funds will be charged, and card numbers are never saved or stored.
+              </p>
             </div>
           </div>
 
@@ -509,11 +522,23 @@ export const CheckoutPage: React.FC = () => {
               <span className="font-bold text-stone-900">Estimated Delivery:</span>
               <span className="font-semibold text-emerald-700">{createdOrder.estimatedDelivery}</span>
             </div>
+            <div className="flex justify-between items-center pb-2 border-b border-stone-200">
+              <span className="font-bold text-stone-900">Payment Mode & Status:</span>
+              <span className="font-semibold text-stone-800 text-right">
+                {paymentMethod === 'Cash on Delivery'
+                  ? 'Cash on Delivery (Pay at Doorstep)'
+                  : `${paymentMethod} (Simulated Demo Authorization)`}
+              </span>
+            </div>
             <div className="flex justify-between items-center">
-              <span className="font-bold text-stone-900">Total Paid:</span>
+              <span className="font-bold text-stone-900">Total Order Amount:</span>
               <span className="font-mono font-extrabold text-stone-900">₹{createdOrder.finalAmount.toLocaleString('en-IN')}</span>
             </div>
           </div>
+
+          <p className="text-[11px] text-stone-500 bg-stone-50 p-3 rounded-xl border border-stone-200 text-left">
+            <strong>Portfolio Showcase Notice:</strong> This transaction was simulated in Sandbox Demo mode. No financial charges were debited to any banking card or UPI VPA, and no confidential payment credentials were saved.
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <Link

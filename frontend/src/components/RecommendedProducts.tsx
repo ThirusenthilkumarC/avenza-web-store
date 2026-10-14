@@ -1,42 +1,48 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from './ProductCard';
-import { History, RotateCcw } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 export const RecommendedProducts: React.FC = () => {
-  const { recentlyViewed, products, clearRecentlyViewed } = useShop();
+  const { products } = useShop();
 
-  const handleClearHistory = () => {
-    clearRecentlyViewed();
-  };
+  // Curate highly-rated luxury products (rating >= 4.7) from diverse departments
+  const recommendations = useMemo(() => {
+    return products
+      .filter(p => p.rating >= 4.7 && p.discount >= 10)
+      .slice(0, 5);
+  }, [products]);
 
-  const displayProducts = recentlyViewed.length >= 6
-    ? recentlyViewed.slice(0, 6)
-    : [...recentlyViewed, ...products.filter(p => !recentlyViewed.some(rv => rv.id === p.id))].slice(0, 6);
+  if (recommendations.length === 0) return null;
 
   return (
-    <section className="my-12">
-      <div className="flex items-center justify-between mb-6">
-        <div className="text-left">
+    <section className="my-14 text-left">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+        <div>
           <div className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-amber-800 uppercase mb-1">
-            <History className="w-3.5 h-3.5 text-amber-600" />
-            PERSONALIZED SELECTION
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+            TAILORED FOR YOU
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold font-serif-luxury text-stone-900">
-            Recommended Based on Your Browsing
+            Personalized Luxury Recommendations
           </h2>
+          <p className="text-xs text-stone-500 mt-1 max-w-xl">
+            Algorithmic curations matched to premium taste profiles, verified mastercraft reviews, and trending artisan collections.
+          </p>
         </div>
 
-        <button
-          onClick={handleClearHistory}
-          className="flex items-center gap-1 text-xs font-bold text-stone-500 hover:text-stone-900 transition-colors min-h-[44px]"
+        <Link
+          to="/products"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 hover:text-amber-950 hover:underline shrink-0 self-start sm:self-auto min-h-[44px]"
         >
-          <RotateCcw className="w-3.5 h-3.5" /> Clear History
-        </button>
+          <span>Explore All Curations</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-        {displayProducts.map(product => (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+        {recommendations.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
