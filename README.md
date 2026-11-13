@@ -324,3 +324,15 @@ npm run lint
 * **Accent & Metallic**: Muted Gold / Amber (`#D4AF37` / `amber-600` / `amber-400`)
 * **Typography**: Luxury Serif Headings paired with clean Geometric Sans body
 * **Design Philosophy**: High visual density with generous whitespace, subtle micro-interactions, and accessible contrast ratios.
+
+👨‍💻 Developer
+
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=soft&color=0:111827,100:312E81&height=120&text=Thirusenthilkumar%20C&fontSize=32&fontColor=FFFFFF" width="100%" alt="Developer banner"/>Thirusenthilkumar C
+
+Full Stack Developer | UI/UX Designer | Front-End Developer
+
+Building modern web experiences and exploring AI-powered applications.
+
+<a href="https://github.com/ThirusenthilkumarC">
+<img src="https://img.shields.io/badge/GitHub-Follow%20My%20Journey-181717?style=for-the-badge&logo=github" alt="GitHub profile"/>
+</a></div>---
