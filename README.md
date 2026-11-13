@@ -335,4 +335,4 @@ Building modern web experiences and exploring AI-powered applications.
 
 <a href="https://github.com/ThirusenthilkumarC">
 <img src="https://img.shields.io/badge/GitHub-Follow%20My%20Journey-181717?style=for-the-badge&logo=github" alt="GitHub profile"/>
-</a></div>---
+</a></div>
