@@ -1,8 +1,8 @@
+
+# 🛍️ AVENZA — Luxury Marketplace
 <div align="center">
 
 <img src="assets/avenza-logo.jpeg" alt="Avenza Logo" width="220"/>
-
-# 🛍️ AVENZA — Luxury Marketplace
 
 ### A New Avenue for You.
 **Tagline: Discover. Explore. Shop. Experience Avenza.**
