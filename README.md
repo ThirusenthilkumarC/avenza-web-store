@@ -137,9 +137,7 @@ avenza-web-store/
 │   └── dist/                  # Production client bundle output
 │
 └── package.json               # Monorepo orchestration scripts
-```
 
----
 
 ## 🔒 Security & Data Integrity Highlights
 
