@@ -1,5 +1,3 @@
-<div align="center">
-   <img src="assets/avenza-logo.jpeg" alt="Avenza Logo" width="220"/>
 
 # 🛍️ AVENZA — Luxury Marketplace
 <div align="center">
@@ -336,3 +334,5 @@ Building modern web experiences and exploring AI-powered applications.
 <a href="https://github.com/ThirusenthilkumarC">
 <img src="https://img.shields.io/badge/GitHub-Follow%20My%20Journey-181717?style=for-the-badge&logo=github" alt="GitHub profile"/>
 </a></div>
+<div align="center">
+   <img src="assets/avenza-logo.jpeg" alt="Avenza Logo" width="220"/>
